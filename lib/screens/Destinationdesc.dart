@@ -15,7 +15,7 @@ class Description_Destination extends StatelessWidget {
       backgroundColor: Colors.grey.shade400,
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.pop(context);},
           icon: Icon(Icons.arrow_back_sharp),
           color: Color(0xff85586F),
         ),

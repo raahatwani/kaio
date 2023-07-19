@@ -4,7 +4,7 @@ import 'package:kaio/screens/desc_Hc_pprmche.dart';
 
 import '../constants.dart';
 import '../main.dart';
-import 'cook.dart';
+
 
 class Paper_machie extends StatelessWidget {
   const Paper_machie({super.key});

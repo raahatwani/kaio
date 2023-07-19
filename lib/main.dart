@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:kaio/screens/Hc_papermachie.dart';
 import 'package:kaio/screens/desc_Hc_pprmche.dart';
+import 'package:kaio/screens/destinations.dart';
 import 'package:kaio/screens/handicrafts.dart';
 
 import 'package:kaio/widgets/Recipe.dart';
@@ -15,7 +16,7 @@ import 'screens/literature.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Description_Destination(),
+    home: HomeScreen(),
   ));
 }
 var devH;
@@ -64,6 +65,17 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text('Kashmir Handicrafts'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Destination(),
+                  ),
+                );
+              },
+              child: Text('Kashmir Destinations'),
             ),
            
           ],
