@@ -1,17 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_typing_uninitialized_variables, unused_import, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:kaio/screens/Hc_papermachie.dart';
+import 'package:kaio/screens/desc_Hc_pprmche.dart';
+import 'package:kaio/screens/handicrafts.dart';
 
 import 'package:kaio/widgets/Recipe.dart';
 
 import 'screens/Cuisine.dart';
+import 'screens/Destinationdesc.dart';
 import 'screens/literature.dart';
 
 
 
 void main() {
   runApp(MaterialApp(
-    home: HomeScreen(),
+    home: Description_Destination(),
   ));
 }
 var devH;
@@ -49,6 +53,17 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text('Kashmiri Cuisine'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Handicraft(),
+                  ),
+                );
+              },
+              child: Text('Kashmir Handicrafts'),
             ),
            
           ],
