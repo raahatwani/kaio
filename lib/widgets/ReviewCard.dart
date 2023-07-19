@@ -14,7 +14,7 @@ class ReviewCard extends StatelessWidget {
     return  SizedBox(
                           height: devH * 0.1,
                           width: devW ,
-                          child: Card(color: Colors.grey.shade400, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          child: Card(color: Colors.grey.shade300, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                             child: Padding(
                               padding:  EdgeInsets.all(8.0),
                               child: Text(CardText),

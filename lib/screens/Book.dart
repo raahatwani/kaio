@@ -18,10 +18,9 @@ class Book extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade400,
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_sharp,
-          color: Colors.black,
-        ),
+        leading: IconButton(onPressed: (){Navigator.pop(context);},icon: Icon(Icons.arrow_back_sharp),color: Colors.black,
+            
+          ),
         title: Text(
           'Back',
           style: TextStyle(color: Colors.black),
@@ -50,12 +49,45 @@ class Book extends StatelessWidget {
                     Row(mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         SizedBox(width: devW*0.3,),
-                        IconButton(
-                          onPressed: () {
-                          },
-                          icon: Icon(Icons.arrow_drop_down_circle_outlined),
+                        // IconButton(
+                        //   onPressed: () {
+                        //   },
+                        //   icon: Icon(Icons.arrow_drop_down_circle_outlined),
+                        //   iconSize: 30,
+                        // ),
+                         PopupMenuButton(color: Color(0xff85586F),
+                          icon:Icon(Icons.arrow_drop_down_circle_outlined,color: Colors.black,),
                           iconSize: 30,
-                        ),
+                           
+                          onSelected: (String value) {
+                            if (value == 'Read') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Read(),
+                                ),
+                              );
+                               } else if (value == 'Download') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Download(),
+                                ),
+                              );
+                            }
+                          },
+                          itemBuilder: (BuildContext context) =>
+                              [
+                            PopupMenuItem(
+                              value: 'Read',
+                              child: Text('Read'),
+                            ),
+                            PopupMenuItem(
+                              value: 'Download',
+                              child: Text('Download'),
+                            ),
+                          ],
+                          )
                       ],
                     )
                   ],
@@ -134,3 +166,25 @@ class Book extends StatelessWidget {
     );
   }
 }
+
+//  read and download  book
+
+
+class Read extends StatelessWidget {
+  const Read({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text('READ BOOK'),),);
+  }
+}
+
+class Download extends StatelessWidget {
+  const Download({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text('DOWNLOAD BOOK'),));
+  }
+}
+
