@@ -1,16 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_typing_uninitialized_variables, unused_import, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:kaio/screens/Hc_papermachie.dart';
-import 'package:kaio/screens/desc_Hc_pprmche.dart';
-import 'package:kaio/screens/destinations.dart';
-import 'package:kaio/screens/handicrafts.dart';
-
 import 'package:kaio/widgets/Recipe.dart';
+import 'package:kaio/widgets/travel_new.dart';
+import 'Culture/Gallery.dart';
+import 'MainScreens/Cuisine.dart';
+import 'MainScreens/destinations.dart';
+import 'MainScreens/handicrafts.dart';
+import 'MainScreens/literature.dart';
 
-import 'screens/Cuisine.dart';
-import 'screens/Destinationdesc.dart';
-import 'screens/literature.dart';
 
 
 
@@ -19,12 +17,17 @@ void main() {
     home: HomeScreen(),
   ));
 }
+
+
+
 var devH;
 var devW;
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    devH = MediaQuery.of(context).size.height;
+    devW = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('Kashmir App'),
@@ -76,6 +79,17 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text('Kashmir Destinations'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => Destination(),
+                //   ),
+                // );
+              },
+              child: Text('Kashmir Culture'),
             ),
            
           ],

@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/widgets/ReviewCard.dart';
-
-
+import '../main.dart';
 import '../widgets/bookshape.dart';
-import 'literature.dart';
+
 
 
 
@@ -111,27 +110,33 @@ class Book extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    Text('GENRE'),
-                    Icon(Icons.book_rounded),
-                    Text('POETRY')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text('LENGTH'),
-                    Icon(Icons.four_k_outlined),
-                    Text('PAGES')
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text('LANG'),
-                    Icon(Icons.language),
-                    Text('KASHMIRI')
-                  ],
-                ),
+                btn('GENRE','POETRY',Icons.book_rounded),
+                // Column(         
+                //   children: [
+                //     Text('GENRE'),
+                //     Icon(Icons.book_rounded),
+                //     Text('POETRY')
+                //   ],
+                // ),
+                btn('LENGTH','PAGES',Icons.four_k_outlined),
+                // Column(
+                //   children: [
+                //     Text('LENGTH'),
+                //     Icon(Icons.four_k_outlined),
+                //     Text('PAGES')
+                //   ],
+                // ),
+
+                btn('LANG','KASHMIRI',Icons.language),
+                // Column(
+                //   children: [
+                //     Text('LANG'),
+                //     Icon(Icons.language),
+                //     Text('KASHMIRI')
+                //   ],
+                // ),
+
+                
               ],
             ),
             SizedBox(height: devH * 0.02),
@@ -164,6 +169,16 @@ class Book extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  btn (String text1, String text2, IconData icon){
+    return  Column(
+                  children: [
+                    Text(text1),
+                    Icon(icon),
+                    Text(text2)
+                  ],
+                );
   }
 }
 

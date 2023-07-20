@@ -2,12 +2,14 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:kaio/widgets/travel_new.dart';
 
 
+import '../Destination/Destinationdescription.dart';
 import '../constants.dart';
 
-import '../widgets/Travel.dart';
-import 'Destinationdesc.dart';
+
+
 
 
 bool showDefault = true,
@@ -81,7 +83,7 @@ class _DestinationState extends State<Destination> {
             height: devH * 0.5,
             child: SingleChildScrollView(
               child: Column(
-                children: [Travel(name: Description_Destination(),), Travel(name:Description_Destination() ,), Travel(name:Description_Destination ,)],
+                children: [Travel_new(name: Description_Destination(),), Travel_new(name:Description_Destination() ,), Travel_new(name:Description_Destination ,)],
               ),
             ),
           )

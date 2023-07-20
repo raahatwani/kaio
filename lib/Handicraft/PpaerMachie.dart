@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kaio/screens/desc_Hc_pprmche.dart';
 
 import '../constants.dart';
 import '../main.dart';
+import 'DescriptionPaperMachie.dart';
 
 
 class Paper_machie extends StatelessWidget {

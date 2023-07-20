@@ -1,47 +1,26 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_constructor_bodies, must_be_immutable, prefer_const_constructors_in_immutables, non_constant_identifier_names, prefer_typing_uninitialized_variables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-
 import 'package:kaio/constants.dart';
 import 'package:kaio/widgets/bookshape.dart';
-import 'package:kaio/widgets/selection.dart';
+import '../Literature/Book.dart';
 
-import 'Book.dart';
 
-var devH, devW;
+
 class LiteraturePage extends StatefulWidget {
-  var i;
-  void Selection() {
-    if (showPoetry == true) {
-      i = Poetry();
-    } else if (showHistory == true) {
-      i = History();
-    } else if (showFamousWriters == true) {
-      i = FamousWriters();
-    } else if (showReligion == true) {
-      i = Religion();
-    } else {
-      i = Default();
-    }
-  }
-
+ 
   LiteraturePage({super.key});
 
   @override
   State<LiteraturePage> createState() => _LiteraturePageState();
 }
 
-bool showDefault = true,
-    showPoetry = false,
-    showHistory = false,
-    showFamousWriters = false,
-    showReligion = false;
+
 
 class _LiteraturePageState extends State<LiteraturePage> {
   @override
   Widget build(BuildContext context) {
-    devH = MediaQuery.of(context).size.height;
-    devW = MediaQuery.of(context).size.width;
+    
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -80,64 +59,52 @@ class _LiteraturePageState extends State<LiteraturePage> {
               'Book Shelf',
               style: kHeading,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  SelectionButton(
-                      function: () {
-                        showPoetry = true;
-                        showHistory = false;
-                        showFamousWriters = false;
-                        showDefault = false;
-                        setState(() {
-                          widget.Selection();
-                        });
-                      },
-                      buttonText: 'Poetry'),
-                  SelectionButton(
-                      function: () {
-                        showHistory = true;
-                        showPoetry = false;
-                        showFamousWriters = false;
-                        showDefault = false;
-                        setState(() {
-                          widget.Selection();
-                        });
-                      },
-                      buttonText: 'History'),
-                  SelectionButton(
-                      function: () {
-                        showFamousWriters = true;
-                        showPoetry = false;
-                        showHistory = false;
-                        showDefault = false;
-                        setState(() {
-                          widget.Selection();
-                        });
-                      },
-                      buttonText: 'Famous Writers'),
-                  SelectionButton(
-                      function: () {
-                        showReligion = true;
-                        showFamousWriters = false;
-                        showPoetry = false;
-                        showHistory = false;
-                        showDefault = false;
-                        setState(() {
-                          widget.Selection();
-                        });
-                      },
-                      buttonText: 'Religion'),
-                  SelectionButton(function: () {}, buttonText: 'Folk'),
-                ],
-              ),
-            ),
-            Container(
-                height: devH * 0.45,
-                width: devW * 0.9,
-                child: showDefault ? Default() : widget.i),
-          ],
+            DefaultTabController(
+                      length: 5,
+                      child: Expanded(
+                        child: 
+                            Column(
+                              children: [
+                                Container(height: 45,
+                                decoration: BoxDecoration(color: Colors.grey.shade200,borderRadius: BorderRadius.circular(25.0)),
+                                  child: TabBar( indicator: BoxDecoration(
+                                                    color: Color(0xff85586F),
+                                                    borderRadius:  BorderRadius.circular(25.0)
+                                                  ) ,
+                                    tabs: [
+                                      Tab(text: 'Poetry'),
+                                      Tab(text: 'History'),
+                                       Tab(text: 'Famous Writers'),
+                                      Tab(text: 'Religion'),
+                                       Tab(text: 'Folk'),
+                                       
+                                      
+                                    ],
+                                    labelColor: Colors.black,
+                                    
+                                   
+                                  ),
+                                ),
+                                Expanded(
+                              child: TabBarView(
+                                children: [
+                                  Poetry(),
+                                  History(),
+                                  FamousWriters(),
+                                  Religion(),
+                                  History()
+                                  
+                                  
+                                ],
+                              ),
+                            ),
+                              ],
+                            ),
+                            
+                          
+                      ),
+                    ),
+            ],
         ),
       ),
     );
