@@ -5,6 +5,7 @@ import 'package:kaio/widgets/Recipe.dart';
 import 'package:kaio/widgets/travel_new.dart';
 import 'Culture/Gallery.dart';
 import 'MainScreens/Cuisine.dart';
+import 'MainScreens/Culture.dart';
 import 'MainScreens/destinations.dart';
 import 'MainScreens/handicrafts.dart';
 import 'MainScreens/literature.dart';
@@ -82,12 +83,12 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => Destination(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Culture(),
+                  ),
+                );
               },
               child: Text('Kashmir Culture'),
             ),
