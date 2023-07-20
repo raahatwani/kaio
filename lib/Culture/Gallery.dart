@@ -1,73 +1,55 @@
-// ignore_for_file: must_be_immutable
+
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
-import 'package:kaio/main.dart';
 
-class Gallery extends StatelessWidget {
-  List imagePath = [
-    'assets/argami.jpg',
-    'assets/gulmarg.jpg',
-    'assets/kehwa.jpg',
-    'assets/kral.jpg',
-    'assets/mehjoor.jpg',
-    'assets/museeki.jpg',
-    'assets/rasol.jpg',
-    'assets/shamas.jpg',
-    'assets/rahman.jpg',
-    'assets/paper_machie.jpg',
-  ];
+import '../main.dart';
+
+class GalleryImage extends StatelessWidget {
+  const GalleryImage({super.key});
 
   @override
   Widget build(BuildContext context) {
-devH = MediaQuery.of(context).size.height;
-    devW = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      backgroundColor: Colors.grey.shade400,
-      appBar: AppBar(leading: IconButton(onPressed: (){},icon: Icon(Icons.arrow_back_sharp),color: Color(0xff85586F),
-            
+       backgroundColor: Colors.grey.shade400,
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: (){
+              Navigator.pop(context);},
+              icon: Icon(Icons.arrow_back_sharp),
+              color: Color(0xff85586F),
           ),
-        title: Text(
-          'GALLERY',
-          style: kHeading,
+          title: const Text('GALLERY', style: kHeading),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
         ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Padding(
-        padding:  EdgeInsets.all(devW*0.02),
-        child: GridView.builder(
-            itemCount: 10,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: devW*0.03,
-              childAspectRatio: 0.7,
-              mainAxisSpacing: devH*0.03,
+        body: Column(
+          children: [
+            Container(
+        height: devW * 0.8,
+        width: devW * 0.9,
+        margin: EdgeInsets.all(devW * 0.01),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.black, width: 3),
+            image: DecorationImage(
+                image: AssetImage('assets/story1.jpg'), fit: BoxFit.fitWidth)
             ),
-            itemBuilder: (context, index) {
-              String images = imagePath[index];
-
-              return Padding(
-                padding:  EdgeInsets.all(devW*0.01),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(devH*0.05),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(devH*0.05),
-                    child: Image.asset(
-                      images,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              );
-            }),
       ),
+      SizedBox(
+        height: devH*0.05,
+      ),
+            Text('DESCRIPTION',style: kHeading,),
+            SizedBox(
+        height: devH*0.05,
+      ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('In 1950 James Cobb Burke - a writer, war correspondent and photojournalist was assigned to India as a part-time correspondent for Time-Life and became their full-time Bureau Chief in New Delhi in 1951. He visited Kashmir in 1964 and captured its beauty and life in some amazing pictures. Tragically, the same year James Burke slipped and fell to his death 60 miles north of Tezpur, Assam while trying to take a picture in the Himalayas. He was 49 years old and left behind a wife and three children.'),
+            )
+          ],
+        ),
     );
   }
 }

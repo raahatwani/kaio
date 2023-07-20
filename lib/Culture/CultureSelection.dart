@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Gallery.dart';
+import '../widgets/CultureCard.dart';
 
 class CultureSelection extends StatelessWidget {
   const CultureSelection({super.key});
@@ -40,8 +40,8 @@ class CultureSelection extends StatelessWidget {
                   child: TabBarView(
                     children:  [
                       Gallery(),
-                      // Blogs(),
-                      // KLife()
+                      Blogs(),
+                      KLife()
                     ],
                   )
               )
