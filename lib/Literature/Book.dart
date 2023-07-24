@@ -3,23 +3,27 @@
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/widgets/ReviewCard.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 import '../main.dart';
-import '../widgets/bookshape.dart';
-
-
-
+import '../widgets/BookShape1.dart';
 
 class Book extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     devH = MediaQuery.of(context).size.height;
+    devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
+   
     return Scaffold(
       backgroundColor: Colors.grey.shade400,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){Navigator.pop(context);},icon: Icon(Icons.arrow_back_sharp),color: Colors.black,
-            
-          ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_sharp),
+          color: Colors.black,
+        ),
         title: Text(
           'Back',
           style: TextStyle(color: Colors.black),
@@ -33,50 +37,49 @@ class Book extends StatelessWidget {
           children: [
             Row(
               children: [
-                BookShape(name: Book(), imagepath: 'assets/rahman.jpg'),
+                BookShape1(name: Book(), imagepath: 'assets/rahman.jpg'),
                 SizedBox(
                   width: devW * 0.04,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('KHEWAT',style: kHeading,),
-                    Text('RAHMAN RAHI',style:  kSelText,),
+                    Text(
+                      'KHEWAT',
+                      style: kHeading,
+                    ),
+                    Text(
+                      'RAHMAN RAHI',
+                      style: kSelText,
+                    ),
                     SizedBox(
                       height: devH * 0.01,
                     ),
-                    Row(mainAxisAlignment: MainAxisAlignment.end,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(width: devW*0.3,),
-                        // IconButton(
-                        //   onPressed: () {
-                        //   },
-                        //   icon: Icon(Icons.arrow_drop_down_circle_outlined),
-                        //   iconSize: 30,
-                        // ),
-                         PopupMenuButton(color: Color(0xff85586F),
-                          icon:Icon(Icons.arrow_drop_down_circle_outlined,color: Colors.black,),
+                        SizedBox(
+                          width: devW * 0.3,
+                        ),
+                        PopupMenuButton(
+                          color: Color(0xff85586F),
+                          icon: Icon(
+                            Icons.arrow_drop_down_circle_outlined,
+                            color: Colors.black,
+                          ),
                           iconSize: 30,
-                           
                           onSelected: (String value) {
                             if (value == 'Read') {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Read(),
-                                ),
-                              );
-                               } else if (value == 'Download') {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Download(),
-                                ),
-                              );
+                              launchURL(
+                                          'https://drive.google.com/file/d/1GWL9f-xYvtYrupI7C62qV-UyRsox4wEX/view?usp=drivesdk');
+                                
+                            } else if (value == 'Download') {
+                             launchURL(
+                                          'https://blog.logrocket.com');
+                             
                             }
                           },
-                          itemBuilder: (BuildContext context) =>
-                              [
+                          itemBuilder: (BuildContext context) => [
                             PopupMenuItem(
                               value: 'Read',
                               child: Text('Read'),
@@ -86,7 +89,7 @@ class Book extends StatelessWidget {
                               child: Text('Download'),
                             ),
                           ],
-                          )
+                        )
                       ],
                     )
                   ],
@@ -97,7 +100,10 @@ class Book extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Description',style: kHeading,),
+                  Text(
+                    'Description',
+                    style: kHeading,
+                  ),
                   SizedBox(
                     height: devH * 0.01,
                   ),
@@ -110,41 +116,27 @@ class Book extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                btn('GENRE','POETRY',Icons.book_rounded),
-                // Column(         
+                btn('GENRE', 'POETRY', Icons.book_rounded),
+                // Column(
                 //   children: [
                 //     Text('GENRE'),
                 //     Icon(Icons.book_rounded),
                 //     Text('POETRY')
                 //   ],
                 // ),
-                btn('LENGTH','PAGES',Icons.four_k_outlined),
-                // Column(
-                //   children: [
-                //     Text('LENGTH'),
-                //     Icon(Icons.four_k_outlined),
-                //     Text('PAGES')
-                //   ],
-                // ),
+                btn('LENGTH', 'PAGES', Icons.four_k_outlined),
 
-                btn('LANG','KASHMIRI',Icons.language),
-                // Column(
-                //   children: [
-                //     Text('LANG'),
-                //     Icon(Icons.language),
-                //     Text('KASHMIRI')
-                //   ],
-                // ),
-
-                
+                btn('LANG', 'KASHMIRI', Icons.language),
               ],
             ),
             SizedBox(height: devH * 0.02),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Reviews',style: kHeading,),
-                
+                Text(
+                  'Reviews',
+                  style: kHeading,
+                ),
                 Container(
                   height: devH * 0.27,
                   width: devW,
@@ -152,13 +144,24 @@ class Book extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: SingleChildScrollView(
                         child: Column(children: [
-                      ReviewCard(CardText: 'My friend recommended this book to me, talking about how I would love it and it was true, I did.',),
+                      ReviewCard(
+                        CardText:
+                            'My friend recommended this book to me, talking about how I would love it and it was true, I did.',
+                      ),
                       SizedBox(height: 10),
-                     ReviewCard(CardText: 'This book i must say .. this is one of the amazing book i have ever read..',),
+                      ReviewCard(
+                        CardText:
+                            'This book i must say .. this is one of the amazing book i have ever read..',
+                      ),
                       SizedBox(height: 10),
-                      ReviewCard(CardText: 'One of the finest pieces of writings in the market.',),
+                      ReviewCard(
+                        CardText:
+                            'One of the finest pieces of writings in the market.',
+                      ),
                       SizedBox(height: 10),
-                      ReviewCard(CardText: 'Amazing piece of work..',),
+                      ReviewCard(
+                        CardText: 'Amazing piece of work..',
+                      ),
                       SizedBox(height: 10),
                     ])),
                   ),
@@ -171,35 +174,57 @@ class Book extends StatelessWidget {
     );
   }
 
-  btn (String text1, String text2, IconData icon){
-    return  Column(
-                  children: [
-                    Text(text1),
-                    Icon(icon),
-                    Text(text2)
-                  ],
-                );
+  btn(String text1, String text2, IconData icon) {
+    return Column(
+      children: [Text(text1), Icon(icon), Text(text2)],
+    );
   }
 }
 
 //  read and download  book
 
+// class Read extends StatelessWidget {
+//   const Read({super.key});
 
-class Read extends StatelessWidget {
-  const Read({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('READ BOOK'),),);
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//     Scaffold();
+//     // GestureDetector(
+//     //   onTap: ()async{
+//     //     var url='https://blog.logrocket.com';
+//     //     if (await canLaunchUrlString(url))
+//     //     {
+//     //       await launchUrlString(url);
+//     //     }
+//     //     else
+//     //     {
+//     //       throw'Could not Lauch $url';
+//     //     }
+//     //   },
+//     //   child: Center(child: Text(' tap here to see article'),),
+//     // );
+//   }
+// }
 
 class Download extends StatelessWidget {
   const Download({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('DOWNLOAD BOOK'),));
+    return Scaffold(
+        body: Center(
+      child: Text('DOWNLOAD BOOK'),
+    ));
   }
 }
 
+//code for launching url
+
+launchURL(String url) async {
+  if (!await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}

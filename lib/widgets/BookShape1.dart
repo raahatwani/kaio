@@ -51,10 +51,11 @@ import '../main.dart';
 //   }
 // }
 
-class BookShape extends StatelessWidget {
+class BookShape1 extends StatelessWidget {
   String imagepath = '';
   var name;
-  BookShape({required this.name,required this.imagepath, });
+  
+  BookShape1({required this.name,required this.imagepath, });
 
   @override
   Widget build(BuildContext context) {
