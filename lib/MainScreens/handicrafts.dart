@@ -10,12 +10,8 @@ import '../constants.dart';
 import '../main.dart';
 import 'literature.dart';
 
-
-
 // ignore: must_be_immutable
 class Handicraft extends StatefulWidget {
-  
-
   Handicraft({super.key});
 
   @override
@@ -23,12 +19,11 @@ class Handicraft extends StatefulWidget {
 }
 
 class _HandicraftState extends State<Handicraft> {
-
   @override
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
@@ -73,58 +68,49 @@ class _HandicraftState extends State<Handicraft> {
             SizedBox(
               height: 20,
             ),
-  
             DefaultTabController(
-                      length: 5,
-                      child: Expanded(
-                        child: 
-                            Column(
-                              children: [
-                                Container(height: 45,
-                                decoration: BoxDecoration(color: Colors.grey.shade200,borderRadius: BorderRadius.circular(25.0)),
-                                  child: TabBar( indicator: BoxDecoration(
-                                                    color: Color(0xff85586F),
-                                                    borderRadius:  BorderRadius.circular(25.0)
-                                                  ) ,
-                                    tabs: [
-                                      Tab(text: 'Paper-Mache'),
-                                      Tab(text: 'Carpets, Rugs and Mats'),
-                                       Tab(text: 'Embroidery Work'),
-                                      Tab(text: 'Stone Craft'),
-                                       Tab(text: 'Others'),
-                                       
-                                      
-                                    ],
-                                    labelColor: Colors.black,
-                                    
-                                   
-                                  ),
-                                ),
-                                Expanded(
-                              child: TabBarView(
-                                children: [
-                                  PaperMac(),
-                                  CRM(),
-                                  Embroidery(),
-                                  StoneCraft(),
-                                  Others()
-                                  
-                                  
-                                ],
-                              ),
-                            ),
-                              ],
-                            ),
-                            
-                          
+              length: 5,
+              child: Expanded(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(25.0)),
+                      child: TabBar(
+                        indicator: BoxDecoration(
+                            color: Color(0xff85586F),
+                            borderRadius: BorderRadius.circular(25.0)),
+                        tabs: [
+                          Tab(text: 'Paper-Mache'),
+                          Tab(text: 'Carpets, Rugs and Mats'),
+                          Tab(text: 'Embroidery Work'),
+                          Tab(text: 'Stone Craft'),
+                          Tab(text: 'Others'),
+                        ],
+                        labelColor: Colors.black,
                       ),
                     ),
- 
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          PaperMac(),
+                          CRM(),
+                          Embroidery(),
+                          StoneCraft(),
+                          Others()
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
-    
   }
 }
 
@@ -137,10 +123,19 @@ class PaperMac extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('PaperMachie',style: kHeading,),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
+          Text(
+            'PaperMachie',
+            style: kHeading,
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
         ],
       ),
     );
@@ -154,15 +149,23 @@ class Default extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Default',style: kHeading,),
-        CraftCard(name: Paper_machie(),),
-        CraftCard(name: Paper_machie(),),
-        CraftCard(name: Paper_machie(),),
+        Text(
+          'Default',
+          style: kHeading,
+        ),
+        CraftCard(
+          name: Paper_machie(),
+        ),
+        CraftCard(
+          name: Paper_machie(),
+        ),
+        CraftCard(
+          name: Paper_machie(),
+        ),
       ],
     );
   }
 }
-
 
 class CRM extends StatelessWidget {
   const CRM({super.key});
@@ -173,10 +176,19 @@ class CRM extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Carpets, Rugs and Mats',style: kHeading,),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
+          Text(
+            'Carpets, Rugs and Mats',
+            style: kHeading,
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
         ],
       ),
     );
@@ -192,10 +204,19 @@ class Embroidery extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Emboidery Work',style: kHeading,),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
+          Text(
+            'Emboidery Work',
+            style: kHeading,
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
         ],
       ),
     );
@@ -211,10 +232,19 @@ class StoneCraft extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Stone Craft',style: kHeading,),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
+          Text(
+            'Stone Craft',
+            style: kHeading,
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
         ],
       ),
     );
@@ -230,10 +260,19 @@ class Others extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Others',style: kHeading,),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
-          CraftCard(name: Paper_machie(),),
+          Text(
+            'Others',
+            style: kHeading,
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
+          CraftCard(
+            name: Paper_machie(),
+          ),
         ],
       ),
     );

@@ -9,8 +9,9 @@ class Culture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(body: CultureSelection(),)
-    );
+        child: Scaffold(
+      body: CultureSelection(),
+    ));
   }
 }
 

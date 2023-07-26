@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 
-
-
 import '../main.dart';
 import 'cook.dart';
-
-
 
 class Recipe extends StatelessWidget {
   const Recipe({super.key});
@@ -18,8 +14,12 @@ class Recipe extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey.shade400,
         appBar: AppBar(
-           leading: IconButton(onPressed: (){Navigator.pop(context);},icon: Icon(Icons.arrow_back_sharp),color: Color(0xff85586F),
-            
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_sharp),
+            color: Color(0xff85586F),
           ),
           title: Text('BEVERAGES', style: kHeading),
           centerTitle: true,
@@ -43,13 +43,14 @@ class Recipe extends StatelessWidget {
                       Text(
                         'Kashmiri Kehwa is an authentic kashmiri beverage.',
                         style: kSelText,
-                      ), SizedBox(height: devH*0.04,),
+                      ),
+                      SizedBox(
+                        height: devH * 0.04,
+                      ),
                       Text(
                         'Ingredients:',
                         style: kHeading,
                       )
-                     
-
 
 // big buttons
 
@@ -72,7 +73,7 @@ class Recipe extends StatelessWidget {
                       //         'Chopped Almonds',
                       //         '8'
                       //       ];
-                      
+
                       //       return Padding(
                       //         padding: EdgeInsets.symmetric(
                       //             horizontal: 10, vertical: 10),
@@ -85,80 +86,88 @@ class Recipe extends StatelessWidget {
                       //   ),
                       // ),
 
-
 // small buttons
 
-                      ,Container(
-  // color: Colors.amber,
-  width: devW,
-  height: devH * 0.3,
-  child: GridView.builder(
-    itemCount: 7,
-    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 3,
-      childAspectRatio: 2, 
-    ),
-    itemBuilder: (context, index) {
-      List buttonTexts = [
-        'Water',
-        'Cardamom',
-        'Cinnamon',
-        'Saffron',
-        'Sugar',
-        'Kashmiri tea leaves',
-        'Chopped Almonds',
-        
-        
-      ];
+                      ,
+                      Container(
+                        // color: Colors.amber,
+                        width: devW,
+                        height: devH * 0.3,
+                        child: GridView.builder(
+                          itemCount: 7,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            childAspectRatio: 2,
+                          ),
+                          itemBuilder: (context, index) {
+                            List buttonTexts = [
+                              'Water',
+                              'Cardamom',
+                              'Cinnamon',
+                              'Saffron',
+                              'Sugar',
+                              'Kashmiri tea leaves',
+                              'Chopped Almonds',
+                            ];
 
-      return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-        child: SizedBox(
-          width: devW*0.01,
-          height: devH*0.03,
-          child: OutlinedButton(
-            child: Text(buttonTexts[index],style: kSelText,),
-            onPressed: () {},
-          ),
-        ),
-      );
-    },
-  ),
-)
+                            return Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 5),
+                              child: SizedBox(
+                                width: devW * 0.01,
+                                height: devH * 0.03,
+                                child: OutlinedButton(
+                                  child: Text(
+                                    buttonTexts[index],
+                                    style: kSelText,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      )
 
+// row col
+                      // Column(children: [
+                      //   Row(
+                      //     children: [
+                      //       Ingredients(),
 
+                      //     ],
+                      //   ),
+                      //   Row(
+                      //     children: [
+                      //       Ingredients(),
 
-                      
-// row col 
-                    // Column(children: [
-                    //   Row(
-                    //     children: [
-                    //       Ingredients(),
-                          
-                          
-                    //     ],
-                    //   ),
-                    //   Row(
-                    //     children: [
-                    //       Ingredients(),
-                          
-                    //     ],
-                    //   ),
-                    // ],),
-                      ,SizedBox(height: devH*0.02,)
-                      ,SizedBox(
+                      //     ],
+                      //   ),
+                      // ],),
+                      ,
+                      SizedBox(
+                        height: devH * 0.02,
+                      ),
+                      SizedBox(
                         height: devH * 0.07,
                         width: devW,
                         child: FilledButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (_){return Cook();}));
-                            },
-                            style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(Color(0xff85586F)), // Change the color here
-    ),
-                            child: Text("Let's cook this recipie",),),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) {
+                              return Cook();
+                            }));
+                          },
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Color(0xff85586F)), 
+                          ),
+                          child: Text(
+                            "Let's cook this recipe",
+                          ),
+                        ),
                       )
                     ]))));
   }
 }
-

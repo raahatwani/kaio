@@ -4,13 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/widgets/travel_new.dart';
 
-
 import '../Destination/Destinationdescription.dart';
 import '../constants.dart';
-
-
-
-
 
 bool showDefault = true,
     showPaperMac = false,
@@ -30,7 +25,7 @@ class Destination extends StatefulWidget {
 class _DestinationState extends State<Destination> {
   @override
   Widget build(BuildContext context) {
-   var devH = MediaQuery.of(context).size.height;
+    var devH = MediaQuery.of(context).size.height;
 
     return SafeArea(
         child: Scaffold(
@@ -83,7 +78,17 @@ class _DestinationState extends State<Destination> {
             height: devH * 0.5,
             child: SingleChildScrollView(
               child: Column(
-                children: [Travel_new(name: Description_Destination(),), Travel_new(name:Description_Destination() ,), Travel_new(name:Description_Destination ,)],
+                children: [
+                  Travel_new(
+                    name: Description_Destination(),
+                  ),
+                  Travel_new(
+                    name: Description_Destination(),
+                  ),
+                  Travel_new(
+                    name: Description_Destination,
+                  )
+                ],
               ),
             ),
           )

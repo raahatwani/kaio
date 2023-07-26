@@ -56,53 +56,46 @@ class Cuisine extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-  
             DefaultTabController(
-                      length: 5,
-                      child: Expanded(
-                        child: 
-                            Column(
-                              children: [
-                                Container(height: 45,
-                                decoration: BoxDecoration(color: Colors.grey.shade200,borderRadius: BorderRadius.circular(25.0)),
-                                  child: TabBar( indicator: BoxDecoration(
-                                                    color: Color(0xff85586F),
-                                                    borderRadius:  BorderRadius.circular(25.0)
-                                                  ) ,
-                                    tabs: [
-                                      Tab(text: 'Beverages'),
-                                      Tab(text: 'HomeMade'),
-                                       Tab(text: 'Wazwan'),
-                                      Tab(text: 'Deserts'),
-                                       Tab(text: 'Others'),
-                                       
-                                      
-                                    ],
-                                    labelColor: Colors.black,
-                                    // indicatorColor: Colors.blue,
-                                   
-                                  ),
-                                ),
-                                Expanded(
-                              child: TabBarView(
-                                children: [
-                                  Beverages(),
-                                  HomeMade(),
-                                  Wazwan(),
-                                  Deserts(),
-                                  Others()
-                                  
-                                  
-                                ],
-                              ),
-                            ),
-                              ],
-                            ),
-                            
-                          
+              length: 5,
+              child: Expanded(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(25.0)),
+                      child: TabBar(
+                        indicator: BoxDecoration(
+                            color: Color(0xff85586F),
+                            borderRadius: BorderRadius.circular(25.0)),
+                        tabs: [
+                          Tab(text: 'Beverages'),
+                          Tab(text: 'HomeMade'),
+                          Tab(text: 'Wazwan'),
+                          Tab(text: 'Deserts'),
+                          Tab(text: 'Others'),
+                        ],
+                        labelColor: Colors.black,
+                        // indicatorColor: Colors.blue,
                       ),
                     ),
- 
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          Beverages(),
+                          HomeMade(),
+                          Wazwan(),
+                          Deserts(),
+                          Others()
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -119,10 +112,19 @@ class Beverages extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Bev',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'Bev',
+            style: kHeading,textScaleFactor: devW * 0.006,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );
@@ -138,16 +140,24 @@ class Default extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Default',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'Default',
+            style: kHeading,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );
   }
 }
-
 
 class HomeMade extends StatelessWidget {
   const HomeMade({super.key});
@@ -158,10 +168,19 @@ class HomeMade extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('HomeMade',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'HomeMade',
+            style: kHeading,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );
@@ -177,10 +196,19 @@ class Wazwan extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Wazwan',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'Wazwan',
+            style: kHeading,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );
@@ -196,10 +224,19 @@ class Deserts extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Deserts',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'Deserts',
+            style: kHeading,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );
@@ -215,10 +252,19 @@ class Others extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text('Others',style: kHeading,),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
-          RecipeImage(name: Recipe(),),
+          Text(
+            'Others',
+            style: kHeading,
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
+          RecipeImage(
+            name: Recipe(),
+          ),
         ],
       ),
     );

@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 
-
-
-
 // class BookShape extends StatelessWidget {
 //   String imagepath = '';
 //   BookShape({required this.imagepath});
@@ -54,8 +51,11 @@ import '../main.dart';
 class BookShape1 extends StatelessWidget {
   String imagepath = '';
   var name;
-  
-  BookShape1({required this.name,required this.imagepath, });
+
+  BookShape1({
+    required this.name,
+    required this.imagepath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +63,14 @@ class BookShape1 extends StatelessWidget {
     devW = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => name));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => name));
       },
       child: Container(
         height: devW * 0.35,
         width: devW * 0.3,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10),
             border: Border.all(color: Colors.black, width: 3),
             image: DecorationImage(
                 image: AssetImage(imagepath), fit: BoxFit.fill)),
