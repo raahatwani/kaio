@@ -1,11 +1,27 @@
+// // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors, must_be_immutable
+
+// ignore_for_file: must_be_immutable
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
-
-import '../main.dart';
 import 'cook.dart';
+import '../main.dart';
 
 class Recipe extends StatelessWidget {
-  const Recipe({super.key});
+  int itemCount;
+  List buttonTexts = [];
+  String RecipeName = '';
+  String RecipeDescription='';
+  String imagePath='';
+  String Category='';
+  Recipe(
+      {required this.itemCount,
+      required this.buttonTexts,
+      required this.RecipeName,
+      required this.RecipeDescription,
+      required this. imagePath,
+      required this. Category});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +37,7 @@ class Recipe extends StatelessWidget {
             icon: Icon(Icons.arrow_back_sharp),
             color: Color(0xff85586F),
           ),
-          title: Text('BEVERAGES', style: kHeading),
+          title:  Text(Category, style: kHeading),
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -33,84 +49,39 @@ class Recipe extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage('assets/kehwa.jpg'),
+                        backgroundImage: AssetImage(imagePath),
                         radius: devW * 0.3,
                       ),
+                      
                       Text(
-                        'KASHMIRI KEHWA',
+                        RecipeName,
                         style: kHeading,
                       ),
                       Text(
-                        'Kashmiri Kehwa is an authentic kashmiri beverage.',
+                        RecipeDescription,
                         style: kSelText,
                       ),
-                      SizedBox(
-                        height: devH * 0.04,
-                      ),
+                      
                       Text(
                         'Ingredients:',
                         style: kHeading,
-                      )
-
-// big buttons
-
-                      // Container(
-                      //   color: Colors.amber,
-                      //   width: devW,height: devH*0.35,
-                      //   child: GridView.builder(
-                      //     itemCount: 8,
-                      //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      //       crossAxisCount: 2,
-                      //     ),
-                      //     itemBuilder: (context, index) {
-                      //       List buttonTexts = [
-                      //         'Water',
-                      //         'Cardamom',
-                      //         'Cinnamon',
-                      //         'Saffron',
-                      //         'Sugar',
-                      //         'Kashmiri green tea leaves',
-                      //         'Chopped Almonds',
-                      //         '8'
-                      //       ];
-
-                      //       return Padding(
-                      //         padding: EdgeInsets.symmetric(
-                      //             horizontal: 10, vertical: 10),
-                      //         child: OutlinedButton(
-                      //           child: Text(buttonTexts[index]),
-                      //           onPressed: () {},
-                      //         ),
-                      //       );
-                      //     },
-                      //   ),
-                      // ),
-
-// small buttons
-
-                      ,
+                      ),
+                      SizedBox(
+                        height: devH * 0.02,
+                      ),
                       Container(
                         // color: Colors.amber,
                         width: devW,
-                        height: devH * 0.3,
+                        height: devH * 0.28,
                         child: GridView.builder(
-                          itemCount: 7,
+                          itemCount: itemCount,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                             childAspectRatio: 2,
                           ),
                           itemBuilder: (context, index) {
-                            List buttonTexts = [
-                              'Water',
-                              'Cardamom',
-                              'Cinnamon',
-                              'Saffron',
-                              'Sugar',
-                              'Kashmiri tea leaves',
-                              'Chopped Almonds',
-                            ];
-
+                            buttonTexts;
                             return Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 5, vertical: 5),
@@ -128,43 +99,22 @@ class Recipe extends StatelessWidget {
                             );
                           },
                         ),
-                      )
-
-// row col
-                      // Column(children: [
-                      //   Row(
-                      //     children: [
-                      //       Ingredients(),
-
-                      //     ],
-                      //   ),
-                      //   Row(
-                      //     children: [
-                      //       Ingredients(),
-
-                      //     ],
-                      //   ),
-                      // ],),
-                      ,
-                      SizedBox(
-                        height: devH * 0.02,
                       ),
+                      
                       SizedBox(
                         height: devH * 0.07,
                         width: devW,
                         child: FilledButton(
                           onPressed: () {
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (_) {
-                              return Cook();
-                            }));
+                                MaterialPageRoute(builder: (_) => Cook()));
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Color(0xff85586F)), 
+                                Color(0xff85586F)), // Change the color here
                           ),
                           child: Text(
-                            "Let's cook this recipe",
+                            "Let's cook this recipie",
                           ),
                         ),
                       )
