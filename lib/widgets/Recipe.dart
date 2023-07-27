@@ -55,7 +55,8 @@ import 'package:kaio/constants.dart';
 
 class RecipeImage extends StatefulWidget {
   var name;
-  RecipeImage({required this.name});
+  String recipeName;
+  RecipeImage({required this.name, required this.recipeName});
 
   @override
   State<RecipeImage> createState() => _RecipeImageState();
@@ -82,7 +83,7 @@ class _RecipeImageState extends State<RecipeImage> {
                   top: 60,
                   child: Center(
                       child: Text(
-                    'Recipe',
+                    widget.recipeName,
                     style: kHeading,
                   )),
                 ),

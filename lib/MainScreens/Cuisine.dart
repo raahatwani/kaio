@@ -119,7 +119,7 @@ class Beverages extends StatelessWidget {
             textScaleFactor: devW * 0.006,
           ),
           RecipeImage(
-             
+              recipeName: 'KASHMIRI KEHWA: The Aromatic Elixir',
             name: Recipe(
               Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
@@ -130,6 +130,7 @@ class Beverages extends StatelessWidget {
             ),
           ),
           RecipeImage(
+             recipeName: 'KASHMIRI NOON CHAI',
             name: Recipe(
               Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
@@ -140,6 +141,7 @@ class Beverages extends StatelessWidget {
             ),
           ),
           RecipeImage(
+            recipeName: 'BABRIBYOL SHARBAT',
             name: Recipe(
                Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
@@ -150,41 +152,46 @@ class Beverages extends StatelessWidget {
             ),
           ),
            RecipeImage(
+             recipeName: 'KESAR DOODH',
             name: Recipe(
                Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
               RecipeName: 'KESAR DOODH',
-              RecipeDescription: 'Kashmir is extremely popular for its production of saffron or kesar. A mere pinch of the beautiful and delicate orange-crimson threads of saffron can turn any dish around both flavour and colour. Kashmiris add saffron to milk prepare Kesar Doodh which is not only delicious to taste but incredibly nutritious. Saffron has various healing properties and is warm in nature that helps reduce the risk of catching a cold.',
+              RecipeDescription: 'Kesar Doodh is delicious to taste and incredibly nutritious.',
               buttonTexts: ['Milk','Sugar','Dry Fruits'],
               itemCount: 3,
             ),
           ),
           RecipeImage(
+            recipeName: 'KASHMIRI LASSI',
             name: Recipe(
                Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
               RecipeName: 'KASHMIRI LASSI',
-              RecipeDescription: 'Any afternoon meals in Kashmir is never complete without a tall glass of buttermilk. Prepared with mint leaves, yoghurt and cumin powder, it is the ultimate elixir for the digestive system. It is typically a summer drink, but in winters, Kashmiris heat up the water a bit and then add it to the yoghurt.',
+              RecipeDescription:'Prepared with mint leaves, yoghurt and cumin powder, it is the ultimate elixir for the digestive system.',
               buttonTexts: ['Yogurt','Water','Dried mint leaves','Salt','Roasted cumin powder'],
               itemCount: 5,
             ),
           ),
           RecipeImage(
+            recipeName: 'KANJI',
             name: Recipe(
                Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
               RecipeName: 'KANJI',
-              RecipeDescription: 'It is a healthy drink made by boiling black carrots in water and adding a few herbs and spices to give it a delicious flavour. Kanji should be enjoyed either cold or at room temperature.',
+              RecipeDescription: 'Kanji is a healthy drink made by boiling black carrots in water and adding a few herbs and spices to give it a delicious flavour.',
               buttonTexts: ['Carrots','Mustard seeds','Black salt','Red chilli powder','Beetroot','Water'],
               itemCount: 6,
             ),
           ),
           RecipeImage(
+            recipeName: 'GUD CHAI',
             name: Recipe(
+              
                Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
               RecipeName: 'GUD CHAI: The Sweetened Elixir',
-              RecipeDescription: 'Gud Chai, also known as "Jaggery Tea," is a sweetened version of Kashmiri tea that uses jaggery as a natural sweetener instead of sugar. The deep, caramel-like flavours of jaggery infuse the tea, creating a warm and comforting elixir. Gud Chai is a popular choice during winters when its sweetness helps to keep the cold at bay.',
+              RecipeDescription: 'Gud Chai is a sweetened version of Kashmiri tea that uses jaggery as a natural sweetener instead of sugar which infuse the tea, creating a warm and comforting elixir.',
               buttonTexts: ['Water','Powdered jaggery','Cardamom','Milk','Pepper corns','Tea leaves'],
               itemCount: 6,
             ),
@@ -195,33 +202,9 @@ class Beverages extends StatelessWidget {
   }
 }
 
-class Default extends StatelessWidget {
-  const Default({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: [
-          Text(
-            'Default',
-            style: kHeading,
-          ),
-          // RecipeImage(
-          //   name: Recipe(),
-          // ),
-          // RecipeImage(
-          //   name: Recipe(),
-          // ),
-          // RecipeImage(
-          //   name: Recipe(),
-          // ),
-        ],
-      ),
-    );
-  }
-}
+/////////////////////////////HOME MADE//////////////////////////////////////////
+
 
 class HomeMade extends StatelessWidget {
   const HomeMade({super.key});
@@ -251,6 +234,10 @@ class HomeMade extends StatelessWidget {
   }
 }
 
+
+//////////////////////////////////WAZWAN//////////////////////////////////////
+
+
 class Wazwan extends StatelessWidget {
   const Wazwan({super.key});
 
@@ -279,6 +266,10 @@ class Wazwan extends StatelessWidget {
   }
 }
 
+
+////////////////////////////////////////DESERTS/////////////////////////////////
+
+
 class Deserts extends StatelessWidget {
   const Deserts({super.key});
 
@@ -306,6 +297,10 @@ class Deserts extends StatelessWidget {
     );
   }
 }
+
+
+//////////////////////////////OTHERS//////////////////////////////////////////
+
 
 class Others extends StatelessWidget {
   const Others({super.key});

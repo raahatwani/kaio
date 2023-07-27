@@ -103,7 +103,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
   }
 }
 
-//poetry section
+/////////////////////////////////poetry section/////////////////////////////////
 
 class Poetry extends StatelessWidget {
   const Poetry({super.key});
@@ -236,7 +236,7 @@ class Poetry extends StatelessWidget {
   }
 }
 
-//history section
+////////////////////////////////////////history section//////////////////////////
 
 class History extends StatelessWidget {
   const History({super.key});
@@ -335,7 +335,7 @@ class History extends StatelessWidget {
   }
 }
 
-//prose section
+///////////////////////////////////////prose section////////////////////////////
 
 class Prose extends StatelessWidget {
   const Prose({super.key});
@@ -440,7 +440,7 @@ class Prose extends StatelessWidget {
   }
 }
 
-//new section
+///////////////////////////////new section/////////////////////////////////////
 
 class New extends StatelessWidget {
   const New({super.key});
