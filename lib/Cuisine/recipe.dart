@@ -72,7 +72,7 @@ class Recipe extends StatelessWidget {
                       Container(
                         // color: Colors.amber,
                         width: devW,
-                        height: devH * 0.28,
+                        height: devH * 0.30,
                         child: GridView.builder(
                           itemCount: itemCount,
                           gridDelegate:
@@ -100,7 +100,7 @@ class Recipe extends StatelessWidget {
                           },
                         ),
                       ),
-                      
+                      SizedBox(height: devH*0.08,),
                       SizedBox(
                         height: devH * 0.07,
                         width: devW,
@@ -121,3 +121,8 @@ class Recipe extends StatelessWidget {
                     ]))));
   }
 }
+
+
+
+
+
