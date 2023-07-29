@@ -57,7 +57,7 @@ class Cuisine extends StatelessWidget {
               height: 20,
             ),
             DefaultTabController(
-              length: 5,
+              length: 4,
               child: Expanded(
                 child: Column(
                   children: [
@@ -76,7 +76,6 @@ class Cuisine extends StatelessWidget {
                           Tab(text: 'HomeMade'),
                           Tab(text: 'Wazwan'),
                           Tab(text: 'Deserts'),
-                          Tab(text: 'Others'),
                         ],
                         labelColor: Colors.black,
                         // indicatorColor: Colors.blue,
@@ -89,7 +88,6 @@ class Cuisine extends StatelessWidget {
                           HomeMade(),
                           Wazwan(),
                           Deserts(),
-                          Others()
                         ],
                       ),
                     ),
@@ -654,7 +652,7 @@ class Deserts extends StatelessWidget {
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriKesarPhirni.jpg',
               RecipeName: 'KESAR PHIRNI',
               RecipeDescription:
                   'This scrumptious traditional kashmiri dessert is perfect for any special occasions. ',
@@ -669,12 +667,12 @@ class Deserts extends StatelessWidget {
               itemCount: 6,
             ),
             recipeName: 'KESAR PHIRNI',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriKesarPhirni.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriAppleKheer.jpg',
               RecipeName: 'APPLE KHEER',
               RecipeDescription:
                   'Kashmiri apple kheer is super delicious and very famous recipe.',
@@ -690,12 +688,12 @@ class Deserts extends StatelessWidget {
               itemCount: 7,
             ),
             recipeName: 'APPLE KHEER',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriAppleKheer.jpg',
           ),
            RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriLyde.jpg',
               RecipeName: 'KASHMIRI LYDE',
               RecipeDescription:
                   'Kashmiri Lyde is a delectable, delicious and unique dessert which is an integral part of its Cuisine.',
@@ -712,12 +710,12 @@ class Deserts extends StatelessWidget {
               itemCount: 7,
             ),
             recipeName: 'KASHMIRI LYDE',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriLyde.jpg',
           ),
            RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriSevaiyan.jpg',
               RecipeName: 'KASHMIRI SEVAIYAN',
               RecipeDescription:
                   'Kashmiri sevaiyan , the sweet of Kashmiri cuisine is made with sevai, dry fruits and nuts and cooked in milk till thick! It\'s texture and taste are beautiful and mouthwatering!',
@@ -735,12 +733,12 @@ class Deserts extends StatelessWidget {
               itemCount: 9,
             ),
             recipeName: 'KASHMIRI SEVAIYAN',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriSevaiyan.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriFalooda.jpg',
               RecipeName: 'KASHMIRI FALOODA',
               RecipeDescription:
                   'Very delicious and yummy beverage dessert that is flavored with Rose syrup.',
@@ -757,12 +755,12 @@ class Deserts extends StatelessWidget {
               itemCount: 8,
             ),
             recipeName: 'KASHMIRI FALOODA',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriFalooda.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriShufta.jpg',
               RecipeName: 'KASHMIRI SHUFTA',
               RecipeDescription:
                   'Kashmiri Badam Paneer ka Shufta is traditional Desserts of Kashmir, prepared during weddings and special occasions.',
@@ -779,12 +777,12 @@ class Deserts extends StatelessWidget {
               itemCount: 8,
             ),
             recipeName: 'KASHMIRI SHUFTA',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriShufta.jpg',
           ),
            RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriHalwa.jpg',
               RecipeName: 'KASHMIRI HALWA',
               RecipeDescription:
                   'A delicious, easy and quick halwa recipe for the festive season. ',
@@ -800,12 +798,12 @@ class Deserts extends StatelessWidget {
               itemCount: 7,
             ),
             recipeName: 'KASHMIRI HALWA',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriHalwa.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriBasrakh.jpg',
               RecipeName: 'BASRAKH',
               RecipeDescription:
                   'Basrakh, the crispy sugar coated ball of Maida cooked in Ghee.',
@@ -816,12 +814,12 @@ class Deserts extends StatelessWidget {
               itemCount: 3,
             ),
             recipeName: 'BASRAKH',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriBasrakh.jpg',
           ),
            RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriTosha.jpg',
               RecipeName: 'TOSHA',
               RecipeDescription:
                   'Tosha is usually made as a symbol of respect on the occasion of joy or grief and has religious values and sentiments attached to it.',
@@ -834,7 +832,7 @@ class Deserts extends StatelessWidget {
               itemCount: 3,
             ),
             recipeName: 'TOSHA',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriTosha.jpg',
           ),
         ],
       ),
