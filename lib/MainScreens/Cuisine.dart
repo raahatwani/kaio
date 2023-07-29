@@ -144,7 +144,7 @@ class Beverages extends StatelessWidget {
             recipeName: 'KASHMIRI NOON CHAI',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriNoonChai.jpg',
               RecipeName: 'KASHMIRI NOON CHAI: The Pink Elixir',
               RecipeDescription:
                   'Kashmiris are known to be the connoisseurs of tea and the pink-coloured noon chai or sheer chai is one of their traditional beverages.',
@@ -157,13 +157,13 @@ class Beverages extends StatelessWidget {
               ],
               itemCount: 5,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriNoonChai.jpg',
           ),
           RecipeImage(
             recipeName: 'BABRIBYOL SHARBAT',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/Babribyol.jpg',
               RecipeName: 'KASHMIRI BABRIBYOL SHARBAT',
               RecipeDescription:
                   'Babribyol is a ubiquitous drink in Kashmir during the holy month of Ramadhan.',
@@ -178,26 +178,26 @@ class Beverages extends StatelessWidget {
               ],
               itemCount: 7,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/Babribyol.jpg',
           ),
           RecipeImage(
             recipeName: 'KESAR DOODH',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KesarDoodh.jpg',
               RecipeName: 'KESAR DOODH',
               RecipeDescription:
                   'Kesar Doodh is delicious to taste and incredibly nutritious.',
               buttonTexts: ['Milk', 'Sugar', 'Dry Fruits'],
               itemCount: 3,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KesarDoodh.jpg',
           ),
           RecipeImage(
             recipeName: 'KASHMIRI LASSI',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriLassi.jpg',
               RecipeName: 'KASHMIRI LASSI',
               RecipeDescription:
                   'Prepared with mint leaves, yoghurt and cumin powder, it is the ultimate elixir for the digestive system.',
@@ -210,13 +210,13 @@ class Beverages extends StatelessWidget {
               ],
               itemCount: 5,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriLassi.jpg',
           ),
           RecipeImage(
             recipeName: 'KANJI',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriKanji.jpg',
               RecipeName: 'KANJI',
               RecipeDescription:
                   'Kanji is a healthy drink made by boiling black carrots in water and adding a few herbs and spices to give it a delicious flavour.',
@@ -230,13 +230,13 @@ class Beverages extends StatelessWidget {
               ],
               itemCount: 6,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriKanji.jpg',
           ),
           RecipeImage(
             recipeName: 'GUD CHAI',
             name: Recipe(
               Category: 'BEVERAGES',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/KashmiriGudChai.jpg',
               RecipeName: 'GUD CHAI: The Sweetened Elixir',
               RecipeDescription:
                   'Gud Chai, also known as "Jaggery Tea," is a sweetened version of Kashmiri tea that uses jaggery as a natural sweetener instead of sugar.',
@@ -250,7 +250,7 @@ class Beverages extends StatelessWidget {
               ],
               itemCount: 6,
             ),
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriGudChai.jpg',
           ),
         ],
       ),
