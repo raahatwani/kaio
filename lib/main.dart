@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:kaio/Literature/Book.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
+import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/widgets/Recipe.dart';
 import 'package:kaio/widgets/travel_new.dart';
 import 'Culture/Gallery.dart';
@@ -17,7 +18,7 @@ import 'MainScreens/literature.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomeScreen(),
+    home: Cuisine(),
   ));
 }
 

@@ -1,6 +1,10 @@
 // // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, sized_box_for_whitespace, prefer_typing_uninitialized_variables
+// ignore_for_file: file_names, use_key_in_widget_constructors
+
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flip_carousel/flip_carousel.dart';
 import 'package:flutter/material.dart';
+import 'package:kaio/Cuisine/FlipCarousel.dart';
 import '../Cuisine/recipe.dart';
 import '../constants.dart';
 import '../main.dart';
@@ -32,17 +36,26 @@ class Cuisine extends StatelessWidget {
                 ),
               ),
             ),
+
+
             CarouselSlider(
               items: [
-                Container(
-                  color: Colors.blue,
-                ),
-                Container(
-                  color: Colors.pink,
-                ),
-                Container(
-                  color: Colors.yellow,
-                ),
+                Flip(cardItems: ['assets/HARRISA.png','assets/HarrisaRecipie.png']),
+                 Flip(cardItems: ['assets/LAAYE.png', 'assets/LaayeRecipie.png'], ),
+                Flip(cardItems: ['assets/TUJJE.png','assets/TujjeRecipie.png']),
+                 Flip(cardItems: ['assets/MASALA TCHOT.png', 'assets/MasalaDesc.png'],),
+                Flip(cardItems: ['assets/TILLE KARRE.png','assets/TilleKareDesc.png']),
+                 Flip(cardItems: ['assets/SAFFRON.png', 'assets/SaffronDesc.png'], ),
+                Flip(cardItems: ['assets/SHERMAL.png','assets/ShermalDesc.png']),
+                 Flip(cardItems: ['assets/halwa.png', 'assets/HalwaDesc.png'],),
+                Flip(cardItems: ['assets/MATKA KULFI.png','assets/KulfiDesc.png']),
+                 Flip(cardItems: ['assets/KHANDE GAZIR.png', 'assets/KhandeDesc.png'], ),
+                Flip(cardItems: ['assets/BASRAKH.png','assets/BasraakhDEsc.png']),
+                 Flip(cardItems: ['assets/CHANA.png', 'assets/ChanaDesc.png'],),
+                Flip(cardItems: ['assets/KENN\'K MASALA.png','assets/KennkDesc.png']),
+                 Flip(cardItems: ['assets/MONJI GADE.png', 'assets/MonjeGadeDesc.png'], ),
+                Flip(cardItems: ['assets/NADRE MONJI.png','assets/NadreMonjeDesc.png']),
+                 Flip(cardItems: ['assets/GAER GOJJE.png', 'assets/GearGojjDesc.png'],), 
               ],
               options: CarouselOptions(
                 height: 160.0,
@@ -118,7 +131,7 @@ class Beverages extends StatelessWidget {
             textScaleFactor: devW * 0.006,
           ),
           RecipeImage(
-            recipeName: 'KASHMIRI KEHWA',
+            recipeName: 'KEHWA',
             name: Recipe(
               Category: 'BEVERAGES',
               imagePath: 'assets/kehwa.jpg',
@@ -139,7 +152,7 @@ class Beverages extends StatelessWidget {
             assetName: 'assets/kehwa.jpg',
           ),
           RecipeImage(
-            recipeName: 'KASHMIRI NOON CHAI',
+            recipeName: 'NOON CHAI',
             name: Recipe(
               Category: 'BEVERAGES',
               imagePath: 'assets/KashmiriNoonChai.jpg',
@@ -158,7 +171,7 @@ class Beverages extends StatelessWidget {
             assetName: 'assets/KashmiriNoonChai.jpg',
           ),
           RecipeImage(
-            recipeName: 'BABRIBYOL SHARBAT',
+            recipeName: 'BABRIBYOL',
             name: Recipe(
               Category: 'BEVERAGES',
               imagePath: 'assets/Babribyol.jpg',
@@ -256,8 +269,6 @@ class Beverages extends StatelessWidget {
   }
 }
 
-/////////////////////////////HOME MADE//////////////////////////////////////////
-
 class HomeMade extends StatelessWidget {
   const HomeMade({super.key});
 
@@ -267,30 +278,15 @@ class HomeMade extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'HomeMade',
-            style: kHeading,
-          ),
           RecipeImage(
             name: Recipe(
               Category: 'HOME MADE',
               imagePath: 'assets/Rajma.jpeg',
-              RecipeName: 'Kashmiri Rajma',
-              RecipeDescription:
-                  'A lip-smacking dish flavoured by tomato puree slow-cooked in a loch full of tasty Indian spice, the Rajma Kashmiri is a much-loved curry. ',
-              buttonTexts: [
-                'Kashmiri Rajma',
-                'Onion',
-                'Tomato',
-                'Tomato Puree',
-                'Ginger Garlic Paste',
-                'Asafoetida/Hing',
-                'Dry Ginger Powder',
-                'Cumin'
-              ],
+              RecipeName:'Kashmiri Rajma' ,
+              RecipeDescription: 'A lip-smacking dish flavoured by tomato puree slow-cooked in a loch full of tasty Indian spice, the Rajma Kashmiri is a much-loved curry. ',
+              buttonTexts: ['Kashmiri Rajma','Onion','Tomato','Tomato Puree','Ginger Garlic Paste','Asafoetida/Hing','Dry Ginger Powder','Cumin'],
               itemCount: 8,
-            ),
-            recipeName: 'Rajma',
+            ), recipeName: 'Kashmiri Rajma', 
             assetName: 'assets/Rajma.jpeg',
           ),
           RecipeImage(
@@ -298,24 +294,11 @@ class HomeMade extends StatelessWidget {
               Category: 'HOME MADE',
               imagePath: 'assets/Alyakhni.jpg',
               RecipeName: 'Kashmiri Al Yakni',
-              RecipeDescription:
-                  'Kashmiri Al Yakhni is a popular recipe that is prepared in Kashmiri households for their everyday meals. Here, Al means “lauki” and yakhni means “yogurt based gravy”.',
-              buttonTexts: [
-                'Bottle Gourd',
-                'Oil',
-                'Yogurt',
-                'Cloves',
-                'Cardamom',
-                'Cinnamon',
-                'Fennel Powder',
-                'Ginger Powder',
-                'Cumin Seeds',
-                'Salt',
-                'Shahi Jeera'
-              ],
+              RecipeDescription: 'Kashmiri Al Yakhni is a popular recipe that is prepared in Kashmiri households for their everyday meals. Here, Al means “lauki” and yakhni means “yogurt based gravy”.',
+              buttonTexts: ['Bottle Gourd','Oil','Yogurt','Cloves','Cardamom','Cinnamon','Fennel Powder','Ginger Powder','Cumin Seeds','Salt','Shahi Jeera'],
               itemCount: 11,
             ),
-            recipeName: 'Al Yakni',
+            recipeName: '\t Kashmiri Al Yakni',
             assetName: 'assets/Alyakhni.jpg',
           ),
           RecipeImage(
@@ -323,183 +306,90 @@ class HomeMade extends StatelessWidget {
               Category: 'HOME MADE',
               imagePath: 'assets/KashmiriLaalPaneer.jpg',
               RecipeName: 'Kashmiri Laal Paneer',
-              RecipeDescription:
-                  'Kashmiri Laal Paneer (also called laal chaman) is a super delicious and quick paneer dish. As the name suggests, this curry is fiery red, and the appealing red color comes with the use of Kashmiri red chili powder.',
-              buttonTexts: [
-                'Paneer',
-                'Mustard Oil',
-                'Cloves',
-                'Cardamoms',
-                'Cumin Seeds',
-                'Cinnamon Sticks',
-                'Red Chilli Powder',
-                'Cardamoms',
-                'Bay Leaves',
-                'Salt',
-                'Ground Ginger',
-                'Coriander Powder'
-              ],
+              RecipeDescription: 'Kashmiri Laal Paneer (also called laal chaman) is a super delicious and quick paneer dish. As the name suggests, this curry is fiery red, and the appealing red color comes with the use of Kashmiri red chili powder.',
+              buttonTexts: ['Paneer','Mustard Oil','Cloves','Cardamoms','Cumin Seeds','Cinnamon Sticks','Red Chilli Powder','Cardamoms','Bay Leaves','Salt','Ground Ginger','Coriander Powder'],
               itemCount: 12,
             ),
             recipeName: 'Laal Paneer',
             assetName: 'assets/KashmiriLaalPaneer.jpg',
           ),
           RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/KashmiriDumAloo.jpg',
-              RecipeName: 'Kashmir Dum Aloo',
-              RecipeDescription:
-                  'A traditional Kashmiri potato recipe where baby potatoes are boiled, fried, and then added to a spicy and rich yogurt-based gravy. This curry is subtly flavored with dry ginger powder which gives it a very distinct taste',
-              buttonTexts: [
-                'Baby Potatoes',
-                'Yogurt',
-                'Maida',
-                'Oil',
-                'Cloves',
-                'Dry Red Chillies',
-                'Black Cardamoms',
-                'Black Peppercorn',
-                'Kashmiri Red Chilli Powder',
-                'Turmeric Powder',
-                'Dry Ginger Powder',
-                'Cumin Powder',
-                'Fennel Powder',
-                'Garam Masala',
-              ],
-              itemCount: 14,
-            ),
-            recipeName: 'Dum Aloo',
-            assetName: 'assets/KashmiriDumAloo.jpg',
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/KashmiriDumAloo.jpg',
+                RecipeName: 'Kashmir Dum Aloo',
+                RecipeDescription: 'A traditional Kashmiri potato recipe where baby potatoes are boiled, fried, and then added to a spicy and rich yogurt-based gravy. This curry is subtly flavored with dry ginger powder which gives it a very distinct taste',
+            buttonTexts: ['Baby Potatoes','Yogurt','Maida','Oil','Cloves','Dry Red Chillies','Black Cardamom', 'Black Peppercorn','Kashmiri Red Chilli Powder','Turmeric Powder','Dry Ginger Powder', 'Cumin Powder','Fennel Powder','Garam Masala',],
+            itemCount: 14,
+          ),
+          recipeName: 'Dum Aloo',
+          assetName: 'assets/KashmiriDumAloo.jpg',
+          ),
+          
+          RecipeImage(
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/saag.jpg',
+                RecipeName: 'Kashmiri Saag',
+                RecipeDescription: 'The quintessential winter recipe! All you need is 6 ingredients and 20 minutes to cook up this warm, dish on a chilly winter night. Cooked in mustard oil, kashmiri saag can be paired with makki ki roti.',
+            buttonTexts: ['Whole Spinach','Kashmiri Chillies','Mustard Oil','Cardamom','Garlic','Salt'],
+            itemCount: 6,
+          ),
+          recipeName: 'Kashmiri Saag',
+          assetName: 'assets/saag.jpg',
           ),
           RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/saag.jpg',
-              RecipeName: 'Kashmiri Saag',
-              RecipeDescription:
-                  'The quintessential winter recipe! All you need is 6 ingredients and 20 minutes to cook up this warm, dish on a chilly winter night. Cooked in mustard oil, kashmiri saag can be paired with makki ki roti.',
-              buttonTexts: [
-                'Whole Spinach',
-                'Kashmiri Chillies',
-                'Mustard Oil',
-                'Cardamom',
-                'Garlic',
-                'Salt'
-              ],
-              itemCount: 6,
-            ),
-            recipeName: 'Kashmiri Saag',
-            assetName: 'assets/saag.jpg',
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/khatteBhaingan.jpg',
+                RecipeName: 'Kashmiri Cxoch Wagan',
+                RecipeDescription: 'This is usually served as a side dish in Kashmiri feasts and ceremonies for it\'s pop flavours. It\'s essentially golden fried aubergines laced in a thick, spicy and zingy gravy.',
+            buttonTexts: ['Brinjals','Onion','Tomato','Lime','Mustard Oil','Cinnamon Stick','Cumin Seeds','Cardamom','Kashmiri Red Chilli','Asafoetida','Turmeric Powder','Coriander Powder','Salt','Dry Ginger Powder','Fennel Seeds','Corainder Leaves'],
+            itemCount: 16,
           ),
-          RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/khatteBhaingan.jpg',
-              RecipeName: 'Kashmiri Cxoch Wagan',
-              RecipeDescription:
-                  'This is usually served as a side dish in Kashmiri feasts and ceremonies for it\'s pop flavours. It\'s essentially golden fried aubergines laced in a thick, spicy and zingy gravy.',
-              buttonTexts: [
-                'Brinjals',
-                'Onion',
-                'Tomato',
-                'Lime',
-                'Mustard Oil',
-                'Cinnamon Stick',
-                'Cumin Seeds',
-                'Cardamom',
-                'Kashmiri Red Chilli',
-                'Asafoetida',
-                'Turmeric Powder',
-                'Coriander Powder',
-                'Salt',
-                'Dry Ginger Powder',
-                'Fennel Seeds',
-                'Corainder Leaves'
-              ],
-              itemCount: 16,
-            ),
             recipeName: 'Cxoch Wagan',
             assetName: 'assets/khatteBhaingan.jpg',
           ),
           RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/Gaad.jpeg',
-              RecipeName: 'Kashmiri Muji Gaad',
-              RecipeDescription:
-                  'Muji gaad or machhli mooli as commonly known is a very special regional specialty from Kashmir. This delicacy from Kashmiri Pundit cuisine is also hugely popular during winters.',
-              buttonTexts: [
-                'Fish Fillets',
-                'Radish',
-                'Red Chilli Powder',
-                'Asafoetida/Hing',
-                'Oil',
-                'Green Chillies',
-                'Black Cardamom',
-                'Cloves',
-                'Turmeric Powder',
-                'Dry Ginger Powder',
-                'Veer',
-                'Aniseed/Saunf',
-                'Salt',
-                'Tamarind Pulp'
-              ],
-              itemCount: 14,
-            ),
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/Gaad.jpeg',
+                RecipeName: 'Kashmiri Muji Gaad',
+                RecipeDescription: 'Muji gaad or machhli mooli as commonly known is a very special regional specialty from Kashmir. This delicacy from Kashmiri Pundit cuisine is also hugely popular during winters.',
+            buttonTexts: ['Fish Fillets','Radish','Red Chilli Powder','Asafoetida/Hing','Oil','Green Chillies','Black Cardamom','Cloves','Turmeric Powder','Dry Ginger Powder','Veer','Aniseed/Saunf','Salt','Tamarind Pulp'],
+            itemCount: 14,
+          ),
             recipeName: 'Muji Gaad',
             assetName: 'assets/Gaad.jpeg',
           ),
           RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/kehwa.jpg',
-              RecipeName: 'Kashmiri Dahi Bhaingan',
-              RecipeDescription:
-                  'Kashmiri Dahi Baingan Recipe is a lip smacking dish where the eggplant is diced and cooked in a simple yogurt gravy, which ideally is the Kashmiri style of cooking. ',
-              buttonTexts: [
-                'Brinjal',
-                'Mustard Oil',
-                'Curd',
-                'Dry Ginger Powder',
-                'Kashmiri Red Chilli Powder',
-                'Turmeric Powder',
-                'Fennel Seeds',
-                'Cardamom',
-                'Asafoetida/Hing',
-                'Salt'
-              ],
-              itemCount: 10,
-            ),
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/KashmiriDahiBaingan.jpg',
+                RecipeName: 'Kashmiri Dahi Bhaingan',
+                RecipeDescription: 'Kashmiri Dahi Baingan Recipe is a lip smacking dish where the eggplant is diced and cooked in a simple yogurt gravy, which ideally is the Kashmiri style of cooking. ',
+            buttonTexts: ['Brinjal','Mustard Oil','Curd','Dry Ginger Powder','Kashmiri Red Chilli Powder','Turmeric Powder','Fennel Seeds','Cardamom','Asafoetida/Hing','Salt'],
+            itemCount: 10,
+          ),
             recipeName: 'Dahi Bhaingan',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/KashmiriDahiBaingan.jpg',
           ),
           RecipeImage(
-            name: Recipe(
-              Category: 'HOME MADE',
-              imagePath: 'assets/kehwa.jpg',
-              RecipeName: 'Kashmiri Mutton Yakni',
-              RecipeDescription:
-                  'A lip-smacking yoghurt based dish made with mutton cooked in a variety of spices and curd. The dish is very easy to prepare and can be made for lunch or dinner. Serve with plain rice, jeera rice or a simple pulao.',
-              buttonTexts: [
-                'Mutton Chopped',
-                'Curd',
-                'Cardamoms',
-                'Cloves',
-                'Cinnamom Sticks',
-                'Dry Ginger Powder',
-                'Mint Leaves',
-                'Salt'
-              ],
-              itemCount: 8,
-            ),
+              name: Recipe(
+                Category: 'HOME MADE',
+                imagePath: 'assets/MuttonYakni.jpg',
+                RecipeName: 'Kashmiri Mutton Yakni',
+                RecipeDescription: 'A lip-smacking yoghurt based dish made with mutton cooked in a variety of spices and curd. The dish is very easy to prepare and can be made for lunch or dinner. Serve with plain rice, jeera rice or a simple pulao.',
+            buttonTexts: ['Mutton Chopped','Curd','Cardamoms','Cloves','Cinnamom Sticks','Dry Ginger Powder','Mint Leaves','Salt'],
+            itemCount: 8,
+          ),
             recipeName: 'Mutton Yakni',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/MuttonYakni.jpg',
           ),
-          RecipeImage(
+           RecipeImage(
             name: Recipe(
               Category: 'HOME MADE',
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/MonjeMaaz.jpg',
               RecipeName: 'Kashmiri Monje Maaz',
               RecipeDescription:
                   'Kashmiri Al Yakhni is a popular recipe that is prepared in Kashmiri households for their everyday meals. Here, Al means “lauki” and yakhni means “yogurt based gravy”.',
@@ -519,7 +409,7 @@ class HomeMade extends StatelessWidget {
               itemCount: 11,
             ),
             recipeName: 'Monje Maaz',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/MonjeMaaz.jpg',
           ),
         ],
       ),
@@ -527,7 +417,9 @@ class HomeMade extends StatelessWidget {
   }
 }
 
-//////////////////////////////////WAZWAN//////////////////////////////////////
+
+//////////////////////////////WAZWAN/////////////////////////////////////
+
 
 class Wazwan extends StatelessWidget {
   const Wazwan({super.key});
@@ -538,58 +430,54 @@ class Wazwan extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'Wazwan',
-            style: kHeading,
-          ),
-           RecipeImage(
+          RecipeImage(
             name: Recipe(
               Category: 'WAZWAN', 
               RecipeDescription: 'Tender lamb cooked with Kashmiri spices', 
               RecipeName: 'Rogan Josh', 
               buttonTexts: ['Mutton','Curd','Salt','Oil','Black Cardamom','Cardamom','Cloves','Cinnamon Stick','Bay Leaf','Black Pepper Powder','Fennel Powder','Asafoetida/Hing','Kashmiri Chilli Powder','Ratan Jot'], 
-              imagePath: 'assets/kehwa.jpg', 
+              imagePath: 'assets/RoganJosh.jpg', 
               itemCount: 14,
           ), recipeName: 'Rogan Josh',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/RoganJosh.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'WAZWAN', 
               RecipeName: 'Rista', 
               RecipeDescription: 'Rista-Meatballs in a fiery red gravy', 
-              imagePath: 'assets/kehwa.jpg', 
+              imagePath: 'assets/rista.jpeg', 
               buttonTexts: ['Boneless Mutton','Red Chilli Powder','Ginger Powder','Meat Fat','Moval Extract','Asafoetida Liquid','Brown Cardamom','Fennel Powder','Bay Leaves','Cloves','Cinnamon Stick','Mustard Oil','Salt'], 
               itemCount: 13,
             ), recipeName: 'Rista',
-           assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/rista.jpeg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'WAZWAN', 
               RecipeName: 'Goshtaba', 
               RecipeDescription: 'A velvety textured meatball in white yogurt gravy', 
-              imagePath: 'assets/kehwa.jpg',
+              imagePath: 'assets/Goshtaba.jpg',
               buttonTexts: ['Boneless Mutton','Cardamom Powder','Ginger','Yogurt','Milk','Bay Leaf','Cinnamon Stick','Cloves','Fennel Seeds','Cumin Seeds','Dry Ginger Powder','Turmeric Powder','Salt','Ghee'], 
               itemCount: 14, 
             ), recipeName: 'Goshtaba',
-           assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/Goshtaba.jpg',
           ),
           RecipeImage(
             name: Recipe(
               Category: 'WAZWAN', 
-              imagePath: 'assets/kehwa.jpg', 
+              imagePath: 'assets/TabakMaaz.jpeg', 
               RecipeName: 'Tabak Maaz', 
               RecipeDescription: 'Ribs of lamb simmered in yogurt till tender, then fried', 
               buttonTexts: ['Rib Cage','Water','Ground Garlic','Salt','Dry Ginger Powder','Cloves','Black Cardamom','Turmeric Powder','Ghee'],
               itemCount: 9), 
             recipeName: 'Tabak Maaz',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/TabakMaaz.jpeg',
           ),
           RecipeImage(
               name: Recipe(
                   Category: 'WAZWAN',
-                  imagePath: 'assets/kehwa.jpg',
+                  imagePath: 'assets/DaniwalKorma.jpeg',
                   RecipeName: 'Daniwal korma',
                   RecipeDescription:
                       'A mutton curry with coriander',
@@ -598,12 +486,12 @@ class Wazwan extends StatelessWidget {
                   ],
                   itemCount: 14),
               recipeName: 'Daniwal korma',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/DaniwalKorma.jpeg',
           ),
               RecipeImage(
               name: Recipe(
                   Category: 'WAZWAN',
-                  imagePath: 'assets/kehwa.jpg',
+                  imagePath: 'assets/LahabiKebab.jpeg',
                   RecipeName: 'Lahabi kabab or Moachi kabab',
                   RecipeDescription:
                       'Flattened mutton kababs cooked in yogurt',
@@ -612,12 +500,12 @@ class Wazwan extends StatelessWidget {
                   ],
                   itemCount: 11),
               recipeName: 'Lahabi kabab',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/LahabiKebab.jpeg',
           ),
               RecipeImage(
               name: Recipe(
                   Category: 'WAZWAN',
-                  imagePath: 'assets/kehwa.jpg',
+                  imagePath: 'assets/AabGosht.jpg',
                   RecipeName: 'Aab Gosht Or Doudha ras ',
                   RecipeDescription:
                       'Mutton cooked in sweet milk gravy',
@@ -626,7 +514,7 @@ class Wazwan extends StatelessWidget {
                   ],
                   itemCount: 12),
               recipeName: 'Aab Gosht',
-            assetName: 'assets/kehwa.jpg',
+            assetName: 'assets/AabGosht.jpg',
           ),
         ],
       ),
@@ -732,7 +620,7 @@ class Deserts extends StatelessWidget {
               ],
               itemCount: 9,
             ),
-            recipeName: 'KASHMIRI SEVAIYAN',
+            recipeName: 'SEVAIYAN',
             assetName: 'assets/KashmiriSevaiyan.jpg',
           ),
           RecipeImage(
@@ -754,7 +642,7 @@ class Deserts extends StatelessWidget {
               ],
               itemCount: 8,
             ),
-            recipeName: 'KASHMIRI FALOODA',
+            recipeName: 'FALOODA',
             assetName: 'assets/KashmiriFalooda.jpg',
           ),
           RecipeImage(
@@ -776,7 +664,7 @@ class Deserts extends StatelessWidget {
               ],
               itemCount: 8,
             ),
-            recipeName: 'KASHMIRI SHUFTA',
+            recipeName: 'SHUFTA',
             assetName: 'assets/KashmiriShufta.jpg',
           ),
            RecipeImage(
@@ -797,7 +685,7 @@ class Deserts extends StatelessWidget {
               ],
               itemCount: 7,
             ),
-            recipeName: 'KASHMIRI HALWA',
+            recipeName: 'HALWA',
             assetName: 'assets/KashmiriHalwa.jpg',
           ),
           RecipeImage(
