@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors, duplicate_ignore
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
