@@ -37,7 +37,7 @@ class BookTemplate extends StatelessWidget {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: Colors.grey.shade400,
+        
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {

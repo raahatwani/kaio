@@ -18,7 +18,7 @@ import 'MainScreens/literature.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Cuisine(),
+    home: HomeScreen(),
   ));
 }
 

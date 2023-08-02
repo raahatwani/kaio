@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/widgets/Recipe.dart';
 import 'package:kaio/widgets/craft.dart';
 import 'package:kaio/widgets/selection.dart';
+import '../Cuisine/FlipCarousel.dart';
 import '../Handicraft/PpaerMachie.dart';
 import '../constants.dart';
 import '../main.dart';
@@ -46,15 +47,9 @@ class _HandicraftState extends State<Handicraft> {
             ),
             CarouselSlider(
               items: [
-                Container(
-                  color: Colors.blue,
-                ),
-                Container(
-                  color: Colors.pink,
-                ),
-                Container(
-                  color: Colors.yellow,
-                ),
+              HandicraftCard(imagePath: 'assets/Carpet.png'),
+              HandicraftCard(imagePath: 'assets/PaperMache.png'),
+              HandicraftCard(imagePath: 'assets/Shawl.png'),
               ],
               options: CarouselOptions(
                 height: 160.0,
@@ -78,7 +73,7 @@ class _HandicraftState extends State<Handicraft> {
                       decoration: BoxDecoration(
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(25.0)),
-                      child: TabBar(
+                      child: TabBar(isScrollable: true,
                         indicator: BoxDecoration(
                             color: Color(0xff85586F),
                             borderRadius: BorderRadius.circular(25.0)),
@@ -123,49 +118,16 @@ class PaperMac extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'PaperMachie',
-            style: kHeading,
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
+          CraftCard(imagePath: 'assets/FlowerVase.png'),
+          CraftCard(imagePath: 'assets/TableLamp.png'),
+          CraftCard(imagePath: 'assets/Clutch.png'),
+          CraftCard(imagePath: 'assets/FruitBowl.png')
         ],
       ),
     );
   }
 }
 
-class Default extends StatelessWidget {
-  const Default({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Default',
-          style: kHeading,
-        ),
-        CraftCard(
-          name: Paper_machie(),
-        ),
-        CraftCard(
-          name: Paper_machie(),
-        ),
-        CraftCard(
-          name: Paper_machie(),
-        ),
-      ],
-    );
-  }
-}
 
 class CRM extends StatelessWidget {
   const CRM({super.key});
@@ -176,19 +138,10 @@ class CRM extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'Carpets, Rugs and Mats',
-            style: kHeading,
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
+          CraftCard(imagePath: 'assets/Carpet1.png'),
+          CraftCard(imagePath: 'assets/Carpet2.png'),
+          CraftCard(imagePath: 'assets/Carpet3.png'),
+          CraftCard(imagePath: 'assets/Carpet4.png')
         ],
       ),
     );
@@ -208,15 +161,15 @@ class Embroidery extends StatelessWidget {
             'Emboidery Work',
             style: kHeading,
           ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
         ],
       ),
     );
@@ -236,15 +189,15 @@ class StoneCraft extends StatelessWidget {
             'Stone Craft',
             style: kHeading,
           ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
         ],
       ),
     );
@@ -264,16 +217,41 @@ class Others extends StatelessWidget {
             'Others',
             style: kHeading,
           ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
-          CraftCard(
-            name: Paper_machie(),
-          ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
+          // CraftCard(
+          //   name: Paper_machie(),
+          // ),
         ],
+      ),
+    );
+  }
+}
+
+
+
+class HandicraftCard extends StatelessWidget {
+  String imagePath='';
+  HandicraftCard ({required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+       onTap: () {
+    },
+      child: Card(
+        child: Container(
+          height: devH*0.3,
+          width: devW*0.9,
+          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+          child: Image(
+            fit: BoxFit.fill,
+            image: AssetImage(imagePath))
+        ),
       ),
     );
   }

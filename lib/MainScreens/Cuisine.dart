@@ -2,7 +2,6 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flip_carousel/flip_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import '../Cuisine/recipe.dart';
@@ -76,6 +75,7 @@ class Cuisine extends StatelessWidget {
                   children: [
                     Container(
                       height: 45,
+                      width: devW,
                       decoration: BoxDecoration(
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(25.0)),

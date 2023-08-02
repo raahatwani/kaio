@@ -1,5 +1,4 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flip_carousel/flip_carousel.dart';
 
@@ -24,12 +23,7 @@ class _FlipState extends State<Flip> {
       fit: BoxFit.contain,
       perspectiveFactor: 0.002,
       layersGap: 30,
-      onChange: (int pageIndex) {
-        print(pageIndex);
-      },
-      onTap: () {
-               print("tap");
-      },
+      
     );
   }
 }
