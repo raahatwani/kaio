@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +50,9 @@ class _HandicraftState extends State<Handicraft> {
               HandicraftCard(imagePath: 'assets/Carpet.png'),
               HandicraftCard(imagePath: 'assets/PaperMache.png'),
               HandicraftCard(imagePath: 'assets/Shawl.png'),
+              HandicraftCard(imagePath: 'assets/tilla.png'),
+              HandicraftCard(imagePath: 'assets/Copper.png'),
+              HandicraftCard(imagePath: 'assets/Wood.png'),
               ],
               options: CarouselOptions(
                 height: 160.0,
@@ -81,8 +84,8 @@ class _HandicraftState extends State<Handicraft> {
                           Tab(text: 'Paper-Mache'),
                           Tab(text: 'Carpets, Rugs and Mats'),
                           Tab(text: 'Embroidery Work'),
-                          Tab(text: 'Stone Craft'),
-                          Tab(text: 'Others'),
+                          Tab(text: 'Copper Work'),
+                          Tab(text: 'Wood Carving'),
                         ],
                         labelColor: Colors.black,
                       ),
@@ -93,8 +96,8 @@ class _HandicraftState extends State<Handicraft> {
                           PaperMac(),
                           CRM(),
                           Embroidery(),
-                          StoneCraft(),
-                          Others()
+                          CopperWork(),
+                          WoodCarving()
                         ],
                       ),
                     ),
@@ -108,6 +111,9 @@ class _HandicraftState extends State<Handicraft> {
     );
   }
 }
+
+
+///////////////////////////PAPER MACHIE/////////////////////////
 
 class PaperMac extends StatelessWidget {
   const PaperMac({super.key});
@@ -129,6 +135,9 @@ class PaperMac extends StatelessWidget {
 }
 
 
+//////////////////////////CARPETS RUGS MATS//////////////////////
+
+
 class CRM extends StatelessWidget {
   const CRM({super.key});
 
@@ -147,6 +156,9 @@ class CRM extends StatelessWidget {
     );
   }
 }
+
+
+///////////////////////////////////EMBROIDERY/////////////////////
 
 class Embroidery extends StatelessWidget {
   const Embroidery({super.key});
@@ -176,8 +188,31 @@ class Embroidery extends StatelessWidget {
   }
 }
 
-class StoneCraft extends StatelessWidget {
-  const StoneCraft({super.key});
+
+///////////////////////////////COPPER///////////////////////////
+
+class CopperWork extends StatelessWidget {
+  const CopperWork({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        children: [
+          
+          CraftCard(imagePath: 'assets/Samavar.png'),
+          CraftCard(imagePath: 'assets/Izbandsoz.png'),
+          CraftCard(imagePath: 'assets/Tramisarposh.png'),
+          CraftCard(imagePath: 'assets/Dryfruitbowl.png'),
+        ],
+      ),
+    );
+  }
+}
+
+class WoodCarving extends StatelessWidget {
+  const WoodCarving({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +221,7 @@ class StoneCraft extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Stone Craft',
+            'Wood Carving',
             style: kHeading,
           ),
           // CraftCard(
@@ -204,35 +239,7 @@ class StoneCraft extends StatelessWidget {
   }
 }
 
-class Others extends StatelessWidget {
-  const Others({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: [
-          Text(
-            'Others',
-            style: kHeading,
-          ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
-        ],
-      ),
-    );
-  }
-}
-
-
+////////////////////////////////WIDGET HANDICRAFTCARD//////////////////
 
 class HandicraftCard extends StatelessWidget {
   String imagePath='';
