@@ -47,12 +47,14 @@ class _HandicraftState extends State<Handicraft> {
             ),
             CarouselSlider(
               items: [
-                HandicraftCard(imagePath: 'assets/Carpet.png'),
-                HandicraftCard(imagePath: 'assets/PaperMache.png'),
-                HandicraftCard(imagePath: 'assets/Shawl.png'),
-                HandicraftCard(imagePath: 'assets/tilla.png'),
-                HandicraftCard(imagePath: 'assets/Copper.png'),
-                HandicraftCard(imagePath: 'assets/Wood.png'),
+                HandicraftCard(imagePath: 'assets/Carpet.png',
+            widgetName: CarpetPage(),),
+                HandicraftCard(imagePath: 'assets/PaperMache.png',widgetName: PaperMachePage(),),
+                HandicraftCard(imagePath: 'assets/Shawl.png',  widgetName: ShawlPage(),),
+                HandicraftCard(imagePath: 'assets/tilla.png', widgetName: TillaPage(),),
+                HandicraftCard(imagePath: 'assets/Copper.png',
+            widgetName: CopperPage(),),
+                HandicraftCard(imagePath: 'assets/Wood.png',widgetName: WoodCarvingPage(),),
               ],
               options: CarouselOptions(
                 height: 160.0,
@@ -230,12 +232,16 @@ class WoodCarving extends StatelessWidget {
 
 class HandicraftCard extends StatelessWidget {
   String imagePath = '';
-  HandicraftCard({required this.imagePath});
+  var widgetName;
+  HandicraftCard({required this.imagePath, required this.widgetName});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => widgetName));
+      },
       child: Card(
         child: Container(
             height: devH * 0.3,
@@ -620,10 +626,13 @@ class TillaPage extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'The process of Tilla Dozi begins with the Naqash or the designer, who draws the design over the trace paper, and perforates this paper with the help of a specialized needle, the process known as “Trombun”. Meanwhile, his assistants prepare the white and blue inks, by mixing sand from the river of Jhelum with some kerosene. The trace paper is placed carefully on the cloth and a paper weight placed over it. It is then that a duster dipped in ink (blue for dark shaded cloth and white for light shaded ones) is passed. The result causes prints of chinar leaves, paisleys and different types of Kashmiri flowers to befall these pieces of plain cloth. This, “Chaamp Traavun” is the second step in casting the beautiful embroidery.This imprinted cloth is then passed onto a Tilla artisan who uses two threads – one of staple and the other of Tilla and embroiders the plain canvas awaiting his strokes. The technique involves threading the Tilla over the fabric using a specialized needle and fastening this embellishment with a camouflaging cotton thread for a perfect and long lasting finesse. The thread of Tilla is altogether a new dimension, where malleable copper is used as an underwire and coated with silver or gold hues to achieve the desired thickness for the embroidery to be done. The Tilla threads hence obtained are of varying types – the Angora, Hiran, Murga and Peacock. Of these, the most commonly used thread is of the Hiran for it does not age, its sheen remaining unaffected across the folds of time. Once embroidered, the apparel or accessories are sent for washing and ironing for the finished piece to reflect elegance. Special care is taken that a hot iron does not come in direct contact with the Tilla, lest its sheen gets damaged by the heat.',
-                    style: kSelText,
-                    textAlign: TextAlign.justify,
-                  ),
+                    'The process of Tilla Dozi begins with the Naqash or the designer, who draws the design over the trace paper, and perforates this paper with the help of a specialized needle, the process known as “Trombun”. Meanwhile, his assistants prepare the white and blue inks, by mixing sand from the river of Jhelum with some kerosene. The trace paper is placed carefully on the cloth and a paper weight placed over it. It is then that a duster dipped in ink (blue for dark shaded cloth and white for light shaded ones) is passed. The result causes prints of chinar leaves, paisleys and different types of Kashmiri flowers to befall these pieces of plain cloth. This, “Chaamp Traavun” is the second step in casting the beautiful embroidery.',style: kSelText,
+                    textAlign: TextAlign.justify,),
+                    SizedBox(height: 10,)
+                    ,Text('This imprinted cloth is then passed onto a Tilla artisan who uses two threads – one of staple and the other of Tilla and embroiders the plain canvas awaiting his strokes. The technique involves threading the Tilla over the fabric using a specialized needle and fastening this embellishment with a camouflaging cotton thread for a perfect and long lasting finesse. The thread of Tilla is altogether a new dimension, where malleable copper is used as an underwire and coated with silver or gold hues to achieve the desired thickness for the embroidery to be done. The Tilla threads hence obtained are of varying types – the Angora, Hiran, Murga and Peacock. Of these, the most commonly used thread is of the Hiran for it does not age, its sheen remaining unaffected across the folds of time. Once embroidered, the apparel or accessories are sent for washing and ironing for the finished piece to reflect elegance. Special care is taken that a hot iron does not come in direct contact with the Tilla, lest its sheen gets damaged by the heat.',style: kSelText,
+                    textAlign: TextAlign.justify,),
+                    
+                  
                   SizedBox(
                     height: 10,
                   ),
@@ -1114,7 +1123,7 @@ class WoodCarvingPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Image(image: AssetImage('assets/wood.png')),
+              Image(image: AssetImage('assets/Wood.png')),
               SizedBox(
                 height: 10,
               ),
