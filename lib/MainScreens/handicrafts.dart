@@ -168,19 +168,10 @@ class Embroidery extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'Emboidery Work',
-            style: kHeading,
-          ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
-          // CraftCard(
-          //   name: Paper_machie(),
-          // ),
+          CraftCard(imagePath: 'assets/EmbTilla1.png', urlLink: 'https://www.instagram.com/p/CvgaXtQP2Qg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/EmbTilla2.png', urlLink: 'https://www.instagram.com/p/CuHgMKJPk9r/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/EmbTilla3.png', urlLink: 'https://www.instagram.com/p/Ck0Y5UBPOpP/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/EmbTilla4.png', urlLink: 'https://www.instagram.com/kashur_handicraft/'),
         ],
       ),
     );
@@ -209,6 +200,8 @@ class CopperWork extends StatelessWidget {
   }
 }
 
+/////////////////////////WOOD CARVING////////////////////////////////
+
 class WoodCarving extends StatelessWidget {
   const WoodCarving({super.key});
 
@@ -219,8 +212,24 @@ class WoodCarving extends StatelessWidget {
       child: Column(
         children: [
           CraftCard(
-            imagePath: 'assets/AyatUlKursi.png',
-            urlLink: 'https://www.instagram.com/p/CGU4FEuMxSv/'
+            imagePath: 'assets/WoodAyat.png',
+            urlLink: 'https://instagram.com/elkhattstore?igshid=MzRlODBiNWFlZA=='
+          ),
+          CraftCard(
+            imagePath: 'assets/WoodChair.png',
+            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
+          ),
+          CraftCard(
+            imagePath: 'assets/WoodDesk.png',
+            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
+          ),
+          CraftCard(
+            imagePath: 'assets/WoodScreen.png',
+            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
+          ),
+          CraftCard(
+            imagePath: 'assets/WoodTable.png',
+            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
           ),
         ],
       ),

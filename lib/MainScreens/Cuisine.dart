@@ -125,11 +125,7 @@ class Beverages extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'Bev',
-            style: kHeading,
-            textScaleFactor: devW * 0.006,
-          ),
+          
           RecipeImage(
             recipeName: 'KEHWA',
             name: Recipe(
@@ -533,10 +529,7 @@ class Deserts extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          Text(
-            'Deserts',
-            style: kHeading,
-          ),
+          
           RecipeImage(
             name: Recipe(
               Category: 'DESSERTS',

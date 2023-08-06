@@ -223,7 +223,7 @@ class _RecipeImageState extends State<RecipeImage> {
                     top: 80,
                     child: Text(
                       widget.recipeName,
-                      style: kHeading,
+                      style:kSelText,
                     ),
                   ),
                   Positioned(
