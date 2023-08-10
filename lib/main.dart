@@ -19,7 +19,7 @@ import 'MainScreens/literature.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: SecondPage(),
+    home: HomeScreen(),
   ));
 }
 
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Destination(),
+                    builder: (context) => SecondPage(),
                   ),
                 );
               },

@@ -18,7 +18,7 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
+    
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -61,11 +61,7 @@ class _SecondPageState extends State<SecondPage> {
                   aspectRatio: 16 / 9,
                   enableInfiniteScroll: true,
                   viewportFraction: 1,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
+                  
                 ),
               ),
               Positioned(

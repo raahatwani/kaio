@@ -67,8 +67,8 @@ class BookTemplate extends StatelessWidget {
                 children: [
                   Text(
                     bookName,
-                    textScaleFactor: devW * 0.0038,
-                    style: kHeading,
+                    
+                    style: kSubHeading,
                   ),
                   IconButton(
                     onPressed: () async {
@@ -93,7 +93,6 @@ class BookTemplate extends StatelessWidget {
                   Text(
                     author,
                     style: kSelText,
-                    textScaleFactor: devW * 0.003,
                   ),
                 ],
               ),
@@ -113,7 +112,6 @@ class BookTemplate extends StatelessWidget {
               ),
               Text(
                 'Description',
-                textScaleFactor: devW * 0.0037,
                 style: kHeading,
               ),
               SizedBox(

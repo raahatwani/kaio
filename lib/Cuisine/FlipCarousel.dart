@@ -4,8 +4,8 @@ import 'package:flip_carousel/flip_carousel.dart';
 
 class Flip extends StatefulWidget {
   final List<String> cardItems;
-
-  Flip({required this.cardItems});
+String heroTag;
+  Flip({required this.cardItems, required this.heroTag});
 
   @override
   State<Flip> createState() => _FlipState();
@@ -23,7 +23,7 @@ class _FlipState extends State<Flip> {
       fit: BoxFit.contain,
       perspectiveFactor: 0.002,
       layersGap: 30,
-      
+      heroTag: widget.heroTag,
     );
   }
 }

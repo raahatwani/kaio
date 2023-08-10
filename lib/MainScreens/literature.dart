@@ -42,7 +42,6 @@ class _LiteraturePageState extends State<LiteraturePage> {
             Text(
               'My Books',
               style: kHeading,
-              textScaleFactor: devW * 0.006,
             ),
             SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -58,7 +57,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
             SizedBox(
               height: devH * 0.04,
             ),
-            Text('Book Shelf', style: kHeading, textScaleFactor: devW * 0.006),
+            Text('Book Shelf', style: kHeading,),
             DefaultTabController(
               length: 4,
               child: Expanded(
