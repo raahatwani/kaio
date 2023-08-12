@@ -1,99 +1,179 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, prefer_const_constructors_in_immutables, non_constant_identifier_names, unused_import, unused_element, avoid_unnecessary_containers, must_be_immutable, use_key_in_widget_constructors, prefer_typing_uninitialized_variables
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kaio/widgets/travel_new.dart';
 
-import '../Destination/Destinationdescription.dart';
-import '../constants.dart';
+import 'package:kaio/MainScreens/literature.dart';
+import 'package:kaio/constants.dart';
+import 'package:kaio/main.dart';
+import 'package:kaio/widgets/craft.dart';
 
-bool showDefault = true,
-    showPaperMac = false,
-    showCRM = false,
-    showEmb = false,
-    showStoneCraft = false,
-    showOther = false;
+import '../Destination/Container.dart';
+import '../Destination/Features.dart';
+import '../Destination/desttemplate.dart';
 
-// ignore: must_be_immutable
-class Destination extends StatefulWidget {
+PageController controller = PageController();
+
+class Destination extends StatelessWidget {
+  final controller = PageController();
+  int selectedPage = 0;
+
   Destination({super.key});
 
   @override
-  State<Destination> createState() => _DestinationState();
-}
-
-class _DestinationState extends State<Destination> {
-  @override
   Widget build(BuildContext context) {
-    var devH = MediaQuery.of(context).size.height;
-
-    return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Search',
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
-              ),
-            ),
-          ),
-          CarouselSlider(
-            items: [
-              Container(
-                color: Colors.blue,
-              ),
-              Container(
-                color: Colors.pink,
-              ),
-              Container(
-                color: Colors.yellow,
-              ),
-            ],
-            options: CarouselOptions(
-              height: 160.0,
-              enlargeCenterPage: true,
-              enlargeFactor: 0.5,
-              aspectRatio: 16 / 9,
-              enableInfiniteScroll: true,
-              viewportFraction: 0.5,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            'Recommendations for you',
-            style: kHeading,
-          ),
-          Container(
-            height: devH * 0.5,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Travel_new(
-                    name: Description_Destination(),
-                  ),
-                  Travel_new(
-                    name: Description_Destination(),
-                  ),
-                  Travel_new(
-                    name: Description_Destination,
-                  )
-                ],
-              ),
-            ),
-          )
-        ],
+    return Scaffold(
+      body: Stack(
+        children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],
       ),
-    ));
+    );
+  }
+
+  Widget _DestinationPage() {
+    return SizedBox(
+      height: devH * 0.5,
+      width: devW,
+      child: Image.asset(fit: BoxFit.cover, 'assets/kashmir.png'),
+    );
+  }
+
+  Widget _GradientWidget() {
+    return Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          height: devH * 0.7,
+          width: devW,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0xffd1d1cd), Colors.transparent],
+                  stops: [0.65, 1.0],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter)),
+        ));
+  }
+
+  Widget _topLayerWidget() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: devH * 0.40,
+            ),
+            DestinationFeatures(),
+            SizedBox(
+              height: devH * 0.01,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'North',
+                  style: kHeading,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      DestinationContainer(
+                        imagePath: 'assets/baramulla.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/ganderbal.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/bandipora.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/kupwara.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'South',
+                  style: kHeading,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      DestinationContainer(
+                        imagePath: 'assets/kulgam.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/pulwama.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/shopian.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/anantnag.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Central',
+                  style: kHeading,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      DestinationContainer(
+                        imagePath: 'assets/srinagar.png',
+                        nextPage: DestTemplate(
+                          placeName: 'Srinagar',
+                          cimage1: 'assets/srinagar1.jpg',
+                          cimage2: 'assets/srinagar2.avif',
+                          cimage3: 'assets/srinagar3.jpg',
+                          cimage4: 'assets/srinagar4.png',
+                          cimage5: 'assets/srinagar5.jpg',
+                          DescriptionPlace: '-Summer capital of Jammu and Kashmir (UT).\n\n-Situated in the centre of the Kashmir Valley on the banks of the Jhelum River.\n\n-Famous for its gardens, lakes and houseboats.',
+                          place1: 'assets/Shalimar.png',
+                          place2: 'assets/Tulipgarden.png',
+                          place3: 'assets/Parimahal.png',
+                          place4: 'assets/Chashmashahi.png',
+                          place5: 'assets/Badamwari.png',
+                          thing1: 'assets/Shikara.png',
+                          thing2: 'assets/paragliding.png',
+                          thing3: 'assets/heritage.png',
+                          thing4: 'assets/houseboat.png',
+                          thing5: 'assets/birds.png',
+                          BestTime: 'April to October is the best time to visit Srinagar when the weather is perfect for sightseeing. The minimum temperature during this time ranges between 10 to 20 degrees Celcius while the maximum temperature is around 20 to 30 degrees Celcius.\nSrinagar has two main seasons - summer and winter with 1-2 months of autumn. There is no proper monsoon season as Srinagar has very little rainfall. Overall, Srinagar has pleasant weather with a soothing temperature making it a go-to destination throughout the year. ',
+                        ),
+                      ),
+                      DestinationContainer(
+                        imagePath: 'assets/budgam.png',
+                        nextPage: LiteraturePage(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

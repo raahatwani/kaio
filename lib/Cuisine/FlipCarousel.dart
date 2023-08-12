@@ -1,4 +1,6 @@
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flip_carousel/flip_carousel.dart';
 
@@ -19,7 +21,6 @@ class _FlipState extends State<Flip> {
       items: widget.cardItems.map((item) => Container(child: Image.asset(item))).toList(),
       transitionDuration: const Duration(milliseconds: 400),
       isAssetImage: true,
-      // border: Border.all(width: 1, color: const Color(0xFFFFFFFF)),
       fit: BoxFit.contain,
       perspectiveFactor: 0.002,
       layersGap: 30,

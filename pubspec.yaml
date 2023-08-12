@@ -63,6 +63,8 @@ flutter:
   uses-material-design: true
   assets:
    - assets/
+   - assets/images/literatureimgs/
+   - assets/images/cuisineimgs/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

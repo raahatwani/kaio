@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_typing_uninitialized_variables, unused_import, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:kaio/Destination/dest2ndpage.dart';
+import 'package:kaio/Destination/desttemplate.dart';
 import 'package:kaio/Literature/Book.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SecondPage(),
+                    builder: (context) => Destination(),
                   ),
                 );
               },
