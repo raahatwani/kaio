@@ -244,7 +244,7 @@ class PlaceCard extends StatelessWidget {
         child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
-              side: BorderSide(color: Color(0xff85586F), width: 4),
+              side: BorderSide(color: Color(0xff85586F), width: 3),
             ),
             child: Container(
               height: devH * 0.3,

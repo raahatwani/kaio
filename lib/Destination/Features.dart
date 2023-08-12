@@ -16,19 +16,19 @@ class DestinationFeatures extends StatelessWidget {
           items: [
             Container(
                 width: devW,
-                child: Image.asset('assets/kashWidlife.png')),
+                child: Image.asset('assets/images/destinationimgs/kashWidlife.png')),
               Container(
                 width: devW,
-                child: Image.asset('assets/kashShrines.png')),
+                child: Image.asset('assets/images/destinationimgs/kashShrines.png')),
               Container(
                 width: devW,
-                child: Image.asset('assets/kashTreks.png')),
+                child: Image.asset('assets/images/destinationimgs/kashTreks.png')),
               Container(
                 width: devW, 
-                child: Image.asset('assets/kashPilgrims.png')),
+                child: Image.asset('assets/images/destinationimgs/kashPilgrims.png')),
               Container(
                 width: devW, 
-                child: Image.asset('assets/kashHeriatge.png')),
+                child: Image.asset('assets/images/destinationimgs/kashHeriatge.png')),
           ], 
           options: CarouselOptions(
             autoPlay: true,
