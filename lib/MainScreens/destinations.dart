@@ -223,7 +223,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Anantnag',
         cimages: AnantnagCImages,
-        DescriptionPlace: 'DescriptionPlace',
+        DescriptionPlace: '\n-Located towards South of Jehlum Valley,beautified by the splendors of nature.\n\n-The majestic mountains, gushing streams, numerous springs,and aromatic flowers welcomes you to this land of amazing wonders in Kashmir.',
         places: AnantnagPlaceImages,
         things: AnantnagThingImages);
   }
@@ -407,18 +407,16 @@ List<String> AnantnagPlaceImages = [
   'assets/Destination/Anantnag/place/Verinag.png',
 ];
 List<String> AnantnagThingImages = [
-  'assets/Destination/Anantnag/place/Achabal.png',
-  'assets/Destination/Anantnag/place/amarnath.png',
-  'assets/Destination/Anantnag/place/Kokernag.png',
-  'assets/Destination/Anantnag/place/Pahalgam.png',
-  'assets/Destination/Anantnag/place/Verinag.png',
+  'assets/Destination/Anantnag/thing/anantnagfishing.png',
+  'assets/Destination/Anantnag/thing/anantnaghorseride.png',
+  'assets/Destination/Anantnag/thing/anantnagrafting.png',
+  'assets/Destination/Anantnag/thing/anantnagspring.png',
 ];
 List<String> AnantnagCImages = [
-  'assets/Destination/Anantnag/place/Achabal.png',
-  'assets/Destination/Anantnag/place/amarnath.png',
-  'assets/Destination/Anantnag/place/Kokernag.png',
-  'assets/Destination/Anantnag/place/Pahalgam.png',
-  'assets/Destination/Anantnag/place/Verinag.png',
+  'assets/Destination/Anantnag/carousel/anantnag1.jpg',
+  'assets/Destination/Anantnag/carousel/anantnag2.jpg',
+  'assets/Destination/Anantnag/carousel/anantnag3.jpg',
+  'assets/Destination/Anantnag/carousel/anantnag4.jpg',
 ];
 
 List<String> SrinagarPlaceImages = [

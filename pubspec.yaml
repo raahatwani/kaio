@@ -83,6 +83,8 @@ flutter:
    - assets/Destination/Pulwama/place/
    - assets/Destination/Shopain/place/
    - assets/Destination/Anantnag/place/
+   - assets/Destination/Anantnag/thing/
+   - assets/Destination/Anantnag/carousel/
    - assets/Handicrafts/Carousel/Carpet/
    - assets/Handicrafts/Carousel/Copper/
    - assets/Handicrafts/Carousel/Paper-Mache/
