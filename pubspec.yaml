@@ -63,10 +63,41 @@ flutter:
   uses-material-design: true
   assets:
    - assets/
-   - assets/images/literatureimgs/
-   - assets/images/cuisineimgs/
-   - assets/images/handicraftimgs/
-   - assets/images/destinationimgs/
+   - assets/Cuisine/Beverages/
+   - assets/Cuisine/Carousel/
+   - assets/Cuisine/Deserts/
+   - assets/Cuisine/HomeMade/
+   - assets/Cuisine/Wazwan/
+   - assets/Destination/Main/
+   - assets/Destination/Srinagar/Carousel/
+   - assets/Destination/Srinagar/Place/
+   - assets/Destination/Srinagar/Things/
+   - assets/Destination/Budgam/place/
+   - assets/Destination/Budgam/carousel/
+   - assets/Destination/Budgam/thing/
+   - assets/Destination/Baramulla/place/
+   - assets/Destination/Ganderbal/place/
+   - assets/Destination/Bandipora/place/
+   - assets/Destination/Kupwara/place/
+   - assets/Destination/Kulgam/place/
+   - assets/Destination/Pulwama/place/
+   - assets/Destination/Shopain/place/
+   - assets/Destination/Anantnag/place/
+   - assets/Handicrafts/Carousel/Carpet/
+   - assets/Handicrafts/Carousel/Copper/
+   - assets/Handicrafts/Carousel/Paper-Mache/
+   - assets/Handicrafts/Carousel/Shawl/
+   - assets/Handicrafts/Carousel/Tilla/
+   - assets/Handicrafts/Carousel/Wood/
+   - assets/Handicrafts/Carpet/
+   - assets/Handicrafts/Copper/
+   - assets/Handicrafts/Embroidery/
+   - assets/Handicrafts/Paper-Mache/
+   - assets/Handicrafts/Wood/
+   - assets/Literature/History/
+   - assets/Literature/New/
+   - assets/Literature/Poetry/
+   - assets/Literature/Prose/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

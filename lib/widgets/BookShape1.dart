@@ -48,11 +48,11 @@ import '../main.dart';
 //   }
 // }
 
-class BookShape1 extends StatelessWidget {
+class BookShape extends StatelessWidget {
   String imagepath = '';
   var name;
 
-  BookShape1({
+  BookShape({
     required this.name,
     required this.imagepath,
   });

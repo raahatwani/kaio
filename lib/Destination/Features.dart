@@ -14,30 +14,29 @@ class DestinationFeatures extends StatelessWidget {
       children: [
         CarouselSlider(
           items: [
-            Container(
-                width: devW,
-                child: Image.asset('assets/images/destinationimgs/kashWidlife.png')),
-              Container(
-                width: devW,
-                child: Image.asset('assets/images/destinationimgs/kashShrines.png')),
-              Container(
-                width: devW,
-                child: Image.asset('assets/images/destinationimgs/kashTreks.png')),
-              Container(
-                width: devW, 
-                child: Image.asset('assets/images/destinationimgs/kashPilgrims.png')),
-              Container(
-                width: devW, 
-                child: Image.asset('assets/images/destinationimgs/kashHeriatge.png')),
-          ], 
+            featureContainer('assets/Destination/Main/kashWidlife.png'),
+            featureContainer('assets/Destination/Main/kashShrines.png'),
+            featureContainer('assets/Destination/Main/kashTreks.png'),
+            featureContainer('assets/Destination/Main/kashPilgrims.png'),
+            featureContainer('assets/Destination/Main/kashHeriatge.png'),
+          ],
           options: CarouselOptions(
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 2),
-            scrollDirection: Axis.horizontal
-          ),
-
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 2),
+              scrollDirection: Axis.horizontal),
         ),
       ],
     );
+  }
+
+  Widget featureContainer(String imagePath) {
+    return Container(
+      margin: EdgeInsets.all(devW*0.03),
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+      width: devW*0.8,
+      child: Image(
+            fit: BoxFit.fill,
+            image: AssetImage(imagePath)));
   }
 }

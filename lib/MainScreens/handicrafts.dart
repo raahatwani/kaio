@@ -1,17 +1,14 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, must_be_immutable, use_key_in_widget_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, unused_import, non_constant_identifier_names, prefer_typing_uninitialized_variables, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, must_be_immutable, use_key_in_widget_constructors, avoid_unnecessary_containers
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:kaio/MainScreens/literature.dart';
 import 'package:kaio/widgets/Recipe.dart';
 import 'package:kaio/widgets/craft.dart';
 import 'package:kaio/widgets/selection.dart';
-import '../Cuisine/FlipCarousel.dart';
-import '../Handicraft/PpaerMachie.dart';
 import '../constants.dart';
 import '../main.dart';
-import 'literature.dart';
 
-// ignore: must_be_immutable
 class Handicraft extends StatefulWidget {
   Handicraft({super.key});
 
@@ -22,100 +19,106 @@ class Handicraft extends StatefulWidget {
 class _HandicraftState extends State<Handicraft> {
   @override
   Widget build(BuildContext context) {
-    devH = MediaQuery.of(context).size.height;
-    devW = MediaQuery.of(context).size.width;
     return SafeArea(
-      child: Scaffold(
-        body: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.all(20),
-              child: TextField(
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  hintText: 'Search',
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                      borderSide:
-                          BorderSide(color: Color(0xff85586F), width: 2)),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                      borderSide:
-                          BorderSide(color: Color(0xff85586F), width: 2)),
+        child: Scaffold(
+            body: Column(children: [
+      Container(
+        margin: EdgeInsets.all(20),
+        child: TextField(
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.search),
+            hintText: 'Search',
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+          ),
+        ),
+      ),
+      CarouselSlider(
+        items: [
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Carpet/Carpet.png',
+            widgetName: CarpetPage(),
+          ),
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Paper-Mache/PaperMache.png',
+            widgetName: PaperMachePage(),
+          ),
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Shawl/Shawl.png',
+            widgetName: ShawlPage(),
+          ),
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Tilla/tilla.png',
+            widgetName: TillaPage(),
+          ),
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Copper/Copper.png',
+            widgetName: CopperPage(),
+          ),
+          HandicraftCard(
+            imagePath: 'assets/Handicrafts/Carousel/Wood/Wood.png',
+            widgetName: WoodCarvingPage(),
+          ),
+        ],
+        options: CarouselOptions(
+          height: 160.0,
+          enlargeCenterPage: true,
+          enlargeFactor: 0.5,
+          aspectRatio: 16 / 9,
+          enableInfiniteScroll: true,
+          viewportFraction: 0.5,
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      DefaultTabController(
+        length: 5,
+        child: Expanded(
+          child: Column(
+            children: [
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(25.0)),
+                child: TabBar(
+                  isScrollable: true,
+                  indicator: BoxDecoration(
+                      color: Color(0xff85586F),
+                      borderRadius: BorderRadius.circular(25.0)),
+                  tabs: [
+                    Tab(text: 'Paper-Mache'),
+                    Tab(text: 'Carpets, Rugs and Mats'),
+                    Tab(text: 'Embroidery Work'),
+                    Tab(text: 'Copper Work'),
+                    Tab(text: 'Wood Carving'),
+                  ],
+                  labelColor: Colors.black,
                 ),
               ),
-            ),
-            CarouselSlider(
-              items: [
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/Carpet.png',
-            widgetName: CarpetPage(),),
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/PaperMache.png',widgetName: PaperMachePage(),),
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/Shawl.png',  widgetName: ShawlPage(),),
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/tilla.png', widgetName: TillaPage(),),
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/Copper.png',
-            widgetName: CopperPage(),),
-                HandicraftCard(imagePath: 'assets/images/handicraftimgs/Wood.png',widgetName: WoodCarvingPage(),),
-              ],
-              options: CarouselOptions(
-                height: 160.0,
-                enlargeCenterPage: true,
-                enlargeFactor: 0.5,
-                aspectRatio: 16 / 9,
-                enableInfiniteScroll: true,
-                viewportFraction: 0.5,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            DefaultTabController(
-              length: 5,
-              child: Expanded(
-                child: Column(
+              Expanded(
+                child: TabBarView(
                   children: [
-                    Container(
-                      height: 45,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(25.0)),
-                      child: TabBar(
-                        isScrollable: true,
-                        indicator: BoxDecoration(
-                            color: Color(0xff85586F),
-                            borderRadius: BorderRadius.circular(25.0)),
-                        tabs: [
-                          Tab(text: 'Paper-Mache'),
-                          Tab(text: 'Carpets, Rugs and Mats'),
-                          Tab(text: 'Embroidery Work'),
-                          Tab(text: 'Copper Work'),
-                          Tab(text: 'Wood Carving'),
-                        ],
-                        labelColor: Colors.black,
-                      ),
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          PaperMac(),
-                          CRM(),
-                          Embroidery(),
-                          CopperWork(),
-                          WoodCarving()
-                        ],
-                      ),
-                    ),
+                    PaperMac(),
+                    CRM(),
+                    Embroidery(),
+                    CopperWork(),
+                    WoodCarving()
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    );
+    ])));
   }
 }
-
-///////////////////////////PAPER MACHIE/////////////////////////
 
 class PaperMac extends StatelessWidget {
   const PaperMac({super.key});
@@ -126,17 +129,15 @@ class PaperMac extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          CraftCard(imagePath: 'assets/images/handicraftimgs/FlowerVase.png',urlLink: 'https://www.instagram.com/mir___arts/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/TableLamp.png',urlLink: 'https://www.instagram.com/mir___arts/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Clutch.png',urlLink: 'https://www.instagram.com/mir___arts/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/FruitBowl.png',urlLink: 'https://www.instagram.com/mir___arts/')
+          CraftCard(imagePath: 'assets/Handicrafts/Paper-Mache/FlowerVase.png',urlLink: 'https://www.instagram.com/mir___arts/',),
+          CraftCard(imagePath: 'assets/Handicrafts/Paper-Mache/TableLamp.png',urlLink: 'https://www.instagram.com/mir___arts/',),
+          CraftCard(imagePath: 'assets/Handicrafts/Paper-Mache/Clutch.png',urlLink: 'https://www.instagram.com/mir___arts/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Paper-Mache/FruitBowl.png', urlLink: 'https://www.instagram.com/mir___arts/')
         ],
       ),
     );
   }
 }
-
-//////////////////////////CARPETS RUGS MATS//////////////////////
 
 class CRM extends StatelessWidget {
   const CRM({super.key});
@@ -147,17 +148,15 @@ class CRM extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Carpet1.png',urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Carpet2.png',urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Carpet3.png',urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Carpet4.png',urlLink: 'https://www.instagram.com/houseofkashmiricarpets/')
+          CraftCard(imagePath: 'assets/Handicrafts/Carpet/Carpet1.png', urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Carpet/Carpet2.png', urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Carpet/Carpet3.png', urlLink: 'https://www.instagram.com/houseofkashmiricarpets/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Carpet/Carpet4.png', urlLink: 'https://www.instagram.com/houseofkashmiricarpets/')
         ],
       ),
     );
   }
 }
-
-///////////////////////////////////EMBROIDERY/////////////////////
 
 class Embroidery extends StatelessWidget {
   const Embroidery({super.key});
@@ -168,17 +167,15 @@ class Embroidery extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          CraftCard(imagePath: 'assets/images/handicraftimgs/EmbTilla1.png', urlLink: 'https://www.instagram.com/p/CvgaXtQP2Qg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/EmbTilla2.png', urlLink: 'https://www.instagram.com/p/CuHgMKJPk9r/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/EmbTilla3.png', urlLink: 'https://www.instagram.com/p/Ck0Y5UBPOpP/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/EmbTilla4.png', urlLink: 'https://www.instagram.com/kashur_handicraft/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Embroidery/EmbTilla1.png', urlLink: 'https://www.instagram.com/p/CvgaXtQP2Qg/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/Handicrafts/Embroidery/EmbTilla2.png', urlLink: 'https://www.instagram.com/p/CuHgMKJPk9r/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/Handicrafts/Embroidery/EmbTilla3.png', urlLink: 'https://www.instagram.com/p/Ck0Y5UBPOpP/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='),
+          CraftCard(imagePath: 'assets/Handicrafts/Embroidery/EmbTilla4.png', urlLink: 'https://www.instagram.com/kashur_handicraft/'),
         ],
       ),
     );
   }
 }
-
-///////////////////////////////COPPER///////////////////////////
 
 class CopperWork extends StatelessWidget {
   const CopperWork({super.key});
@@ -189,18 +186,15 @@ class CopperWork extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Samavar.png', urlLink: 'https://www.instagram.com/copper.hub/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Tramisarposh.png', urlLink: 'https://www.instagram.com/copper.hub/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Izbandsoz.png', urlLink: 'https://www.instagram.com/copper.hub/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Tramisarposh.png', urlLink: 'https://www.instagram.com/copper.hub/'),
-          CraftCard(imagePath: 'assets/images/handicraftimgs/Dryfruitbowl.png', urlLink: 'https://www.instagram.com/copper.hub/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Copper/Samavar.png', urlLink: 'https://www.instagram.com/copper.hub/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Copper/Izbandsoz.png', urlLink: 'https://www.instagram.com/copper.hub/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Copper/Tramisarposh.png', urlLink: 'https://www.instagram.com/copper.hub/'),
+          CraftCard(imagePath: 'assets/Handicrafts/Copper/Dryfruitbowl.png', urlLink: 'https://www.instagram.com/copper.hub/'),
         ],
       ),
     );
   }
 }
-
-/////////////////////////WOOD CARVING////////////////////////////////
 
 class WoodCarving extends StatelessWidget {
   const WoodCarving({super.key});
@@ -212,32 +206,26 @@ class WoodCarving extends StatelessWidget {
       child: Column(
         children: [
           CraftCard(
-            imagePath: 'assets/images/handicraftimgs/WoodAyat.png',
-            urlLink: 'https://instagram.com/elkhattstore?igshid=MzRlODBiNWFlZA=='
-          ),
+              imagePath: 'assets/Handicrafts/Wood/WoodAyat.png',
+              urlLink:
+                  'https://instagram.com/elkhattstore?igshid=MzRlODBiNWFlZA=='),
           CraftCard(
-            imagePath: 'assets/images/handicraftimgs/WoodChair.png',
-            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
-          ),
+              imagePath: 'assets/Handicrafts/Wood/WoodChair.png',
+              urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'),
           CraftCard(
-            imagePath: 'assets/images/handicraftimgs/WoodDesk.png',
-            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
-          ),
+              imagePath: 'assets/Handicrafts/Wood/WoodDesk.png',
+              urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'),
           CraftCard(
-            imagePath: 'assets/images/handicraftimgs/WoodScreen.png',
-            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
-          ),
+              imagePath: 'assets/Handicrafts/Wood/WoodScreen.png',
+              urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'),
           CraftCard(
-            imagePath: 'assets/images/handicraftimgs/WoodTable.png',
-            urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'
-          ),
+              imagePath: 'assets/Handicrafts/Wood/WoodTable.png',
+              urlLink: 'https://www.instagram.com/parayswalnutwoodcarvings/'),
         ],
       ),
     );
   }
 }
-
-////////////////////////////////WIDGET HANDICRAFTCARD//////////////////
 
 class HandicraftCard extends StatelessWidget {
   String imagePath = '';
@@ -262,7 +250,7 @@ class HandicraftCard extends StatelessWidget {
   }
 }
 
-////////////////////////////CARPETPAGE///////////////////////////////
+//********CARPET PAGE********//
 
 class CarpetPage extends StatelessWidget {
   const CarpetPage({super.key});
@@ -294,7 +282,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Carpet.png'))
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/Carpet.png'))
                 ],
               ),
             ),
@@ -353,7 +341,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Talim.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/Talim.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -372,7 +360,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Yarn.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/Yarn.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -391,7 +379,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Weave.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/Weave.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -402,7 +390,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Weave1.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/Weave1.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -414,7 +402,7 @@ class CarpetPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/kaleen.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Carpet/kaleen.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -439,218 +427,91 @@ class PaperMachePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
-              child: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Center(
-            child: Text(
-              'Paper Mache',
-              style: kHeading,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                Text(
-                  '‘Paper mache’ is a French term which when translated literally means ‘chewed paper’. This art is said to have originated in China hundreds of years ago.',
-                  style: kSelText,
-                  textAlign: TextAlign.justify,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Image(image: AssetImage('assets/images/handicraftimgs/PaperMache.png')),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'History',
-                  style: kHeading,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'The origin of the paper mache crafts in Kashmir dates back to as early as the 15th century.  And the credit for bringing this art form to Kashmir is believed to go to the eighth ruler of Kashmir, Zain-ul-Abidin. He came across this art during his time as a Kashmiri prince in Samarkand, Central Asia. That was when he was intrigued by paper mache handicraft.When he returned to Kashmir, he brought many craftsmen along with him to the valley to train his subjects on the same. Yet another legend suggests that this art was introduced in Kashmir by a poet and Sufi saint called Mir Sayyid Ali Hamdani. He came to Kashmir from Iran in the mid 14th century. He brought along with him 700 artisans from Iran. These artisans are thought to have taught the local Kashmiris various art forms; and paper mache craft was one of them.No matter what the story of its origin, this art was made highly popular during the Mughal rule. The art was originally known by its Iranian name Kar-i-Qalamdani in Kashmir. The word ‘Qalamdani’ is basically pen case. Initially, this art was only restricted to making pen cases.But, through the years, the art of paper mache has tremendously grown in the valley with numerous items available these days.',
-                  style: kSelText,
-                  textAlign: TextAlign.justify,
-                )
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'How are Kashmir Paper Mache Crafts Made?',
-                  style: kHeading,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'The artisans involved in this profession are supremely skilled and practice the art for years and years. This art has also traditionally existed as a family profession in Kashmir. And like many other Kashmiri handicrafts, the trick and technique behind it gets passed on from one generation to another.Even though the idea behind this handicraft might sound relatively simple, it is a very time-consuming process and requires a lot of precision. It basically involves two main steps- Sakthsazi (making of the actual item) and Naqashi (the painting and decoration part).Now, let’s take a look at the making of paper mache handicrafts in detail.',
-                  style: kSelText,
-                  textAlign: TextAlign.justify,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Sakhtsazi',
-                  style: kSubHeading,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Image(image: AssetImage('assets/images/handicraftimgs/Sakthsazi.png')),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'The sakthsazi is the one involved with making the object with the pulp of paper. First of all, the waste paper is soaked in water for several days. Then, a mixture of the soaked waste paper, cloth and the straw of a rice plant is pounded manually in a stone mortar. This is pounded until the mixture becomes very fine and forms a pulp. Then, a rice based glue called ‘Atij’ is combined with this pulp mixture.This complete mixture is then applied onto the desired mould and then left to dry for a few days. After it has dried out, the artwork is very carefully separated from the mould. The artwork is basically cut in two halves to separate it from the mould and the halves are carefully joined with the help of glue. The resultant object that is obtained is known as ‘Kalib’. Then, for the next step, the kalib is handed over to the women. This process is referred to as ‘Pishlawun’. As the next step, the women smoothen out the surface of the artwork with either a stone, baked clay or a wooden file.After the object is nicely smoothened out, it is coated with a light layer of paint/ lacquer. It is coated again with a second coat of lacquer mixed with some chalk powder and water. This is again left to dry out for some time.After the sakthsazi’s work is done, the artwork/ object is handed over to the Naqash.',
-                  style: kSelText,
-                  textAlign: TextAlign.justify,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Naqashi',
-                  style: kSubHeading,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Image(image: AssetImage('assets/images/handicraftimgs/Naqashi.png')),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'When the object reaches the Naqash, it is first covered with thin sheets of butter paper. The butter paper is pasted so that it acts as a barrier between the main object and the paintwork so that the object doesn’t crack. After covering with butter paper, a thin coat of paint is applied all over the artwork. This is actually the step where the object is transformed into the beautiful piece of paper mache handicraft that we know. This work is also very intricate and usually takes about 3 days to a week. The designs are first drawn free hand on the object and then they are painted. The designer uses various different motifs like flowers, fruits, birds, creepers etc.Mostly metallic paints are used for an illuminated effect. After the motifs are painted, often gold or silver is used to highlight them. Mostly the colors that are used for painting are all organic and either nature or vegetable-based. When the whole painting procedure is completed, the final step involves covering the artwork with a layer of varnish for an added shine.This is the whole procedure that goes into making paper mache crafts. It is an extensive process that requires a lot of patience and attention to detail. But, the whole process is worth it as the end result is absolutely stunning.Even though these handicrafts are made using paper, the extensive process that goes into making them is what makes these handicrafts extremely durable. Each of these individually created items has a unique story to tell. The Kashmir paper mache crafts are largely pursued by the Shia sect of the Kashmiri Muslims.',
-                  style: kSelText,
-                  textAlign: TextAlign.justify,
-                )
-              ],
-            ),
-          )
-        ],
-      ))),
-    );
-  }
-}
-
-/////////////////////////////////////TILLA WORK///////////////////////
-
-class TillaPage extends StatelessWidget {
-  const TillaPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
+    devH = MediaQuery.of(context).size.height;
+    devW = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
             Center(
-              child: Text(
-                'Tilla Work',
-                style: kHeading,
+              child: Text('Paper Mache',style: kHeading,),
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Text('‘Paper mache’ is a French term which when translated literally means ‘chewed paper’. This art is said to have originated in China hundreds of years ago.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,),
+                  SizedBox(height: 20,),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Paper-Mache/PaperMache.png')),
+                ],
               ),
             ),
             Container(
               margin: EdgeInsets.all(10),
-              child: Text(
-                'Kashmiri Tilla embroidery, also known as Zari work, is a form of embroidery that has its roots in the Kashmir Valley in India. The technique is unique and distinct from other forms of embroidery due to its intricate use of metallic threads, primarily gold and silver, to create exquisite patterns and designs on various fabrics.',
-                style: kSelText,
-                textAlign: TextAlign.justify,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Image(image: AssetImage('assets/images/handicraftimgs/tilla.png')),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: EdgeInsets.all(10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'History of Kashmiri Tilla',
-                    style: kHeading,
-                  ),
+                  Text('History',style: kHeading,),
                   SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Kashmiri Tilla embroidery has been a significant part of the rich cultural heritage of Kashmir for centuries. Its origins can be traced back to the Mughal era, when it was used to embellish the garments of kings and royalty. Over time, the art form became more popular and accessible, and was incorporated into the traditional dress of the Kashmiri people, including the pheran, the traditional Kashmiri robe.',
-                    style: kSelText,
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  height: 10,
+                ),
+                  Text('The origin of the paper mache crafts in Kashmir dates back to as early as the 15th century.  And the credit for bringing this art form to Kashmir is believed to go to the eighth ruler of Kashmir, Zain-ul-Abidin. He came across this art during his time as a Kashmiri prince in Samarkand, Central Asia. That was when he was intrigued by paper mache handicraft.When he returned to Kashmir, he brought many craftsmen along with him to the valley to train his subjects on the same. Yet another legend suggests that this art was introduced in Kashmir by a poet and Sufi saint called Mir Sayyid Ali Hamdani. He came to Kashmir from Iran in the mid 14th century. He brought along with him 700 artisans from Iran. These artisans are thought to have taught the local Kashmiris various art forms; and paper mache craft was one of them.No matter what the story of its origin, this art was made highly popular during the Mughal rule. The art was originally known by its Iranian name Kar-i-Qalamdani in Kashmir. The word ‘Qalamdani’ is basically pen case. Initially, this art was only restricted to making pen cases.But, through the years, the art of paper mache has tremendously grown in the valley with numerous items available these days.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,)
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Process',
-                    style: kHeading,
-                  ),
+                  Text('How are Kashmir Paper Mache Crafts Made?',
+                  style: kHeading,),
                   SizedBox(
-                    height: 10,
-                  ),
+                  height: 10,
+                ),
+                  Text('The artisans involved in this profession are supremely skilled and practice the art for years and years. This art has also traditionally existed as a family profession in Kashmir. And like many other Kashmiri handicrafts, the trick and technique behind it gets passed on from one generation to another.Even though the idea behind this handicraft might sound relatively simple, it is a very time-consuming process and requires a lot of precision. It basically involves two main steps- Sakthsazi (making of the actual item) and Naqashi (the painting and decoration part).Now, let’s take a look at the making of paper mache handicrafts in detail.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,),
                   SizedBox(
-                      width: devW,
-                      height: 300,
-                      child: Image(
-                        image: AssetImage('assets/images/handicraftimgs/tilla2.jpg'),
-                        fit: BoxFit.fill,
-                      )),
+                  height: 5,
+                ),
+                  Text('Sakhtsazi',
+                  style: kSubHeading,),
                   SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'The process of Tilla Dozi begins with the Naqash or the designer, who draws the design over the trace paper, and perforates this paper with the help of a specialized needle, the process known as “Trombun”. Meanwhile, his assistants prepare the white and blue inks, by mixing sand from the river of Jhelum with some kerosene. The trace paper is placed carefully on the cloth and a paper weight placed over it. It is then that a duster dipped in ink (blue for dark shaded cloth and white for light shaded ones) is passed. The result causes prints of chinar leaves, paisleys and different types of Kashmiri flowers to befall these pieces of plain cloth. This, “Chaamp Traavun” is the second step in casting the beautiful embroidery.',style: kSelText,
-                    textAlign: TextAlign.justify,),
-                    SizedBox(height: 10,)
-                    ,Text('This imprinted cloth is then passed onto a Tilla artisan who uses two threads – one of staple and the other of Tilla and embroiders the plain canvas awaiting his strokes. The technique involves threading the Tilla over the fabric using a specialized needle and fastening this embellishment with a camouflaging cotton thread for a perfect and long lasting finesse. The thread of Tilla is altogether a new dimension, where malleable copper is used as an underwire and coated with silver or gold hues to achieve the desired thickness for the embroidery to be done. The Tilla threads hence obtained are of varying types – the Angora, Hiran, Murga and Peacock. Of these, the most commonly used thread is of the Hiran for it does not age, its sheen remaining unaffected across the folds of time. Once embroidered, the apparel or accessories are sent for washing and ironing for the finished piece to reflect elegance. Special care is taken that a hot iron does not come in direct contact with the Tilla, lest its sheen gets damaged by the heat.',style: kSelText,
-                    textAlign: TextAlign.justify,),
-                    
-                  
+                  height: 10,
+                ),
+                Image(image: AssetImage('assets/Handicrafts/Carousel/Paper-Mache/Sakthsazi.png')),
+                 SizedBox(
+                  height: 20,
+                ),
+                  Text('The sakthsazi is the one involved with making the object with the pulp of paper. First of all, the waste paper is soaked in water for several days. Then, a mixture of the soaked waste paper, cloth and the straw of a rice plant is pounded manually in a stone mortar. This is pounded until the mixture becomes very fine and forms a pulp. Then, a rice based glue called ‘Atij’ is combined with this pulp mixture.This complete mixture is then applied onto the desired mould and then left to dry for a few days. After it has dried out, the artwork is very carefully separated from the mould. The artwork is basically cut in two halves to separate it from the mould and the halves are carefully joined with the help of glue. The resultant object that is obtained is known as ‘Kalib’. Then, for the next step, the kalib is handed over to the women. This process is referred to as ‘Pishlawun’. As the next step, the women smoothen out the surface of the artwork with either a stone, baked clay or a wooden file.After the object is nicely smoothened out, it is coated with a light layer of paint/ lacquer. It is coated again with a second coat of lacquer mixed with some chalk powder and water. This is again left to dry out for some time.After the sakthsazi’s work is done, the artwork/ object is handed over to the Naqash.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,),
+                   SizedBox(
+                  height: 20,
+                ),
+                  Text('Naqashi',
+                  style: kSubHeading,),
                   SizedBox(
-                    height: 10,
-                  ),
+                  height: 10,
+                ),
+                 Image(image: AssetImage('assets/Handicrafts/Carousel/Paper-Mache/Naqashi.png')),
+                SizedBox(
+                  height: 20,
+                ),
+                  Text('When the object reaches the Naqash, it is first covered with thin sheets of butter paper. The butter paper is pasted so that it acts as a barrier between the main object and the paintwork so that the object doesn’t crack. After covering with butter paper, a thin coat of paint is applied all over the artwork. This is actually the step where the object is transformed into the beautiful piece of paper mache handicraft that we know. This work is also very intricate and usually takes about 3 days to a week. The designs are first drawn free hand on the object and then they are painted. The designer uses various different motifs like flowers, fruits, birds, creepers etc.Mostly metallic paints are used for an illuminated effect. After the motifs are painted, often gold or silver is used to highlight them. Mostly the colors that are used for painting are all organic and either nature or vegetable-based. When the whole painting procedure is completed, the final step involves covering the artwork with a layer of varnish for an added shine.This is the whole procedure that goes into making paper mache crafts. It is an extensive process that requires a lot of patience and attention to detail. But, the whole process is worth it as the end result is absolutely stunning.Even though these handicrafts are made using paper, the extensive process that goes into making them is what makes these handicrafts extremely durable. Each of these individually created items has a unique story to tell. The Kashmir paper mache crafts are largely pursued by the Shia sect of the Kashmiri Muslims.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,)
                 ],
               ),
-            ),
-            Image(image: AssetImage('assets/images/handicraftimgs/Tilla1.webp')),
+            )
           ],
-        ),
+        )
       )),
     );
   }
@@ -688,7 +549,7 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Shawl.png'))
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/Shawl.png'))
                 ],
               ),
             ),
@@ -747,7 +608,7 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlRaw.jpeg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlRaw.jpeg')),
                   SizedBox(
                     height: 20,
                   ),
@@ -766,11 +627,11 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlSpin.jpeg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlSpin.jpeg')),
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlThread.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlThread.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -789,7 +650,7 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlDye.jpeg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlDye.jpeg')),
                   SizedBox(
                     height: 20,
                   ),
@@ -807,7 +668,7 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlWeave.jpg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlWeave.jpg')),
                   SizedBox(
                     height: 20,
                   ),
@@ -829,7 +690,7 @@ class ShawlPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/ShawlWash.png')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlWash.png')),
                   SizedBox(
                     height: 20,
                   ),
@@ -847,8 +708,6 @@ class ShawlPage extends StatelessWidget {
     );
   }
 }
-
-/////////////////////////COPPERPAGE///////////////////////////
 
 class CopperPage extends StatelessWidget {
   const CopperPage({super.key});
@@ -880,7 +739,7 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Copper.png'))
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/Copper.png'))
                 ],
               ),
             ),
@@ -924,10 +783,7 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  Text(
-                    '1.   Raw Material Selection:',
-                    style: kSubHeading,
-                  ),
+                  Text('1.   Raw Material Selection:', style: kSubHeading,),
                   SizedBox(
                     height: 5,
                   ),
@@ -939,7 +795,7 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/Rawcopper.jpg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/Rawcopper.jpg')),
                   SizedBox(
                     height: 20,
                   ),
@@ -958,13 +814,11 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Center(
-                      child:
-                          Image(image: AssetImage('assets/images/handicraftimgs/CopperHammer.jpg'))),
+                  Center(child: Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CopperHammer.jpg'))),
                   SizedBox(
                     height: 20,
                   ),
-                  SizedBox(
+                   SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -982,11 +836,11 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/CopperShape.jpg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CopperShape.jpg')),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
+                   Text(
                     '4.   Engraving and Embossing:',
                     style: kSubHeading,
                   ),
@@ -1001,11 +855,11 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/CopperEngrave.jpeg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CopperEngrave.jpeg')),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
+                 Text(
                     '5.   Annealing and Tempering:',
                     style: kSubHeading,
                   ),
@@ -1020,7 +874,7 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/CopperAnneal.jpg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CopperAnneal.jpg')),
                   SizedBox(
                     height: 20,
                   ),
@@ -1039,10 +893,10 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/CopperKalai.png')),
+                  Center(child: Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CopperKalai.png'))),
                   SizedBox(
                     height: 20,
-                  ),
+                  ), 
                   Text(
                     '7.   Tinning and Lacquering:',
                     style: kSubHeading,
@@ -1073,18 +927,114 @@ class CopperPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Image(image: AssetImage('assets/images/handicraftimgs/CoppweFinal.jpg')),
+                  Image(image: AssetImage('assets/Handicrafts/Carousel/Copper/CoppweFinal.jpg')),
                   SizedBox(
                     height: 20,
-                  ),
-                  Text(
-                    'Kashmiri Copperware is not merely a decorative piece; it is an embodiment of the artistic legacy of Kashmir and a testament to the skill and dedication of its artisans. The craft continues to thrive in the modern era, attracting admirers from all around the world who appreciate the beauty and cultural significance of this remarkable art form.',
-                    style: kSelText,
-                    textAlign: TextAlign.justify,
-                  )
+                  ), 
+                  Text('Kashmiri Copperware is not merely a decorative piece; it is an embodiment of the artistic legacy of Kashmir and a testament to the skill and dedication of its artisans. The craft continues to thrive in the modern era, attracting admirers from all around the world who appreciate the beauty and cultural significance of this remarkable art form.',
+                  style: kSelText,
+                  textAlign: TextAlign.justify,)
                 ],
               ),
             )
+          ],
+        ),
+      )),
+    );
+  }
+}
+
+
+/////////////////////////////////////TILLA WORK///////////////////////
+
+class TillaPage extends StatelessWidget {
+  const TillaPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Text(
+                'Tilla Work',
+                style: kHeading,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              child: Text(
+                'Kashmiri Tilla embroidery, also known as Zari work, is a form of embroidery that has its roots in the Kashmir Valley in India. The technique is unique and distinct from other forms of embroidery due to its intricate use of metallic threads, primarily gold and silver, to create exquisite patterns and designs on various fabrics.',
+                style: kSelText,
+                textAlign: TextAlign.justify,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Image(image: AssetImage('assets/Handicrafts/Carousel/Tilla/tilla.png')),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'History of Kashmiri Tilla',
+                    style: kHeading,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Kashmiri Tilla embroidery has been a significant part of the rich cultural heritage of Kashmir for centuries. Its origins can be traced back to the Mughal era, when it was used to embellish the garments of kings and royalty. Over time, the art form became more popular and accessible, and was incorporated into the traditional dress of the Kashmiri people, including the pheran, the traditional Kashmiri robe.',
+                    style: kSelText,
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Process',
+                    style: kHeading,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                      width: devW,
+                      height: 300,
+                      child: Image(
+                        image: AssetImage('assets/Handicrafts/Carousel/Tilla/tilla2.jpg'),
+                        fit: BoxFit.fill,
+                      )),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'The process of Tilla Dozi begins with the Naqash or the designer, who draws the design over the trace paper, and perforates this paper with the help of a specialized needle, the process known as “Trombun”. Meanwhile, his assistants prepare the white and blue inks, by mixing sand from the river of Jhelum with some kerosene. The trace paper is placed carefully on the cloth and a paper weight placed over it. It is then that a duster dipped in ink (blue for dark shaded cloth and white for light shaded ones) is passed. The result causes prints of chinar leaves, paisleys and different types of Kashmiri flowers to befall these pieces of plain cloth. This, “Chaamp Traavun” is the second step in casting the beautiful embroidery.This imprinted cloth is then passed onto a Tilla artisan who uses two threads – one of staple and the other of Tilla and embroiders the plain canvas awaiting his strokes. The technique involves threading the Tilla over the fabric using a specialized needle and fastening this embellishment with a camouflaging cotton thread for a perfect and long lasting finesse. The thread of Tilla is altogether a new dimension, where malleable copper is used as an underwire and coated with silver or gold hues to achieve the desired thickness for the embroidery to be done. The Tilla threads hence obtained are of varying types – the Angora, Hiran, Murga and Peacock. Of these, the most commonly used thread is of the Hiran for it does not age, its sheen remaining unaffected across the folds of time. Once embroidered, the apparel or accessories are sent for washing and ironing for the finished piece to reflect elegance. Special care is taken that a hot iron does not come in direct contact with the Tilla, lest its sheen gets damaged by the heat.',
+                    style: kSelText,
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+            Image(image: AssetImage('assets/Handicrafts/Carousel/Tilla/Tilla1.webp')),
           ],
         ),
       )),
@@ -1129,10 +1079,6 @@ class WoodCarvingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Image(image: AssetImage('assets/images/handicraftimgs/Wood.png')),
               SizedBox(
                 height: 10,
               ),
@@ -1191,7 +1137,7 @@ class WoodCarvingPage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/handicraftimgs/woodselection.jpeg')),
+                    Image(image: AssetImage('assets/Handicrafts/Carousel/Wood/woodselection.jpeg')),
                     SizedBox(
                       height: 20,
                     ),
@@ -1212,7 +1158,7 @@ class WoodCarvingPage extends StatelessWidget {
                     ),
                     Center(
                         child: Image(
-                            image: AssetImage('assets/images/handicraftimgs/designcreation.jpeg'))),
+                            image: AssetImage('assets/Handicrafts/Carousel/Wood/designcreation.jpg'))),
                     SizedBox(
                       height: 20,
                     ),
@@ -1234,7 +1180,7 @@ class WoodCarvingPage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/handicraftimgs/woodblocking.jpeg')),
+                    Image(image: AssetImage('assets/Handicrafts/Carousel/Wood/woodblocking.jpeg')),
                     SizedBox(
                       height: 20,
                     ),
@@ -1253,7 +1199,7 @@ class WoodCarvingPage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/handicraftimgs/intricatecarving.jpeg')),
+                    Image(image: AssetImage('assets/Handicrafts/Carousel/Wood/intricatecarving.jpeg')),
                     SizedBox(
                       height: 20,
                     ),
@@ -1273,7 +1219,7 @@ class WoodCarvingPage extends StatelessWidget {
                       height: 20,
                     ),
                     Image(
-                        image: AssetImage('assets/images/handicraftimgs/finishingandpolishing.jpeg')),
+                        image: AssetImage('assets/Handicrafts/Carousel/Wood/finishingandpolishing.jpeg')),
                     SizedBox(
                       height: 20,
                     ),
@@ -1292,7 +1238,7 @@ class WoodCarvingPage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/handicraftimgs/ShawlWash.png')),
+                    Image(image: AssetImage('assets/Handicrafts/Carousel/Shawl/ShawlWash.png')),
                     SizedBox(
                       height: 20,
                     ),
@@ -1326,7 +1272,7 @@ class WoodCarvingPage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    Image(image: AssetImage('assets/images/handicraftimgs/finalproductwood.png')),
+                    Image(image: AssetImage('assets/Handicrafts/Carousel/Wood/finalproductwood.png')),
                     SizedBox(
                       height: 20,
                     ),

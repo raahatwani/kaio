@@ -19,7 +19,7 @@ class BookTemplate extends StatelessWidget {
       link = '',
       descriptionText = '',
       genre='',
-      length='',
+      pages='',
       lang=''; //imagepath
   BookTemplate(
       {required this.finalPath,
@@ -28,7 +28,7 @@ class BookTemplate extends StatelessWidget {
       required this.link,
       required this.descriptionText,
       required this.genre,
-      required this.length,
+      required this.pages,
       required this.lang,
       });
 
@@ -103,7 +103,7 @@ class BookTemplate extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   btn('GENRE', genre, Icons.book_rounded),
-                  btn('LENGTH', length, Icons.menu_book),
+                  btn('LENGTH', pages, Icons.menu_book),
                   btn('LANG', lang, Icons.language),
                 ],
               ),
