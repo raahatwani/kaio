@@ -2,10 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kaio/MainScreens/Cuisine.dart';
 import 'package:kaio/constants.dart';
-
-import '../MainScreens/handicrafts.dart';
 import '../main.dart';
 
 class DestTemplate extends StatefulWidget {
@@ -45,7 +42,7 @@ class _DestTemplateState extends State<DestTemplate> {
             children: [
               CarouselSlider(
                 items: widget.cimages.map((cimage) {
-                  return PlaceCard(imagePath: cimage, widgetName: Handicraft());
+                  return PlaceCard(imagePath: cimage);
                 }).toList(),
                 options: CarouselOptions(
                   height: 300.0,
@@ -124,7 +121,7 @@ class _DestTemplateState extends State<DestTemplate> {
                             child: Column(
                               children: widget.places.map((place) {
                                 return PlaceCard(
-                                    imagePath: place, widgetName: Handicraft());
+                                    imagePath: place);
                               }).toList(),
                             ),
                           ),
@@ -134,7 +131,7 @@ class _DestTemplateState extends State<DestTemplate> {
                             child: Column(
                               children: widget.things.map((thing) {
                                 return PlaceCard(
-                                    imagePath: thing, widgetName: Cuisine());
+                                    imagePath: thing);
                               }).toList(),
 
                             ),
@@ -155,31 +152,25 @@ class _DestTemplateState extends State<DestTemplate> {
 
 class PlaceCard extends StatelessWidget {
   String imagePath = '';
-  var widgetName;
-  PlaceCard({required this.imagePath, required this.widgetName});
+  PlaceCard({required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => widgetName));
-        },
-        child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-              side: BorderSide(color: Color(0xff85586F), width: 3),
+    return Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+          side: BorderSide(color: Color(0xff85586F), width: 3),
+        ),
+        child: Container(
+          height: devH * 0.3,
+          width: devW * 0.9,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(imagePath),
             ),
-            child: Container(
-              height: devH * 0.3,
-              width: devW * 0.9,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(imagePath),
-                ),
-              ),
-            )));
+          ),
+        ));
   }
 }

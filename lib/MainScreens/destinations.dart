@@ -169,7 +169,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Ganderbal',
         cimages: GanderbalCImages,
-        DescriptionPlace: '\n-The Ganderbal district is located in valley of the Sindh River, also known as Nallah Sindh.\n \n \n-It is rich in landscape and is often called the District of Lakes, as it possesses the highest number of lakes in the state of Jammu and Kashmir.',
+        DescriptionPlace: '\n-The Ganderbal district is located in valley of the Sindh River, also known as Nallah Sindh.\n-It is rich in landscape and is often called the District of Lakes, as it possesses the highest number of lakes in the state of Jammu and Kashmir.',
         places: GanderbalPlaceImages,
         things: GanderbalThingImages);
   }
@@ -178,7 +178,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Bandipora',
         cimages: BandiporaCImages,
-        DescriptionPlace: '\n-Bandipore district (also spelt as Bandipora or Bandipur) is an administrative district of Indian-administered Jammu and Kashmir in the disputed Kashmir region.\n-Bandipora was the connecting link between North India and Central Asia via the Silk Road.',
+        DescriptionPlace: '\n-It is located in the vast Shams Bri mountainous range.\n-It is about 3000 m above sea level. \n-The pass is best known for its generation old mythological legend of Blind and Deaf Fairies.',
         places: BandiporaPlaceImages,
         things: BandiporaThingImages);
   }
@@ -196,7 +196,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Kulgam',
         cimages: KulgamCImages,
-        DescriptionPlace: 'DescriptionPlace',
+        DescriptionPlace: '\n-Kulgam is known as the rice bowl of the valley and is known for its variety of fruit, especially apples.\n\n-This town is on the bank of river Veshaw across the spread of which are the foothills of the Pir Panchal mountains.',
         places: KulgamPlaceImages,
         things: KulgamThingImages);
   }
@@ -205,7 +205,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Pulwama',
         cimages: PulwamaCImages,
-        DescriptionPlace: 'DescriptionPlace',
+        DescriptionPlace: '\n-Pulwama is known for its numerous spring streams, waterfalls, green meadows, and rich biodiversity.\n\n-Pulwama is also home to various historical monuments like Payer temple, Avantishwar temple, and Khankha Tral.',
         places: PulwamaPlaceImages,
         things: PulwamaThingImages);
   }
@@ -214,7 +214,7 @@ class Destination extends StatelessWidget {
     return DestTemplate(
         placeName: 'Shopain',
         cimages: ShopianCImages,
-        DescriptionPlace: 'DescriptionPlace',
+        DescriptionPlace: '\n-Historical town situated in the South of Kashmir at the foot hills of \'Peer-Panchal\' mountain range.\n\n-Famously known as Apple Town in the sub-continent',
         places: ShopianPlaceImages,
         things: ShopianThingImages);
   }
@@ -256,18 +256,16 @@ List<String> BaramullaPlaceImages = [
   'assets/Destination/Baramulla/place/ApharwatPeak.png',
 ];
 List<String> BaramullaThingImages = [
-  'assets/Destination/Baramulla/place/Gulmarg.png',
-  'assets/Destination/Baramulla/place/DrungWaterfall.png',
-  'assets/Destination/Baramulla/place/RaniTemple.png',
-  'assets/Destination/Baramulla/place/NingleNallah.png',
-  'assets/Destination/Baramulla/place/ApharwatPeak.png',
+  'assets/Destination/Baramulla/thing/gondolaRide.png',
+  'assets/Destination/Baramulla/thing/golfing.png',
+  'assets/Destination/Baramulla/thing/Skiing.png',
+  'assets/Destination/Baramulla/thing/Snowboarding.png',
 ];
 List<String> BaramullaCImages = [
-  'assets/Destination/Baramulla/place/Gulmarg.png',
-  'assets/Destination/Baramulla/place/DrungWaterfall.png',
-  'assets/Destination/Baramulla/place/RaniTemple.png',
-  'assets/Destination/Baramulla/place/NingleNallah.png',
-  'assets/Destination/Baramulla/place/ApharwatPeak.png',
+  'assets/Destination/Baramulla/carousel/baramulla.jpg',
+  'assets/Destination/Baramulla/carousel/baramulla1.jpg',
+  'assets/Destination/Baramulla/carousel/baramulla2.jpeg',
+  'assets/Destination/Baramulla/carousel/baramulla3.jpg',
 ];
 
 List<String> GanderbalPlaceImages = [
@@ -278,18 +276,16 @@ List<String> GanderbalPlaceImages = [
   'assets/Destination/Ganderbal/place/MohandMarg.png',
 ];
 List<String> GanderbalThingImages = [
-  'assets/Destination/Ganderbal/place/Sonamarg.png',
-  'assets/Destination/Ganderbal/place/Harmukh.png',
-  'assets/Destination/Ganderbal/place/ManasbalLake.png',
-  'assets/Destination/Ganderbal/place/Prang.png',
-  'assets/Destination/Ganderbal/place/MohandMarg.png',
+  'assets/Destination/Ganderbal/thing/gangbalTrek.png',
+  'assets/Destination/Ganderbal/thing/MountainBiking.png',
+  'assets/Destination/Ganderbal/thing/Fishing.png',
+  'assets/Destination/Ganderbal/thing/RiverRafting.png'
 ];
 List<String> GanderbalCImages = [
-  'assets/Destination/Ganderbal/place/Sonamarg.png',
-  'assets/Destination/Ganderbal/place/Harmukh.png',
-  'assets/Destination/Ganderbal/place/ManasbalLake.png',
-  'assets/Destination/Ganderbal/place/Prang.png',
-  'assets/Destination/Ganderbal/place/MohandMarg.png',
+  'assets/Destination/Ganderbal/carousel/ganderbal1.jpeg',
+  'assets/Destination/Ganderbal/carousel/ganderbal2.jpg',
+  'assets/Destination/Ganderbal/carousel/ganderbal3.jpeg',
+  'assets/Destination/Ganderbal/carousel/ganderbal4.jpg',
 ];
 
 List<String> BandiporaPlaceImages = [
@@ -300,18 +296,14 @@ List<String> BandiporaPlaceImages = [
   'assets/Destination/Bandipora/place/Watlab.png',
 ];
 List<String> BandiporaThingImages = [
-  'assets/Destination/Bandipora/place/WullarLake.png',
-  'assets/Destination/Bandipora/place/GurezValley.png',
-  'assets/Destination/Bandipora/place/ChotaAmarnath.png',
-  'assets/Destination/Bandipora/place/NishatPark.png',
-  'assets/Destination/Bandipora/place/Watlab.png',
+  'assets/Destination/Bandipora/thing/Fishing.png',
+  'assets/Destination/Bandipora/thing/GurezCamping.png',
 ];
 List<String> BandiporaCImages = [
-  'assets/Destination/Bandipora/place/WullarLake.png',
-  'assets/Destination/Bandipora/place/GurezValley.png',
-  'assets/Destination/Bandipora/place/ChotaAmarnath.png',
-  'assets/Destination/Bandipora/place/NishatPark.png',
-  'assets/Destination/Bandipora/place/Watlab.png',
+  'assets/Destination/Bandipora/carousel/bandipora1.jpg',
+  'assets/Destination/Bandipora/carousel/bandipora2.jpg',
+  'assets/Destination/Bandipora/carousel/bandipora3.jpeg',
+  'assets/Destination/Bandipora/carousel/bandipora4.avif',
 ];
 
 List<String> KupwaraPlaceImages = [
@@ -321,16 +313,16 @@ List<String> KupwaraPlaceImages = [
 'assets/Destination/Kupwara/place/Kalaroos.png',
 ];
 List<String> KupwaraThingImages = [
-  'assets/Destination/Kupwara/place/Lolab.png',
-  'assets/Destination/Kupwara/place/SadhnaPass.png',
-  'assets/Destination/Kupwara/place/BungusValley.png',
-  'assets/Destination/Kupwara/place/Kalaroos.png',
+  'assets/Destination/Kupwara/thing/BungusValleySightseeing.png',
+  'assets/Destination/Kupwara/thing/HorseRiding.png',
+  'assets/Destination/Kupwara/thing/BungusValleySafari.png',
+  'assets/Destination/Kupwara/thing/MountainBiking.png'
 ];
 List<String> KupwaraCImages = [
-  'assets/Destination/Kupwara/place/Lolab.png',
-  'assets/Destination/Kupwara/place/SadhnaPass.png',
-  'assets/Destination/Kupwara/place/BungusValley.png',
-  'assets/Destination/Kupwara/place/Kalaroos.png',
+  'assets/Destination/Kupwara/carousel/kupwara1.webp',
+  'assets/Destination/Kupwara/carousel/kupwara2.jpeg',
+  'assets/Destination/Kupwara/carousel/kupwara3.jpeg',
+  'assets/Destination/Kupwara/carousel/kupwara4.jpg',
 ];
 
 List<String> KulgamPlaceImages = [
@@ -341,18 +333,15 @@ List<String> KulgamPlaceImages = [
   'assets/Destination/Kulgam/place/vasaknagkund.png',
 ];
 List<String> KulgamThingImages = [
-  'assets/Destination/Kulgam/place/badibahek.png',
-  'assets/Destination/Kulgam/place/chiranbal.png',
-  'assets/Destination/Kulgam/place/houenheng.png',
-  'assets/Destination/Kulgam/place/Panchanpathri.png',
-  'assets/Destination/Kulgam/place/vasaknagkund.png',
+  'assets/Destination/Kulgam/thing/kulgamtrek.png',
+  'assets/Destination/Kulgam/thing/kulgamwildlife.png',
+  'assets/Destination/Kulgam/thing/kulgamsightseeing.png',
 ];
 List<String> KulgamCImages = [
-  'assets/Destination/Kulgam/place/badibahek.png',
-  'assets/Destination/Kulgam/place/chiranbal.png',
-  'assets/Destination/Kulgam/place/houenheng.png',
-  'assets/Destination/Kulgam/place/Panchanpathri.png',
-  'assets/Destination/Kulgam/place/vasaknagkund.png',
+  'assets/Destination/Kulgam/carousel/kulgam1.jpg',
+  'assets/Destination/Kulgam/carousel/kulgam2.jpg',
+  'assets/Destination/Kulgam/carousel/kulgam3.png',
+  'assets/Destination/Kulgam/carousel/kulgam4.jpg',
 ];
 
 List<String> PulwamaPlaceImages = [
@@ -363,18 +352,15 @@ List<String> PulwamaPlaceImages = [
   'assets/Destination/Pulwama/place/payertemple.png',
 ];
 List<String> PulwamaThingImages = [
-  'assets/Destination/Pulwama/place/avantishwartemple.png',
-  'assets/Destination/Pulwama/place/hundurgompa.png',
-  'assets/Destination/Pulwama/place/kungwattan.png',
-  'assets/Destination/Pulwama/place/marsartarsar.png',
-  'assets/Destination/Pulwama/place/payertemple.png',
+  'assets/Destination/Pulwama/thing/pulwamacamping.png',
+  'assets/Destination/Pulwama/thing/pulwamasightseeing.png',
+  'assets/Destination/Pulwama/thing/pulwamatrek.png',
 ];
 List<String> PulwamaCImages = [
-  'assets/Destination/Pulwama/place/avantishwartemple.png',
-  'assets/Destination/Pulwama/place/hundurgompa.png',
-  'assets/Destination/Pulwama/place/kungwattan.png',
-  'assets/Destination/Pulwama/place/marsartarsar.png',
-  'assets/Destination/Pulwama/place/payertemple.png',
+  'assets/Destination/Pulwama/carousel/pulwama1.jpg',
+  'assets/Destination/Pulwama/carousel/pulwama2.jpg',
+  'assets/Destination/Pulwama/carousel/pulwama3.jpg',
+  'assets/Destination/Pulwama/carousel/pulwama4.jpg',
 ];
 
 List<String> ShopianPlaceImages = [
@@ -385,18 +371,16 @@ List<String> ShopianPlaceImages = [
   'assets/Destination/Shopain/place/pirkigali.png',
 ];
 List<String> ShopianThingImages = [
-  'assets/Destination/Shopain/place/aharbal.png',
-  'assets/Destination/Shopain/place/hirpora.png',
-  'assets/Destination/Shopain/place/kousarnaglake.png',
-  'assets/Destination/Shopain/place/mughalroad.png',
-  'assets/Destination/Shopain/place/pirkigali.png',
+  'assets/Destination/Shopain/thing/shopaincamping.png',
+  'assets/Destination/Shopain/thing/shopainfishing.png',
+  'assets/Destination/Shopain/thing/shopainsanctuary.png',
+  'assets/Destination/Shopain/thing/shopaintrek.png',
 ];
 List<String> ShopianCImages = [
-  'assets/Destination/Shopain/place/aharbal.png',
-  'assets/Destination/Shopain/place/hirpora.png',
-  'assets/Destination/Shopain/place/kousarnaglake.png',
-  'assets/Destination/Shopain/place/mughalroad.png',
-  'assets/Destination/Shopain/place/pirkigali.png',
+  'assets/Destination/Shopain/carousel/shopain1.jpg',
+  'assets/Destination/Shopain/carousel/shopain2.jpg',
+  'assets/Destination/Shopain/carousel/shopain3.jpg',
+  'assets/Destination/Shopain/carousel/shopain4.jpeg',
 ];
 
 List<String> AnantnagPlaceImages = [

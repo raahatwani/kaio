@@ -63,6 +63,7 @@ flutter:
   uses-material-design: true
   assets:
    - assets/
+   - assets/images/
    - assets/Cuisine/Beverages/
    - assets/Cuisine/Carousel/
    - assets/Cuisine/Deserts/
@@ -76,12 +77,26 @@ flutter:
    - assets/Destination/Budgam/carousel/
    - assets/Destination/Budgam/thing/
    - assets/Destination/Baramulla/place/
+   - assets/Destination/Baramulla/thing/
+   - assets/Destination/Baramulla/carousel/
    - assets/Destination/Ganderbal/place/
+   - assets/Destination/Ganderbal/thing/ 
+   - assets/Destination/Ganderbal/carousel/
    - assets/Destination/Bandipora/place/
+   - assets/Destination/Bandipora/thing/
+   - assets/Destination/Bandipora/carousel/
    - assets/Destination/Kupwara/place/
+   - assets/Destination/Kupwara/thing/
+   - assets/Destination/Kupwara/carousel/
    - assets/Destination/Kulgam/place/
+   - assets/Destination/Kulgam/carousel/
+   - assets/Destination/Kulgam/thing/
    - assets/Destination/Pulwama/place/
+   - assets/Destination/Pulwama/carousel/
+   - assets/Destination/Pulwama/thing/
    - assets/Destination/Shopain/place/
+   - assets/Destination/Shopain/carousel/
+   - assets/Destination/Shopain/thing/
    - assets/Destination/Anantnag/place/
    - assets/Destination/Anantnag/thing/
    - assets/Destination/Anantnag/carousel/
