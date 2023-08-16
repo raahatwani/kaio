@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, non_constant_identifier_names, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
@@ -29,7 +29,7 @@ class Heritage extends StatelessWidget {
         width: devW,
         child: Image(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/heritageofkashmir.webp')),
+          image: AssetImage('assets/Destination/Main/kashHeriatge.png')),
     );
   }
 

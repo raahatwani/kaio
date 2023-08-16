@@ -11,7 +11,7 @@ import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/widgets/Recipe.dart';
 import 'package:kaio/widgets/travel_new.dart';
 import 'Culture/Gallery.dart';
-import 'Destination/wildlife.dart';
+import 'Destination/carouselPage.dart';
 import 'MainScreens/Cuisine.dart';
 import 'MainScreens/Culture.dart';
 import 'MainScreens/destinations.dart';
