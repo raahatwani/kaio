@@ -2,14 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:kaio/Destination/desttemplate.dart';
-import 'package:kaio/Destination/heritage.dart';
-import 'package:kaio/Destination/pilgrim.dart';
-import 'package:kaio/Destination/shrines.dart';
 import 'package:kaio/Literature/Book.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/widgets/Recipe.dart';
-import 'package:kaio/widgets/travel_new.dart';
 import 'Culture/Gallery.dart';
 import 'Destination/carouselPage.dart';
 import 'MainScreens/Cuisine.dart';

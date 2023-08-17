@@ -30,11 +30,15 @@ class FeatureCard extends StatelessWidget {
               SizedBox(
                 height: devH * 0.02,
               ),
-              Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                    imagePath,
-                  )),
+              Container(
+                height: devH*0.3,
+              width: devW*0.9,
+                child: Image(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                      imagePath,
+                    )),
+              ),
               SizedBox(
                 height: devH * 0.02,
               ),

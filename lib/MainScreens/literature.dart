@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/data/literature.dart';
 import 'package:kaio/main.dart';
+import 'package:kaio/widgets/BookShape1.dart';
 
 import '../Literature/Book.dart';
-import '../widgets/BookShape1.dart';
 
 class LiteraturePage extends StatefulWidget {
   LiteraturePage({super.key});
@@ -49,19 +49,19 @@ class _LiteraturePageState extends State<LiteraturePage> {
                   children: [
                     BookShape(
                         name: Book(),
-                        imagepath: 'assets/Literature/Poetry/argami.jpg'),
+                        imagepath: 'assets/images/Literature/Poetry/argami.jpg'),
                     BookShape(
                         name: Book(),
-                        imagepath: 'assets/Literature/Poetry/rasol.jpg'),
+                        imagepath: 'assets/images/Literature/Poetry/rasol.jpg'),
                     BookShape(
                         name: Book(),
-                        imagepath: 'assets/Literature/Poetry/wali.jpg'),
+                        imagepath: 'assets/images/Literature/Poetry/wali.jpg'),
                     BookShape(
                         name: Book(),
-                        imagepath: 'assets/Literature/Poetry/kral.jpg'),
+                        imagepath: 'assets/images/Literature/Poetry/kral.jpg'),
                     BookShape(
                         name: Book(),
-                        imagepath: 'assets/Literature/Poetry/museeki.jpg'),
+                        imagepath: 'assets/images/Literature/Poetry/museeki.jpg'),
                   ],
                 )),
             SizedBox(

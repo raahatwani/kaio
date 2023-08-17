@@ -31,7 +31,7 @@ class Destination extends StatelessWidget {
       height: devH * 0.5,
       width: devW,
       child:
-          Image.asset(fit: BoxFit.cover, 'assets/Destination/Main/kashmir.png'),
+          Image.asset(fit: BoxFit.cover, 'assets/images/Destination/Main/kashmir.png'),
     );
   }
 
