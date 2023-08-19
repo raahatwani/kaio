@@ -5,6 +5,7 @@ import 'package:kaio/Destination/desttemplate.dart';
 import 'package:kaio/Literature/Book.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
+import 'package:kaio/mainScreen.dart';
 import 'package:kaio/widgets/Recipe.dart';
 import 'Culture/Gallery.dart';
 import 'Destination/carouselPage.dart';
@@ -16,90 +17,26 @@ import 'MainScreens/literature.dart';
 
 
 
-
 void main() {
-  runApp(MaterialApp(
-    home: HomeScreen(),
-  ));
+  runApp(
+    MaterialApp(
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Color(0xff156F5B),
+              )),
+        home: HomeScreen()),
+  );
 }
 
-
-
-var devH;
-var devW;
+var devH, devW;
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Kashmir App'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LiteraturePage(),
-                  ),
-                );
-              },
-              child: Text('Kashmiri Literature'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Cuisine(),
-                  ),
-                );
-              },
-              child: Text('Kashmiri Cuisine'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Handicraft(),
-                  ),
-                );
-              },
-              child: Text('Kashmir Handicrafts'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Destination(),
-                  ),
-                );
-              },
-              child: Text('Kashmir Destinations'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Culture(),
-                  ),
-                );
-              },
-              child: Text('Kashmir Culture'),
-            ),
-           
-          ],
-        ),
-      ),
-    );
+    return MainScreen();
   }
 }

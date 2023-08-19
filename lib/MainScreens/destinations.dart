@@ -9,11 +9,11 @@ import '../Destination/Container.dart';
 import '../Destination/Features.dart';
 import '../Destination/desttemplate.dart';
 
-PageController controller = PageController();
+// PageController controller = PageController();
 
 class Destination extends StatelessWidget {
-  final controller = PageController();
-  int selectedPage = 0;
+  // final controller = PageController();
+  // int selectedPage = 0;
 
   Destination({super.key});
 
