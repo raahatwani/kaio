@@ -7,7 +7,6 @@ import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/mainScreen.dart';
 import 'package:kaio/widgets/Recipe.dart';
-import 'Culture/Gallery.dart';
 import 'Destination/carouselPage.dart';
 import 'MainScreens/Cuisine.dart';
 import 'MainScreens/Culture.dart';
