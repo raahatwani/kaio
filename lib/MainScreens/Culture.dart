@@ -96,9 +96,10 @@ class _topLayerWidget extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children:[
-                        gallerycontainer(imagePath: 'assets/images/Culture/Main/customs.png',),
-                        gallerycontainer(imagePath: 'assets/images/Culture/Main/customs.png',),
-                        gallerycontainer(imagePath:'assets/images/Culture/Main/customs.png' ,),
+                        gallerycontainer(imagePath: 'assets/gulmarg.jpg',),
+                        gallerycontainer(imagePath: 'assets/story1.jpg',),
+                        gallerycontainer(imagePath: 'assets/gulmarg.jpg',),
+                        gallerycontainer(imagePath: 'assets/story1.jpg',),
                       ] ,
                     ),
                   ),
@@ -189,6 +190,7 @@ class gallerycontainer extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
         width: devW * 0.6,
+        height: devH * 0.23,
         child: Image(
           fit: BoxFit.fill,
           image: AssetImage(imagePath),

@@ -95,30 +95,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-Widget heroCard() {
-  return const Card(
-    child: Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Discover Kashmir: Heritage,\n Culture, and More',
-            style: kHeading,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Discover your Kashmiri heritage with Kaio, the mobile app that immerses you in the rich literature, delicious cuisines, exquisite handicrafts, breathtaking destinations, and vibrant culture of Kashmir.',
-            textAlign: TextAlign.justify,
-            style: kSelText,
-          ),
-        )
-      ],
-    ),
-  );
-}
+// Widget heroCard() {
+//   return const Card(
+//     child: Column(
+//       children: [
+//         Padding(
+//           padding: EdgeInsets.all(8.0),
+//           child: Text(
+//             'Discover Kashmir: Heritage,\n Culture, and More',
+//             style: kHeading,
+//             textAlign: TextAlign.center,
+//           ),
+//         ),
+//         Padding(
+//           padding: EdgeInsets.all(8.0),
+//           child: Text(
+//             'Discover your Kashmiri heritage with Kaio, the mobile app that immerses you in the rich literature, delicious cuisines, exquisite handicrafts, breathtaking destinations, and vibrant culture of Kashmir.',
+//             textAlign: TextAlign.justify,
+//             style: kSelText,
+//           ),
+//         )
+//       ],
+//     ),
+//   );
+// }
 
 Widget ourServices() {
   return Card(
@@ -145,27 +145,33 @@ Widget ourServices() {
         ServiceCard(
             nextpage: LiteraturePage(),
             service: 'Literature',
-            imagePath: 'assets/images/Handicrafts/Carousel/Shawl/Shawl.png',
+            imagePath: 'assets/images/MainScreen/kliterature.png',
             description:
-                'Heritage Discovery offers a comprehensive and formal service that helps individuals uncover their ancestral roots and explore their rich heritage.'),
+                'Embarking on a journey to discover Kashmiri literature is to open a door to a world where language becomes a bridge connecting hearts and minds across time and space.Discovering Kashmiri literature is like embarking on a journey through the captivating landscapes of both the region and the human experience.'),
         ServiceCard(
             nextpage: Cuisine(),
             service: 'Cuisines',
             description:
-                'Heritage Discovery offers a comprehensive and formal service that helps individuals uncover their ancestral roots and explore their rich heritage.',
-            imagePath: 'assets/images/Handicrafts/Carousel/Shawl/Shawl.png'),
+                'Embarking on a journey to discover Kashmiri cuisine is akin to unraveling a symphony of flavors and traditions. Rooted in the fertile valleys of the Himalayas, Kashmiri cuisine is a harmonious blend of aromatic spices, delicate herbs, and locally sourced ingredients. ',
+            imagePath: 'assets/images/MainScreen/kcuisine.png'),
         ServiceCard(
             nextpage: Handicraft(),
             service: 'Handicrafts',
             description:
-                'Heritage Discovery offers a comprehensive and formal service that helps individuals uncover their ancestral roots and explore their rich heritage.',
-            imagePath: 'assets/images/Handicrafts/Carousel/Shawl/Shawl.png'),
+                'Embarking on a journey to discover Kashmiri handicrafts is like stepping into a realm of timeless artistry and intricate craftsmanship. Nestled in the heart of the Himalayas, Kashmir has been a cradle of creativity for centuries, producing exquisite handwoven Pashmina shawls, intricately carved walnut woodwork, vibrant papier-mâché artifacts, and intricate embroidered textiles.',
+            imagePath: 'assets/images/MainScreen/khandicrafts.png'),
         ServiceCard(
             nextpage: Destination(),
             service: 'Destinations',
             description:
-                'Heritage Discovery offers a comprehensive and formal service that helps individuals uncover their ancestral roots and explore their rich heritage.',
-            imagePath: 'assets/images/Handicrafts/Carousel/Shawl/Shawl.png'),
+                'Embarking on a journey to discover Kashmiri destinations is like stepping into a realm of natural beauty and cultural richness. From the serene Dal Lake, where houseboats gently glide on mirrored waters, to the majestic vistas of Gulmarg\'s snow-covered peaks, every corner of this region is a testament to nature\'s artistry.',
+            imagePath: 'assets/images/MainScreen/kdestinations.png'),
+            ServiceCard(
+            nextpage: Culture(),
+            service: 'Culture',
+            description:
+                'Embarking on a journey to discover Kashmiri culture is like unveiling a mosaic of traditions, art, and spirituality that have flourished in the lap of the Himalayas. The culture is a symphony of diverse influences, blending Persian, Central Asian, and Indian elements to create a tapestry that is uniquely Kashmiri.',
+            imagePath: 'assets/images/MainScreen/kculture.png'),
       ],
     ),
   );
@@ -199,11 +205,11 @@ class _ServiceCardState extends State<ServiceCard> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('Discover Your Kashmiri ${widget.service}'),
+            child: Text('Discover Your Kashmiri ${widget.service}',style: kSubHeading,),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(widget.description),
+            child: Text(widget.description,textAlign: TextAlign.justify,),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
