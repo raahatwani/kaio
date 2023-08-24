@@ -50,7 +50,7 @@ class Book extends StatelessWidget {
                     ),
                     Text(
                       'RAHMAN RAHI',
-                      style: kSelText,
+                      style: kNormalText,
                     ),
                     SizedBox(
                       height: devH * 0.01,

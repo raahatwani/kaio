@@ -26,7 +26,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
               child: TextField(
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
-                  hintText: 'Search',
+                  hintText: 'Search',hintStyle: kNormalText,
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25),
                       borderSide:
@@ -81,19 +81,20 @@ class _LiteraturePageState extends State<LiteraturePage> {
                     Container(
                       height: 45,
                       decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(25.0)),
-                      child: TabBar(
-                        indicator: BoxDecoration(
-                            color: Color(0xff85586F),
-                            borderRadius: BorderRadius.circular(25.0)),
-                        tabs: [
-                          Tab(text: 'Poetry'),
-                          Tab(text: 'Prose'),
-                          Tab(text: 'History'),
-                          Tab(text: 'New'),
-                        ],
-                        labelColor: Colors.black,
+                      child: Theme(data: myTheme,
+                        child: TabBar(
+                          indicator: BoxDecoration(
+                              color: Theme.of(context).indicatorColor,
+                              borderRadius: BorderRadius.circular(25.0)),
+                          tabs: [
+                            Tab(text: 'Poetry',),
+                            Tab(text: 'Prose'),
+                            Tab(text: 'History'),
+                            Tab(text: 'New'),
+                          ],
+                          // labelColor: Colors.black,
+                        ),
                       ),
                     ),
                     Expanded(

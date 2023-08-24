@@ -44,7 +44,7 @@ class Paper_machie extends StatelessWidget {
                       ),
                       Text(
                         'Highly stylized combination of craft and fine art.',
-                        style: kSelText,
+                        style: kNormalText,
                       ),
                       SizedBox(
                         height: devH * 0.04,

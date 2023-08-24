@@ -8,7 +8,7 @@ import 'WidgetBookShape2.dart';
 
 btn(String text1, String text2, IconData icon) {
   return Column(
-    children: [Text(text1), Icon(icon), Text(text2)],
+    children: [Text(text1,style: kNormalText,), Icon(icon), Text(text2,style: kNormalText)],
   );
 }
 
@@ -48,7 +48,7 @@ class BookTemplate extends StatelessWidget {
           ),
           title: Text(
             'Back',
-            style: TextStyle(color: Colors.black),
+            style: kNormalText.copyWith(color: Colors.black),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -92,7 +92,7 @@ class BookTemplate extends StatelessWidget {
                 children: [
                   Text(
                     author,
-                    style: kSelText,
+                    style: kNormalText,
                   ),
                 ],
               ),
@@ -117,7 +117,7 @@ class BookTemplate extends StatelessWidget {
               SizedBox(
                 height: devH * 0.01,
               ),
-              Text(descriptionText),
+              Text(descriptionText,style: kNormalText,),
             ]),
           ),
         ));

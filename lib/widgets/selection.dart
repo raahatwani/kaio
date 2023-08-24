@@ -15,7 +15,7 @@ class SelectionButton extends StatelessWidget {
           function,
         child: Text(
           buttonText,
-          style: kSelText,
+          style: kNormalText,
         ));
   }
 }

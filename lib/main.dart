@@ -19,13 +19,23 @@ import 'MainScreens/literature.dart';
 void main() {
   runApp(
     MaterialApp(
-        theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: Color(0xff156F5B),
-              )),
+        theme: myTheme,
         home: HomeScreen()),
   );
 }
+
+
+
+ThemeData myTheme = ThemeData(
+  scaffoldBackgroundColor: Color(0xffBBE1F1),
+  primaryColor: Colors.orange, 
+  tabBarTheme: TabBarTheme( 
+    indicator: BoxDecoration(
+      color: Color(0xff273E47), 
+    ),
+  ),
+);
+
 
 var devH, devW;
 

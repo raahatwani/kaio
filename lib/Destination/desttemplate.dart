@@ -97,17 +97,18 @@ class _DestTemplateState extends State<DestTemplate> {
                   Container(
                     height: 45,
                     decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
                         borderRadius: BorderRadius.circular(25.0)),
-                    child: TabBar(
-                      indicator: BoxDecoration(
-                          color: Color(0xff85586F),
-                          borderRadius: BorderRadius.circular(25.0)),
-                      tabs: [
-                        Tab(text: 'Places to visit'),
-                        Tab(text: 'Things to do'),
-                      ],
-                      labelColor: Colors.black,
+                    child: Theme(data: myTheme,
+                      child: TabBar(
+                        indicator: BoxDecoration(
+                           color: Theme.of(context).indicatorColor,
+                            borderRadius: BorderRadius.circular(25.0)),
+                        tabs: [
+                          Tab(text: 'Places to visit'),
+                          Tab(text: 'Things to do'),
+                        ],
+                        labelColor: Colors.black,
+                      ),
                     ),
                   ),
                   SizedBox(

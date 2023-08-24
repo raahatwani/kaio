@@ -30,7 +30,7 @@ class _CuisineState extends State<Cuisine> {
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
-                hintText: 'Search',
+                hintText: 'Search',hintStyle: kNormalText,
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
                     borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
@@ -62,21 +62,22 @@ class _CuisineState extends State<Cuisine> {
                   Container(
                     height: 45,
                     decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
                         borderRadius: BorderRadius.circular(25.0)),
-                    child: TabBar(
-                      // isScrollable: true,
-                      indicator: BoxDecoration(
-                          color: Color(0xff85586F),
-                          borderRadius: BorderRadius.circular(25.0)),
-                      tabs: [
-                        Tab(text: 'Beverages'),
-                        Tab(text: 'HomeMade'),
-                        Tab(text: 'Wazwan'),
-                        Tab(text: 'Deserts'),
-                        // Tab(text: 'Others'),
-                      ],
-                      labelColor: Colors.black,
+                    child: Theme(data: myTheme,
+                      child: TabBar(
+                        // isScrollable: true,
+                        indicator: BoxDecoration(
+                            color: Theme.of(context).indicatorColor,
+                            borderRadius: BorderRadius.circular(25.0)),
+                        tabs: [
+                          Tab(text: 'Beverages'),
+                          Tab(text: 'HomeMade'),
+                          Tab(text: 'Wazwan'),
+                          Tab(text: 'Deserts'),
+                          // Tab(text: 'Others'),
+                        ],
+                        // labelColor: Colors.black,
+                      ),
                     ),
                   ),
                   Expanded(

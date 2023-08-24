@@ -16,7 +16,7 @@ class CookCard extends StatelessWidget {
                           child: Card(color: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                             child: Padding(
                               padding:  EdgeInsets.all(8.0),
-                              child: Text(CardText,style: kSelText,),
+                              child: Text(CardText,style: kNormalText,),
                             ),
                           ));
   }

@@ -17,22 +17,19 @@ class Recipe extends StatelessWidget {
       required this.RecipeDescription,
       required this.itemCount,
       required this.buttonTexts,
-      required this.listname
-      });
+      required this.listname});
 
   @override
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: Colors.grey.shade400,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_sharp),
-            color: Color(0xff85586F),
+            icon: Icon(Icons.arrow_back_sharp),color: Colors.black,
           ),
           title: Text(Category, style: kHeading),
           centerTitle: true,
@@ -61,7 +58,7 @@ class Recipe extends StatelessWidget {
                           padding: EdgeInsets.all(devW * 0.005),
                           child: Text(
                             RecipeDescription,
-                            style: kSelText,
+                            style: kNormalText,
                           ),
                         ),
                         Padding(
@@ -83,14 +80,17 @@ class Recipe extends StatelessWidget {
                             ),
                             itemBuilder: (context, index) {
                               buttonTexts;
-                              return OutlinedButton(
-                                child: Center(
-                                  child: Text(
-                                    buttonTexts[index],
-                                    style: kSelText,
+                              return Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: OutlinedButton(
+                                  child: Center(
+                                    child: Text(
+                                      buttonTexts[index],
+                                      style: kNormalText
+                                    ),
                                   ),
+                                  onPressed: () {},
                                 ),
-                                onPressed: () {},
                               );
                             },
                           ),
@@ -100,7 +100,10 @@ class Recipe extends StatelessWidget {
                           children: [
                             Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text('Recipe'),
+                              child: Text(
+                                'Recipe',
+                                style: kSubHeading,
+                              ),
                             ),
                             Column(
                               children: listname,
@@ -122,11 +125,18 @@ class StepCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: Column(
-          children: [Text(Step), Text(body)],
+          children: [
+            Text(
+              Step,
+              style: kNormalTextBold,
+            ),
+            Text(
+              body,
+              style: kNormalText,
+            )
+          ],
         ),
       ),
     );
   }
 }
-
-

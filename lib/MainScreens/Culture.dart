@@ -87,7 +87,7 @@ class _topLayerWidget extends StatelessWidget {
                   },
                          child: Text(
                           'View More',
-                          style: kSelText,
+                          style: kNormalText,
                                            ),
                        ),
                     ],
