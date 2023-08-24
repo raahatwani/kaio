@@ -1,5 +1,5 @@
 
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flip_carousel/flip_carousel.dart';
@@ -17,13 +17,12 @@ class _FlipState extends State<Flip> {
   @override
   Widget build(BuildContext context) {
     return FlipCarousel(
-      borderRadius: BorderRadius.circular(25),
-      items: widget.cardItems.map((item) => Container(child: Image.asset(item))).toList(),
-      transitionDuration: const Duration(milliseconds: 400),
+      arrowControllersVisibility: false,
+      items: widget.cardItems.map((item) => Image.asset(item)).toList(),
       isAssetImage: true,
-      fit: BoxFit.contain,
+      fit: BoxFit.fill,
       perspectiveFactor: 0.002,
-      layersGap: 30,
+      layersGap: 0,
       heroTag: widget.heroTag,
     );
   }

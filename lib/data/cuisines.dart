@@ -2,7 +2,7 @@
 
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/Cuisine/recipe.dart';
-import 'package:kaio/widgets/Recipe.dart';
+import 'package:kaio/Cuisine/RecipeImage.dart';
 
 List<Flip> carouselList = [
   Flip(
@@ -1227,7 +1227,7 @@ List<StepCard> goshtaba = [
   StepCard(
       Step: 'Step3',
       body:
-          'Heat a kadai with ghee, add all the whole spices \(Bay leaf, cumin seeds, Cinnamon Sticks, cloves, and fennel seeds\), and allow it to sizzle for a few seconds.'),
+          'Heat a kadai with ghee, add all the whole spices (Bay leaf, cumin seeds, Cinnamon Sticks, cloves, and fennel seeds), and allow it to sizzle for a few seconds.'),
   StepCard(
       Step: 'Step4',
       body:

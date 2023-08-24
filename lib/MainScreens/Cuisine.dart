@@ -5,7 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/data/cuisines.dart';
 import 'package:kaio/main.dart';
-import 'package:kaio/widgets/Recipe.dart';
+import 'package:kaio/Cuisine/RecipeImage.dart';
 
 import '../Cuisine/FlipCarousel.dart';
 import '../Cuisine/recipe.dart';
@@ -23,6 +23,13 @@ class _CuisineState extends State<Cuisine> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+           appBar: AppBar(
+          title: Text(
+            'Kaio',
+            style: kSubHeading,
+          ),
+          backgroundColor: Color(0xff587291),
+        ),
       body: Column(
         children: [
           Container(
@@ -33,10 +40,10 @@ class _CuisineState extends State<Cuisine> {
                 hintText: 'Search',hintStyle: kNormalText,
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+                    borderSide: BorderSide( color: Color(0xff587291), width: 2)),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+                    borderSide: BorderSide(color: Color(0xff587291), width: 2)),
               ),
             ),
           ),
@@ -65,18 +72,18 @@ class _CuisineState extends State<Cuisine> {
                         borderRadius: BorderRadius.circular(25.0)),
                     child: Theme(data: myTheme,
                       child: TabBar(
-                        // isScrollable: true,
+                        
                         indicator: BoxDecoration(
-                            color: Theme.of(context).indicatorColor,
+                             color: Color(0xff587291),
                             borderRadius: BorderRadius.circular(25.0)),
                         tabs: [
                           Tab(text: 'Beverages'),
                           Tab(text: 'HomeMade'),
                           Tab(text: 'Wazwan'),
                           Tab(text: 'Deserts'),
-                          // Tab(text: 'Others'),
+                          
                         ],
-                        // labelColor: Colors.black,
+                        
                       ),
                     ),
                   ),
@@ -156,3 +163,8 @@ class Deserts extends StatelessWidget {
     );
   }
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, prefer_const_constructors, file_names, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
@@ -78,7 +78,6 @@ class BookTemplate extends StatelessWidget {
                           await launchUrlString(url);
                         }
                       }
-                      ;
                     },
                     icon: Icon(
                       Icons.arrow_drop_down_circle_outlined,

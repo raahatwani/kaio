@@ -76,7 +76,7 @@ class _DestTemplateState extends State<DestTemplate> {
                           child: Text(
                             widget.DescriptionPlace,
                             textAlign: TextAlign.justify,
-                            style: TextStyle(color: Colors.white),
+                            style: kNormalTextBold.copyWith(fontSize: 12,color: Colors.white)
                           ),
                         ),
                       ],

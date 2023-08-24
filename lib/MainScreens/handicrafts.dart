@@ -4,9 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/MainScreens/literature.dart';
 import 'package:kaio/data/handicrafts.dart';
-import 'package:kaio/widgets/Recipe.dart';
-import 'package:kaio/widgets/craft.dart';
-import 'package:kaio/widgets/selection.dart';
+import 'package:kaio/Cuisine/RecipeImage.dart';
+import 'package:kaio/Handicraft/craft.dart';
 import '../constants.dart';
 import '../main.dart';
 
@@ -22,6 +21,13 @@ class _HandicraftState extends State<Handicraft> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+           appBar: AppBar(
+          title: Text(
+            'Kaio',
+            style: kSubHeading,
+          ),
+          backgroundColor: Color(0xff587291),
+        ),
             body: Column(children: [
       Container(
         margin: EdgeInsets.all(20),
@@ -31,10 +37,10 @@ class _HandicraftState extends State<Handicraft> {
             hintText: 'Search',hintStyle: kNormalText,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+                borderSide: BorderSide( color: Color(0xff587291), width: 2)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide(color: Color(0xff85586F), width: 2)),
+                borderSide: BorderSide( color: Color(0xff587291), width: 2)),
           ),
         ),
       ),
@@ -65,7 +71,7 @@ class _HandicraftState extends State<Handicraft> {
                   child: TabBar(
                     isScrollable: true,
                     indicator: BoxDecoration(
-                        color: Theme.of(context).indicatorColor,
+                        color: Color(0xff587291),
                         borderRadius: BorderRadius.circular(25.0)),
                     tabs: [
                       Tab(text: 'Paper-Mache'),

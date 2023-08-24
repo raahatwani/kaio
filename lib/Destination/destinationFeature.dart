@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: file_names, use_key_in_widget_constructors, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 
@@ -45,6 +45,7 @@ class FeatureCard extends StatelessWidget {
               Text(
                 description,
                 textAlign: TextAlign.justify,
+                style: kNormalText,
               )
             ],
           ),

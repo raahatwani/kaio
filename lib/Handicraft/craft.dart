@@ -18,8 +18,7 @@ class CraftCard extends StatelessWidget {
           } else {
             throw 'Could not launch $url';
           }
-          ;
-        },
+                  },
         child: Card(
           child: Container(
               height: devH * 0.3,

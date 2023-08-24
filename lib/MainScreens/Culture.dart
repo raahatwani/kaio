@@ -17,9 +17,18 @@ class Culture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+              title: Text(
+                'Kaio',
+                style: kSubHeading,
+              ),
+              backgroundColor: Color(0xff587291),
+            ),
+        body: Stack(
+          children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],
+        ),
       ),
     );
   }
@@ -37,7 +46,7 @@ class Culture extends StatelessWidget {
     return Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          height: devH * 0.7,
+          height: devH * 0.6,
           width: devW,
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -83,11 +92,11 @@ class _topLayerWidget extends StatelessWidget {
                       SizedBox(width: devW*1.5,),
                        GestureDetector(onTap: () {
                     Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Gallery()));
+              context, MaterialPageRoute(builder: (context) => GalleryPage()));
                   },
                          child: Text(
                           'View More',
-                          style: kNormalText,
+                          style: kNormalTextBold,
                                            ),
                        ),
                     ],
@@ -99,7 +108,6 @@ class _topLayerWidget extends StatelessWidget {
                         gallerycontainer(imagePath: 'assets/gulmarg.jpg',),
                         gallerycontainer(imagePath: 'assets/story1.jpg',),
                         gallerycontainer(imagePath: 'assets/gulmarg.jpg',),
-                        gallerycontainer(imagePath: 'assets/story1.jpg',),
                       ] ,
                     ),
                   ),

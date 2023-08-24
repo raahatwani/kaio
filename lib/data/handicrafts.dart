@@ -2,7 +2,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:kaio/MainScreens/handicrafts.dart';
-import 'package:kaio/widgets/craft.dart';
+import 'package:kaio/Handicraft/craft.dart';
 
 List <HandicraftCard> handicraftCarousel=[
             HandicraftCard(

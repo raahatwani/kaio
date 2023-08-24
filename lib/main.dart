@@ -2,11 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:kaio/Destination/desttemplate.dart';
-import 'package:kaio/Literature/Book.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/mainScreen.dart';
-import 'package:kaio/widgets/Recipe.dart';
+import 'package:kaio/Cuisine/RecipeImage.dart';
 import 'Destination/carouselPage.dart';
 import 'MainScreens/Cuisine.dart';
 import 'MainScreens/Culture.dart';
@@ -14,28 +13,19 @@ import 'MainScreens/destinations.dart';
 import 'MainScreens/handicrafts.dart';
 import 'MainScreens/literature.dart';
 
-
-
 void main() {
   runApp(
-    MaterialApp(
-        theme: myTheme,
-        home: HomeScreen()),
+    MaterialApp(theme: myTheme, home: HomeScreen()),
   );
 }
 
-
-
 ThemeData myTheme = ThemeData(
   scaffoldBackgroundColor: Color(0xffBBE1F1),
-  primaryColor: Colors.orange, 
-  tabBarTheme: TabBarTheme( 
-    indicator: BoxDecoration(
-      color: Color(0xff273E47), 
-    ),
+  primaryColor: Color(0xffD77A61),
+  tabBarTheme: TabBarTheme(
+    labelColor: Colors.black,   
   ),
 );
-
 
 var devH, devW;
 

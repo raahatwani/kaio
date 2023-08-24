@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/data/destination.dart';
 import 'package:kaio/main.dart';
-import 'package:kaio/widgets/craft.dart';
+import 'package:kaio/Handicraft/craft.dart';
 import '../Destination/Container.dart';
 import '../Destination/Features.dart';
 import '../Destination/desttemplate.dart';
@@ -19,9 +19,18 @@ class Destination extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],
+    return SafeArea(
+      child: Scaffold(
+         appBar: AppBar(
+            title: Text(
+              'Kaio',
+              style: kSubHeading,
+            ),
+            backgroundColor: Color(0xff587291),
+          ),
+        body: Stack(
+          children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],
+        ),
       ),
     );
   }
@@ -39,7 +48,7 @@ class Destination extends StatelessWidget {
     return Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          height: devH * 0.7,
+          height: devH * 0.6,
           width: devW,
           decoration: BoxDecoration(
               gradient: LinearGradient(

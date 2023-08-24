@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, must_be_immutable, use_key_in_widget_constructors
+// ignore_for_file: non_constant_identifier_names, must_be_immutable, use_key_in_widget_constructors, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
@@ -85,6 +85,7 @@ class Culturecard extends StatelessWidget {
               Text(
                 description,
                 textAlign: TextAlign.justify,
+                style: kNormalText,
               )
             ],
           ),
