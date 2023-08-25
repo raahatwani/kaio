@@ -20,8 +20,8 @@ void main() {
 }
 
 ThemeData myTheme = ThemeData(
-  scaffoldBackgroundColor: Color(0xffBBE1F1),
-  primaryColor: Color(0xffD77A61),
+  scaffoldBackgroundColor: Color(0xff00A095),
+  primaryColor: Color(0xffFBC757),
   tabBarTheme: TabBarTheme(
     labelColor: Colors.black,   
   ),
@@ -33,6 +33,9 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
+
+
+  
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;

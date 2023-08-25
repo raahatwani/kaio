@@ -29,7 +29,7 @@ class BookShape extends StatelessWidget {
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Color(0xff587291), width: 3),
+            border: Border.all(color: Color(0xffFBC757), width: 3),
             image: DecorationImage(
                 image: AssetImage(imagepath), fit: BoxFit.fill)),
       ),

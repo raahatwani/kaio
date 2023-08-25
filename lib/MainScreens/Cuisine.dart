@@ -28,7 +28,7 @@ class _CuisineState extends State<Cuisine> {
             'Kaio',
             style: kSubHeading,
           ),
-          backgroundColor: Color(0xff587291),
+          backgroundColor: Color(0xffFBC757),
         ),
       body: Column(
         children: [
@@ -40,10 +40,10 @@ class _CuisineState extends State<Cuisine> {
                 hintText: 'Search',hintStyle: kNormalText,
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide( color: Color(0xff587291), width: 2)),
+                    borderSide: BorderSide( color: Color(0xffFBC757), width: 2)),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Color(0xff587291), width: 2)),
+                    borderSide: BorderSide(color: Color(0xffFBC757), width: 2)),
               ),
             ),
           ),
@@ -74,7 +74,7 @@ class _CuisineState extends State<Cuisine> {
                       child: TabBar(
                         
                         indicator: BoxDecoration(
-                             color: Color(0xff587291),
+                             color: Color(0xffFBC757),
                             borderRadius: BorderRadius.circular(25.0)),
                         tabs: [
                           Tab(text: 'Beverages'),

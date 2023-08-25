@@ -11,6 +11,8 @@ import 'package:kaio/constants.dart';
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
   @override
+
+  
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -42,9 +44,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SliverAppBar(elevation: 20,
       title: Text(
         'Kaio',
-        style: kHeading.copyWith(color: Color(0xff587291)),
+        style: kHeading.copyWith(color: Color(0xff00A095)),
       ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: (Color(0xffFBC757)),
       expandedHeight: 300.0,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
@@ -57,7 +59,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(15.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -67,7 +69,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   style: kSubHeading
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 Text(
                   'Discover your Kashmiri heritage with Kaio, the mobile app that immerses you in the rich literature, delicious cuisines, exquisite handicrafts, breathtaking destinations, and vibrant culture of Kashmir.',
@@ -82,7 +84,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: Icon(
-            Icons.arrow_back_ios,
+            Icons.arrow_forward_ios,
             
             size: 20.0,
           ),
@@ -91,7 +93,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ],
-      actionsIconTheme: IconThemeData(color: Color(0xff587291), size: 36),
+      actionsIconTheme: IconThemeData(color: Color(0xff00A095), size: 36),
     );
   }
 }
@@ -102,18 +104,18 @@ class ourServices extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            'Our Services',
-            style: kSubHeading,
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Our Services',
+              style: kSubHeading,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ElevatedButton(
+          ElevatedButton(
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all(Theme.of(context).primaryColor),
@@ -126,39 +128,41 @@ class ourServices extends StatelessWidget {
                 child: Text(
                   'View All Services',style: kNormalText,
                 ),
-              )),
-        ),
-        ServiceCard(
-            nextpage: LiteraturePage(),
-            service: 'Literature',
-            imagePath: 'assets/images/MainScreen/kliterature.png',
-            description:
-                'Embarking on a journey to discover Kashmiri literature is to open a door to a world where language becomes a bridge connecting hearts and minds across time and space.Discovering Kashmiri literature is like embarking on a journey through the captivating landscapes of both the region and the human experience.'),
-        ServiceCard(
-            nextpage: Cuisine(),
-            service: 'Cuisines',
-            description:
-                'Embarking on a journey to discover Kashmiri cuisine is akin to unraveling a symphony of flavors and traditions. Rooted in the fertile valleys of the Himalayas, Kashmiri cuisine is a harmonious blend of aromatic spices, delicate herbs, and locally sourced ingredients. ',
-            imagePath: 'assets/images/MainScreen/kcuisine.png'),
-        ServiceCard(
-            nextpage: Handicraft(),
-            service: 'Handicrafts',
-            description:
-                'Embarking on a journey to discover Kashmiri handicrafts is like stepping into a realm of timeless artistry and intricate craftsmanship. Nestled in the heart of the Himalayas, Kashmir has been a cradle of creativity for centuries, producing exquisite handwoven Pashmina shawls, intricately carved walnut woodwork, vibrant papier-mâché artifacts, and intricate embroidered textiles.',
-            imagePath: 'assets/images/MainScreen/khandicrafts.png'),
-        ServiceCard(
-            nextpage: Destination(),
-            service: 'Destinations',
-            description:
-                'Embarking on a journey to discover Kashmiri destinations is like stepping into a realm of natural beauty and cultural richness. From the serene Dal Lake, where houseboats gently glide on mirrored waters, to the majestic vistas of Gulmarg\'s snow-covered peaks, every corner of this region is a testament to nature\'s artistry.',
-            imagePath: 'assets/images/MainScreen/kdestinations.png'),
-        ServiceCard(
-            nextpage: Culture(),
-            service: 'Culture',
-            description:
-                'Embarking on a journey to discover Kashmiri culture is like unveiling a mosaic of traditions, art, and spirituality that have flourished in the lap of the Himalayas. The culture is a symphony of diverse influences, blending Persian, Central Asian, and Indian elements to create a tapestry that is uniquely Kashmiri.',
-            imagePath: 'assets/images/MainScreen/kculture.png'),
-      ],
+              )
+              ),
+              
+          ServiceCard(
+              nextpage: LiteraturePage(),
+              service: 'Literature',
+              imagePath: 'assets/images/MainScreen/kliterature.png',
+              description:
+                  'Embarking on a journey to discover Kashmiri literature is to open a door to a world where language becomes a bridge connecting hearts and minds across time and space.Discovering Kashmiri literature is like embarking on a journey through the captivating landscapes of both the region and the human experience.'),
+          ServiceCard(
+              nextpage: Cuisine(),
+              service: 'Cuisines',
+              description:
+                  'Embarking on a journey to discover Kashmiri cuisine is akin to unraveling a symphony of flavors and traditions. Rooted in the fertile valleys of the Himalayas, Kashmiri cuisine is a harmonious blend of aromatic spices, delicate herbs, and locally sourced ingredients. ',
+              imagePath: 'assets/images/MainScreen/kcuisine.png'),
+          ServiceCard(
+              nextpage: Handicraft(),
+              service: 'Handicrafts',
+              description:
+                  'Embarking on a journey to discover Kashmiri handicrafts is like stepping into a realm of timeless artistry and intricate craftsmanship. Nestled in the heart of the Himalayas, Kashmir has been a cradle of creativity for centuries, producing exquisite handwoven Pashmina shawls, intricately carved walnut woodwork, vibrant papier-mâché artifacts, and intricate embroidered textiles.',
+              imagePath: 'assets/images/MainScreen/khandicrafts.png'),
+          ServiceCard(
+              nextpage: Destination(),
+              service: 'Destinations',
+              description:
+                  'Embarking on a journey to discover Kashmiri destinations is like stepping into a realm of natural beauty and cultural richness. From the serene Dal Lake, where houseboats gently glide on mirrored waters, to the majestic vistas of Gulmarg\'s snow-covered peaks, every corner of this region is a testament to nature\'s artistry.',
+              imagePath: 'assets/images/MainScreen/kdestinations.png'),
+          ServiceCard(
+              nextpage: Culture(),
+              service: 'Culture',
+              description:
+                  'Embarking on a journey to discover Kashmiri culture is like unveiling a mosaic of traditions, art, and spirituality that have flourished in the lap of the Himalayas. The culture is a symphony of diverse influences, blending Persian, Central Asian, and Indian elements to create a tapestry that is uniquely Kashmiri.',
+              imagePath: 'assets/images/MainScreen/kculture.png'),
+        ],
+      ),
     );
   }
 }
@@ -189,7 +193,6 @@ class _ServiceCardState extends State<ServiceCard> {
         borderRadius: BorderRadius.circular(20.0), 
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
@@ -201,7 +204,7 @@ class _ServiceCardState extends State<ServiceCard> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'Discover Your Kashmiri ${widget.service}',
@@ -259,7 +262,7 @@ class AppDrawer extends StatelessWidget {
     gradient: LinearGradient(
       colors: [
         Colors.white,
-        Theme.of(context).scaffoldBackgroundColor,
+       Color(0xffFBC757),
       ],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
@@ -268,20 +271,23 @@ class AppDrawer extends StatelessWidget {
   child: Align(
     alignment: Alignment.center,
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Align(
           alignment: Alignment.topLeft,
           child: IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: Icon(Icons.arrow_back_ios),
             onPressed: () {
               Scaffold.of(context).closeEndDrawer();
               
             },
           ),
         ),
-        SizedBox(height: 40),
-        Text('Kaio App', style: kHeading),
+        // SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text('Kaio App', style: kHeading),
+        ),
       ],
     ),
   ),

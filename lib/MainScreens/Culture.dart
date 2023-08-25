@@ -24,7 +24,7 @@ class Culture extends StatelessWidget {
                 'Kaio',
                 style: kSubHeading,
               ),
-              backgroundColor: Color(0xff587291),
+              backgroundColor: Color(0xffFBC757),
             ),
         body: Stack(
           children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],

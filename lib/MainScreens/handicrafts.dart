@@ -26,7 +26,7 @@ class _HandicraftState extends State<Handicraft> {
             'Kaio',
             style: kSubHeading,
           ),
-          backgroundColor: Color(0xff587291),
+          backgroundColor: Color(0xffFBC757),
         ),
             body: Column(children: [
       Container(
@@ -37,10 +37,10 @@ class _HandicraftState extends State<Handicraft> {
             hintText: 'Search',hintStyle: kNormalText,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Color(0xff587291), width: 2)),
+                borderSide: BorderSide( color: Color(0xffFBC757), width: 2)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Color(0xff587291), width: 2)),
+                borderSide: BorderSide( color: Color(0xffFBC757), width: 2)),
           ),
         ),
       ),
@@ -71,7 +71,7 @@ class _HandicraftState extends State<Handicraft> {
                   child: TabBar(
                     isScrollable: true,
                     indicator: BoxDecoration(
-                        color: Color(0xff587291),
+                        color: Color(0xffFBC757),
                         borderRadius: BorderRadius.circular(25.0)),
                     tabs: [
                       Tab(text: 'Paper-Mache'),
@@ -172,7 +172,7 @@ class WoodCarving extends StatelessWidget {
     );
   }
 }
-
+///////////////////////////////////////////////////////////////////////////
 class HandicraftCard extends StatelessWidget {
   String imagePath = '';
   var widgetName;
@@ -189,7 +189,7 @@ class HandicraftCard extends StatelessWidget {
         child: Container(
             height: devH * 0.3,
             width: devW * 0.9,
-            decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+            decoration: BoxDecoration(border: Border.all(color: Color(0xffFBC757),)),
             child: Image(fit: BoxFit.fill, image: AssetImage(imagePath))),
       ),
     );
