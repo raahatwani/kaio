@@ -16,7 +16,7 @@ import 'MainScreens/literature.dart';
 
 void main() {
   runApp(
-    MaterialApp(theme: myTheme, home: SplashScreen()),
+    MaterialApp(theme: myTheme, home: HomeScreen()),
   );
 }
 
@@ -40,6 +40,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
-    return MainScreen();
+    return SplashScreen();
   }
 }
