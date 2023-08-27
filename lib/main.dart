@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kaio/Destination/desttemplate.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
+import 'package:kaio/SplashScreen.dart';
 import 'package:kaio/mainScreen.dart';
 import 'package:kaio/Cuisine/RecipeImage.dart';
 import 'Destination/carouselPage.dart';
@@ -39,6 +40,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
-    return MainScreen();
+    return SplashScreen();
   }
 }

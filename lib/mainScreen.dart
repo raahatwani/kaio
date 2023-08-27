@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         'Kaio',
         style: kHeading.copyWith(color:Theme.of(context).scaffoldBackgroundColor),
-      ),
+      ),automaticallyImplyLeading: false,
       backgroundColor: (Theme.of(context).primaryColor),
       expandedHeight: 300.0,
       pinned: true,
