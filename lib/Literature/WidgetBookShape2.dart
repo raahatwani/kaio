@@ -28,7 +28,7 @@ class BookShape2 extends StatelessWidget {
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.black, width: 3),
+            border: Border.all(color: Theme.of(context).primaryColor, width: 3),
             image: DecorationImage(
                 image: AssetImage(imagepath), fit: BoxFit.fill)),
       )

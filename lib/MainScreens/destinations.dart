@@ -26,7 +26,7 @@ class Destination extends StatelessWidget {
               'Kaio',
               style: kSubHeading,
             ),
-            backgroundColor: Color(0xffFBC757),
+            backgroundColor: Theme.of(context).primaryColor,
           ),
         body: Stack(
           children: [_DestinationPage(), _GradientWidget(), _topLayerWidget()],

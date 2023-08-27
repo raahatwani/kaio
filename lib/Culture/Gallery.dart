@@ -48,10 +48,10 @@ getData() async {
                   'Kaio',
                   style: kSubHeading,
                 ),
-                backgroundColor: Color(0xffFBC757),
+                backgroundColor:Theme.of(context).primaryColor,
               ),
         body: imgUrl.isEmpty
-            ? Center(child: CircularProgressIndicator(color: Color(0xffFBC757),)) 
+            ? Center(child: CircularProgressIndicator(color:Theme.of(context).primaryColor,)) 
             : GridView.builder(
           itemCount: data.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -24,7 +24,7 @@ return GestureDetector( onTap: () {
         child: Container(
             height: devH * 0.3,
             width: devW * 0.9,
-            decoration: BoxDecoration(border: Border.all(color: Color(0xffFBC757),)),
+            decoration: BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor,)),
             child: Image(fit: BoxFit.fill, image: AssetImage(widget.assetName))),
       ),);
 

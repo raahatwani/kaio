@@ -26,7 +26,7 @@ class _HandicraftState extends State<Handicraft> {
             'Kaio',
             style: kSubHeading,
           ),
-          backgroundColor: Color(0xffFBC757),
+          backgroundColor: Theme.of(context).primaryColor,
         ),
             body: Column(children: [
       Container(
@@ -37,10 +37,10 @@ class _HandicraftState extends State<Handicraft> {
             hintText: 'Search',hintStyle: kNormalText,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Color(0xffFBC757), width: 2)),
+                borderSide: BorderSide( color: Theme.of(context).primaryColor, width: 2)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Color(0xffFBC757), width: 2)),
+                borderSide: BorderSide( color: Theme.of(context).primaryColor, width: 2)),
           ),
         ),
       ),
@@ -71,7 +71,7 @@ class _HandicraftState extends State<Handicraft> {
                   child: TabBar(
                     isScrollable: true,
                     indicator: BoxDecoration(
-                        color: Color(0xffFBC757),
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(25.0)),
                     tabs: [
                       Tab(text: 'Paper-Mache'),
@@ -189,7 +189,7 @@ class HandicraftCard extends StatelessWidget {
         child: Container(
             height: devH * 0.3,
             width: devW * 0.9,
-            decoration: BoxDecoration(border: Border.all(color: Color(0xffFBC757),)),
+            decoration: BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor,)),
             child: Image(fit: BoxFit.fill, image: AssetImage(imagePath))),
       ),
     );

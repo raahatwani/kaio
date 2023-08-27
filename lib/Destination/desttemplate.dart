@@ -101,7 +101,7 @@ class _DestTemplateState extends State<DestTemplate> {
                     child: Theme(data: myTheme,
                       child: TabBar(
                         indicator: BoxDecoration(
-                            color: Color(0xffFBC757),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(25.0)),
                         tabs: [
                           Tab(text: 'Places to visit'),
@@ -160,7 +160,7 @@ class PlaceCard extends StatelessWidget {
     return Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(color: Color(0xffFBC757), width: 3),
+          side: BorderSide(color: Theme.of(context).primaryColor, width: 3),
         ),
         child: Container(
           height: devH * 0.3,

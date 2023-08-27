@@ -44,9 +44,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return SliverAppBar(elevation: 20,
       title: Text(
         'Kaio',
-        style: kHeading.copyWith(color: Color(0xff00A095)),
+        style: kHeading.copyWith(color:Theme.of(context).scaffoldBackgroundColor),
       ),
-      backgroundColor: (Color(0xffFBC757)),
+      backgroundColor: (Theme.of(context).primaryColor),
       expandedHeight: 300.0,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
@@ -93,7 +93,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ],
-      actionsIconTheme: IconThemeData(color: Color(0xff00A095), size: 36),
+      actionsIconTheme: IconThemeData(color: Theme.of(context).scaffoldBackgroundColor, size: 36),
     );
   }
 }
@@ -262,7 +262,7 @@ class AppDrawer extends StatelessWidget {
     gradient: LinearGradient(
       colors: [
         Colors.white,
-       Color(0xffFBC757),
+       Theme.of(context).primaryColor,
       ],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,

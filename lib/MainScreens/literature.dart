@@ -23,7 +23,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
             'Kaio',
             style: kSubHeading,
           ),
-          backgroundColor: Color(0xffFBC757),
+          backgroundColor: Theme.of(context).primaryColor
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -38,11 +38,11 @@ class _LiteraturePageState extends State<LiteraturePage> {
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25),
                       borderSide:
-                          BorderSide(color: Color(0xffFBC757), width: 2)),
+                          BorderSide(color: Theme.of(context).primaryColor, width: 2)),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25),
                       borderSide:
-                          BorderSide(color: Color(0xffFBC757), width: 2)),
+                          BorderSide(color: Theme.of(context).primaryColor, width: 2)),
                 ),
               ),
             ),
@@ -205,7 +205,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
                       data: myTheme,
                       child: TabBar(
                         indicator: BoxDecoration(
-                            color: Color(0xffFBC757),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(25.0)),
                         tabs: [
                           Tab(
