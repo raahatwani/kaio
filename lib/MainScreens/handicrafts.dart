@@ -78,7 +78,7 @@ class _HandicraftState extends State<Handicraft> {
                       Tab(text: 'Copper Work'),
                       Tab(text: 'Wood Carving'),
                     ],
-                    labelColor: Colors.black,
+                    
                   ),
                 ),
               ),
