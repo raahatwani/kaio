@@ -203,18 +203,21 @@ class _LiteraturePageState extends State<LiteraturePage> {
                   children: [
                     Theme(
                       data: myTheme,
-                      child: TabBar(
-                        indicator: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(25.0)),
-                        tabs: [
-                          Tab(
-                            text: 'Poetry',
-                          ),
-                          Tab(text: 'Prose'),
-                          Tab(text: 'History'),
-                          Tab(text: 'New'),
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: TabBar(
+                          indicator: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius: BorderRadius.circular(15.0)),
+                          tabs: [
+                            Tab(
+                              text: 'Poetry',
+                            ),
+                            Tab(text: 'Prose'),
+                            Tab(text: 'History'),
+                            Tab(text: 'New'),
+                          ],
+                        ),
                       ),
                     ),
                     Expanded(

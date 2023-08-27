@@ -1,0 +1,77 @@
+Date : 2023-08-27 11:56:01
+Directory : c:\kaio
+Total : 38 files,  464 codes, -93 comments, 26 blanks, all 397 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         36 |        456 |        -93 |         24 |        387 |
+| YAML     |          1 |          6 |          0 |          2 |          8 |
+| Swift    |          1 |          2 |          0 |          0 |          2 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                  | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                     |         38 |        464 |        -93 |         26 |        397 |
+| . (Files)                                             |          1 |          6 |          0 |          2 |          8 |
+| lib                                                   |         36 |        456 |        -93 |         24 |        387 |
+| lib (Files)                                           |          4 |        306 |          6 |         30 |        342 |
+| lib\Cuisine                                           |          4 |         -2 |         67 |          5 |         70 |
+| lib\Culture                                           |          4 |         53 |        -35 |         11 |         29 |
+| lib\Destination                                       |          3 |         47 |        -44 |          1 |          4 |
+| lib\Handicraft                                        |          3 |        -88 |          1 |         -7 |        -94 |
+| lib\Literature                                        |          4 |       -133 |        -29 |         -7 |       -169 |
+| lib\MainScreens                                       |          5 |        297 |          6 |         36 |        339 |
+| lib\data                                              |          1 |        264 |          0 |         11 |        275 |
+| lib\widgets                                           |          8 |       -288 |        -65 |        -56 |       -409 |
+| macos                                                 |          1 |          2 |          0 |          0 |          2 |
+| macos\Flutter                                         |          1 |          2 |          0 |          0 |          2 |
++-------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                              | language | code       | comment    | blank      | total      |
++-------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\kaio\lib\Cuisine\FlipCarousel.dart                 | Dart     |         -1 |          0 |          0 |         -1 |
+| c:\kaio\lib\Cuisine\RecipeImage.dart                  | Dart     |         25 |          1 |          7 |         33 |
+| c:\kaio\lib\Cuisine\cook.dart                         | Dart     |        -66 |         66 |          0 |          0 |
+| c:\kaio\lib\Cuisine\recipe.dart                       | Dart     |         40 |          0 |         -2 |         38 |
+| c:\kaio\lib\Culture\CultureSelection.dart             | Dart     |        -48 |        -36 |         -6 |        -90 |
+| c:\kaio\lib\Culture\Gallery.dart                      | Dart     |        -49 |         -1 |         -6 |        -56 |
+| c:\kaio\lib\Culture\carouselpage.dart                 | Dart     |         84 |          1 |          9 |         94 |
+| c:\kaio\lib\Culture\gallery.dart                      | Dart     |         66 |          1 |         14 |         81 |
+| c:\kaio\lib\Destination\Tab.dart                      | Dart     |          0 |        -46 |         -4 |        -50 |
+| c:\kaio\lib\Destination\destinationFeature.dart       | Dart     |         48 |          2 |          5 |         55 |
+| c:\kaio\lib\Destination\desttemplate.dart             | Dart     |         -1 |          0 |          0 |         -1 |
+| c:\kaio\lib\Handicraft\DescriptionPaperMachie.dart    | Dart     |        -18 |          0 |         -5 |        -23 |
+| c:\kaio\lib\Handicraft\PaperMachie.dart               | Dart     |       -100 |          0 |         -8 |       -108 |
+| c:\kaio\lib\Handicraft\craft.dart                     | Dart     |         30 |          1 |          6 |         37 |
+| c:\kaio\lib\Literature\Book.dart                      | Dart     |       -182 |        -32 |        -17 |       -231 |
+| c:\kaio\lib\Literature\BookShape.dart                 | Dart     |         31 |          1 |          7 |         39 |
+| c:\kaio\lib\Literature\BookTemplate.dart              | Dart     |         -1 |          0 |          0 |         -1 |
+| c:\kaio\lib\Literature\ReviewCard.dart                | Dart     |         19 |          2 |          3 |         24 |
+| c:\kaio\lib\MainScreens\Cuisine.dart                  | Dart     |          6 |         -2 |          7 |         11 |
+| c:\kaio\lib\MainScreens\Culture.dart                  | Dart     |        159 |          0 |         33 |        192 |
+| c:\kaio\lib\MainScreens\destinations.dart             | Dart     |          6 |          3 |          0 |          9 |
+| c:\kaio\lib\MainScreens\handicrafts.dart              | Dart     |          2 |          5 |          0 |          7 |
+| c:\kaio\lib\MainScreens\literature.dart               | Dart     |        124 |          0 |         -4 |        120 |
+| c:\kaio\lib\SplashScreen.dart                         | Dart     |         46 |          4 |          6 |         56 |
+| c:\kaio\lib\constants.dart                            | Dart     |          4 |          0 |          0 |          4 |
+| c:\kaio\lib\data\culture.dart                         | Dart     |        264 |          0 |         11 |        275 |
+| c:\kaio\lib\main.dart                                 | Dart     |        -59 |          0 |         -1 |        -60 |
+| c:\kaio\lib\mainScreen.dart                           | Dart     |        315 |          2 |         25 |        342 |
+| c:\kaio\lib\widgets\BookShape1.dart                   | Dart     |        -30 |        -43 |         -8 |        -81 |
+| c:\kaio\lib\widgets\CookCard.dart                     | Dart     |        -20 |         -1 |         -2 |        -23 |
+| c:\kaio\lib\widgets\CultureCard.dart                  | Dart     |        -99 |        -14 |        -21 |       -134 |
+| c:\kaio\lib\widgets\Recipe.dart                       | Dart     |        -25 |         -1 |         -7 |        -33 |
+| c:\kaio\lib\widgets\ReviewCard.dart                   | Dart     |        -19 |         -2 |         -3 |        -24 |
+| c:\kaio\lib\widgets\craft.dart                        | Dart     |        -31 |         -1 |         -6 |        -38 |
+| c:\kaio\lib\widgets\destinationFeature.dart           | Dart     |        -47 |         -2 |         -5 |        -54 |
+| c:\kaio\lib\widgets\selection.dart                    | Dart     |        -17 |         -1 |         -4 |        -22 |
+| c:\kaio\macos\Flutter\GeneratedPluginRegistrant.swift | Swift    |          2 |          0 |          0 |          2 |
+| c:\kaio\pubspec.yaml                                  | YAML     |          6 |          0 |          2 |          8 |
+| Total                                                 |          |        464 |        -93 |         26 |        397 |
++-------------------------------------------------------+----------+------------+------------+------------+------------+

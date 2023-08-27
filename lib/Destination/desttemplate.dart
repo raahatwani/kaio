@@ -94,15 +94,13 @@ class _DestTemplateState extends State<DestTemplate> {
             child: Expanded(
               child: Column(
                 children: [
-                  Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0)),
-                    child: Theme(data: myTheme,
+                  Theme(data: myTheme,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
                       child: TabBar(
                         indicator: BoxDecoration(
                             color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(25.0)),
+                            borderRadius: BorderRadius.circular(15.0)),
                         tabs: [
                           Tab(text: 'Places to visit'),
                           Tab(text: 'Things to do'),
