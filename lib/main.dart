@@ -16,7 +16,7 @@ import 'MainScreens/literature.dart';
 
 void main() {
   runApp(
-    MaterialApp(theme: myTheme, home: HomeScreen()),
+    MaterialApp(theme: myTheme, home: SplashScreen()),
   );
 }
 
@@ -30,16 +30,16 @@ ThemeData myTheme = ThemeData(
 
 var devH, devW;
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+// class HomeScreen extends StatelessWidget {
+//   const HomeScreen({super.key});
 
-  @override
+//   @override
 
 
   
-  Widget build(BuildContext context) {
-    devH = MediaQuery.of(context).size.height;
-    devW = MediaQuery.of(context).size.width;
-    return SplashScreen();
-  }
-}
+//   Widget build(BuildContext context) {
+//     devH = MediaQuery.of(context).size.height;
+//     devW = MediaQuery.of(context).size.width;
+//     return MainScreen();
+//   }
+// }
