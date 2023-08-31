@@ -107,13 +107,13 @@ class FullImage extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          actions: [
-            IconButton(onPressed: () {
+          // actions: [
+          //   IconButton(onPressed: () {
              
-            }, 
-            icon: Icon(Icons.download)
-            )
-            ],
+          //   }, 
+          //   icon: Icon(Icons.download)
+          //   )
+          //   ],
           automaticallyImplyLeading: false),
       body: Center(
         child: GestureDetector(
