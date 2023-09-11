@@ -17,18 +17,13 @@ class BookShape2 extends StatelessWidget {
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
     return 
-    // GestureDetector(
-    //   onTap: () {
-    //     Navigator.push(
-    //         context, MaterialPageRoute(builder: (context) => name));
-    //   },
       Container(
         height: devW * 0.6,
         width: devW * 0.6,
         margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
+        decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius:5,offset: Offset(10, 8) )],
           borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Theme.of(context).primaryColor, width: 3),
+            border: Border.all(color: Colors.black, width: 3),
             image: DecorationImage(
                 image: AssetImage(imagepath), fit: BoxFit.fill)),
       )

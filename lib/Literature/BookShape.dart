@@ -24,12 +24,12 @@ class BookShape extends StatelessWidget {
         );
       },
       child: Container(
-        height: devW * 0.35,
+        height: devW * 0.4,
         width: devW * 0.3,
         margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Theme.of(context).primaryColor, width: 3),
+        decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius: 5,offset:Offset(5, 5))],
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(color: Colors.black, width: 1),
             image: DecorationImage(
                 image: AssetImage(imagepath), fit: BoxFit.fill)),
       ),

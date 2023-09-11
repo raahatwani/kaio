@@ -5,6 +5,7 @@ import 'package:kaio/Destination/desttemplate.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/Cuisine/FlipCarousel.dart';
 import 'package:kaio/SplashScreen.dart';
+import 'package:kaio/constants.dart';
 import 'package:kaio/mainScreen.dart';
 import 'package:kaio/Cuisine/RecipeImage.dart';
 import 'Destination/carouselPage.dart';
@@ -21,14 +22,16 @@ void main() {
 }
 
 ThemeData myTheme = ThemeData(
-  scaffoldBackgroundColor: Color(0xff00A095),
-  primaryColor: Color(0xffFBC757),
+  scaffoldBackgroundColor: Color(0xffFBC757),
+  primaryColor: Color(0xff00A095),
   tabBarTheme: TabBarTheme(
-    labelColor: Colors.black,   
+    labelColor: Colors.black, 
+    labelStyle: kNormalTextBold,
+    unselectedLabelStyle: kNormalText  
   ),
 );
 
-var devH, devW;
+var devH, devW,button;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,6 +41,18 @@ class HomeScreen extends StatelessWidget {
 
   
   Widget build(BuildContext context) {
+
+ button= ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).primaryColor,
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  );
+
     devH = MediaQuery.of(context).size.height;
     devW = MediaQuery.of(context).size.width;
     return SplashScreen();
