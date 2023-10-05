@@ -3,8 +3,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flip_carousel/flip_carousel.dart';
-import 'package:kaio/main.dart';
-
 class Flip extends StatefulWidget {
   final List<String> cardItems;
 String heroTag;
