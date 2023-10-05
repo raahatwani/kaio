@@ -30,77 +30,70 @@ class _CuisineState extends State<Cuisine> {
           ),
           backgroundColor: Theme.of(context).primaryColor,
         ),
-      body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Search',hintStyle: kNormalText,
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide( color: Theme.of(context).primaryColor, width: 2)),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide(color: Theme.of(context).primaryColor, width: 2)),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [ Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,], 
+            ),),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0,left: 8.0,right: 8.0),
+              child: CarouselSlider(
+                items: carouselList,
+                options: CarouselOptions(
+                  height: 160.0,
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.5,
+                  aspectRatio: 16 / 9,
+                  enableInfiniteScroll: true,
+                  viewportFraction: 0.5,
+                ),
               ),
             ),
-          ),
-          CarouselSlider(
-            items: carouselList,
-            options: CarouselOptions(
-              height: 160.0,
-              enlargeCenterPage: true,
-              enlargeFactor: 0.5,
-              aspectRatio: 16 / 9,
-              enableInfiniteScroll: true,
-              viewportFraction: 0.5,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          DefaultTabController(
-            length: 4,
-            child: Expanded(
-              child: Column(
-                children: [
-                  Theme(data: myTheme,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: TabBar(
-                        isScrollable: true,
-                        indicator: BoxDecoration(
-                             color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(15.0)),
-                        tabs: [
-                          Tab(text: 'Beverages'),
-                          Tab(text: 'HomeMade'),
-                          Tab(text: 'Wazwan'),
-                          Tab(text: 'Deserts'),
+            DefaultTabController(
+              length: 4,
+              child: Expanded(
+                child: Column(
+                  children: [
+                    Theme(data: myTheme,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: TabBar(
+                          isScrollable: true,
+                          indicator: BoxDecoration(
+                               color: Theme.of(context).primaryColor,
+                              borderRadius: BorderRadius.circular(15.0)),
+                          tabs: [
+                            Tab(text: 'Beverages'),
+                            Tab(text: 'HomeMade'),
+                            Tab(text: 'Wazwan'),
+                            Tab(text: 'Deserts'),
+                            
+                          ],
                           
-                        ],
-                        
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        Beverages(),
-                        HomeMade(),
-                        Wazwan(),
-                        Deserts(),
-                        // Others()
-                      ],
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          Beverages(),
+                          HomeMade(),
+                          Wazwan(),
+                          Deserts(),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     ));
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, annotate_overrides, prefer_const_literals_to_create_immutables, file_names
+
 import "dart:async";
 
 import "package:flutter/material.dart";

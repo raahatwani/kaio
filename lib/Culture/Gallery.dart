@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, annotate_overrides
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, annotate_overrides, prefer_const_constructors_in_immutables
 
 import 'dart:convert';
 
@@ -52,43 +52,52 @@ class _GalleryPageState extends State<GalleryPage> {
           ),
           backgroundColor: Theme.of(context).primaryColor,
         ),
-        body: imgUrl.isEmpty
-            ? Center(
-                child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
-              ))
-            : GridView.builder(
-                itemCount: data.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
-                ),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              FullImage(imageUrl: imgUrl.elementAt(index)),
-                        ),
-                      );
-                    },
-                    child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image: NetworkImage(imgUrl.elementAt(index)),
-                              fit: BoxFit.cover,
-                            ),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [ Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,], 
+            ),),
+          child: imgUrl.isEmpty
+              ? Center(
+                  child: CircularProgressIndicator(
+                  color: Theme.of(context).primaryColor,
+                ))
+              : GridView.builder(
+                  itemCount: data.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0,
+                  ),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                FullImage(imageUrl: imgUrl.elementAt(index)),
                           ),
-                        )),
-                  );
-                },
-              ),
+                        );
+                      },
+                      child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: NetworkImage(imgUrl.elementAt(index)),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          )),
+                    );
+                  },
+                ),
+        ),
       ),
     );
   }
@@ -97,16 +106,12 @@ class _GalleryPageState extends State<GalleryPage> {
 class FullImage extends StatelessWidget {
   final String imageUrl;
   FullImage({required this.imageUrl});
-
-
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+      // appBar: AppBar(
+      //     backgroundColor: Colors.transparent,
+      //     elevation: 0,
           // actions: [
           //   IconButton(onPressed: () {
              
@@ -114,13 +119,22 @@ class FullImage extends StatelessWidget {
           //   icon: Icon(Icons.download)
           //   )
           //   ],
-          automaticallyImplyLeading: false),
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Image.network(imageUrl),
+          // automaticallyImplyLeading: false),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [ Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,], 
+            ),),
+        child: Center(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Image.network(imageUrl),
+          ),
         ),
       ),
     );

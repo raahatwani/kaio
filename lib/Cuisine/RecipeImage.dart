@@ -20,12 +20,16 @@ return GestureDetector( onTap: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => widget.name));
       },
-      child: Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Container(
             height: devH * 0.3,
             width: devW * 0.9,
-            decoration: BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor,)),
-            child: Image(fit: BoxFit.fill, image: AssetImage(widget.assetName))),
+            decoration: BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor,width: 2),borderRadius: BorderRadius.circular(15.0)),
+            child: ClipRRect(borderRadius: BorderRadius.circular(15.0),
+              child: Image(fit: BoxFit.fill, image: AssetImage(widget.assetName),
+              ),
+            )),
       ),);
 
   }

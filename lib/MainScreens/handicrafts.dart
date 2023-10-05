@@ -28,76 +28,70 @@ class _HandicraftState extends State<Handicraft> {
           ),
           backgroundColor: Theme.of(context).primaryColor,
         ),
-            body: Column(children: [
-      Container(
-        margin: EdgeInsets.all(20),
-        child: TextField(
-          decoration: InputDecoration(
-            prefixIcon: Icon(Icons.search),
-            hintText: 'Search',hintStyle: kNormalText,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Theme.of(context).primaryColor, width: 2)),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(25),
-                borderSide: BorderSide( color: Theme.of(context).primaryColor, width: 2)),
-          ),
-        ),
-      ),
-      CarouselSlider(
-        items: handicraftCarousel,
-        options: CarouselOptions(
-          height: 160.0,
-          enlargeCenterPage: true,
-          enlargeFactor: 0.5,
-          aspectRatio: 16 / 9,
-          enableInfiniteScroll: true,
-          viewportFraction: 0.5,
-        ),
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      DefaultTabController(
-        length: 5,
-        child: Expanded(
-          child: Column(
-            children: [
-              Theme(data: myTheme,
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: TabBar(
-                    isScrollable: true,
-                    indicator: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(15.0)),
-                    tabs: [
-                      Tab(text: 'Paper-Mache'),
-                      Tab(text: 'Carpets, Rugs and Mats'),
-                      Tab(text: 'Embroidery Work'),
-                      Tab(text: 'Copper Work'),
-                      Tab(text: 'Wood Carving'),
-                    ],
-                    
+            body: Container(
+              decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [ Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,], 
+            ),),
+              child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CarouselSlider(
+                      items: handicraftCarousel,
+                      options: CarouselOptions(
+              height: 160.0,
+              enlargeCenterPage: true,
+              enlargeFactor: 0.5,
+              aspectRatio: 16 / 9,
+              enableInfiniteScroll: true,
+              viewportFraction: 0.5,
+                      ),
+                    ),
+                  ),
+                  DefaultTabController(
+                    length: 5,
+                    child: Expanded(
+                      child: Column(
+              children: [
+                Theme(data: myTheme,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: TabBar(
+                      isScrollable: true,
+                      indicator: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(15.0)),
+                      tabs: [
+                        Tab(text: 'Paper-Mache'),
+                        Tab(text: 'Carpets, Rugs and Mats'),
+                        Tab(text: 'Embroidery Work'),
+                        Tab(text: 'Copper Work'),
+                        Tab(text: 'Wood Carving'),
+                      ],
+                      
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    PaperMac(),
-                    CRM(),
-                    Embroidery(),
-                    CopperWork(),
-                    WoodCarving()
-                  ],
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      PaperMac(),
+                      CRM(),
+                      Embroidery(),
+                      CopperWork(),
+                      WoodCarving()
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ])));
+              ],
+                      ),
+                    ),
+                  ),
+                ]),
+            )));
   }
 }
 
