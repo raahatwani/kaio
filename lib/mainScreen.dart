@@ -110,18 +110,6 @@ class OurServices extends StatelessWidget {
               style: kSubHeading,
             ),
           ),
-          ElevatedButton(
-              style: button,
-              onPressed: () {
-                Scaffold.of(context).openEndDrawer();
-              },
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  'View All Services',
-                  style: kNormalText,
-                ),
-              )),
           Column(children: ServiceList)
         ],
       ),
@@ -207,6 +195,7 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.transparent,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -242,7 +231,18 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-       Column(children: items,)
+       Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white,
+                    Theme.of(context).scaffoldBackgroundColor,
+                  ],
+                ),
+        ),
+        child: Column(children: items,))
         ],
       ),
     );

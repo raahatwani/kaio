@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_constructors, annotate_overrides, prefer_const_literals_to_create_immutables, file_names
+// ignore_for_file: prefer_const_constructors, annotate_overrides, prefer_const_literals_to_create_immutables, file_names, sized_box_for_whitespace
 
 import "dart:async";
-
 import "package:flutter/material.dart";
-import "package:kaio/constants.dart";
 import "package:kaio/main.dart";
 import "package:kaio/mainScreen.dart";
 
@@ -28,30 +26,23 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Center(
-        child: Container(
-          height: devH * 0.1,
-          width: devW * 0.2,
-          decoration: BoxDecoration(
-            // gradient: LinearGradient(
-            //     colors: [Colors.white, Theme.of(context).primaryColor],
-            //     begin: Alignment.topLeft,
-            //     end: Alignment.bottomRight),
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 20.0,
-              ),
-            ],
+          body: Container(
+            decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,
+              ],
+            ),
           ),
-          child: Center(
-              child: Text(
-            'Kaio',
-            style: kNormalTextBold,
+            child: Center(
+              child: Container(
+                height: devH*0.5,
+                child: Image(image: AssetImage("assets/logo.png"),fit: BoxFit.fill,)),
+            ),
           )),
-        ),
-      )),
     );
   }
 }

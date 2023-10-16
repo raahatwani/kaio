@@ -1,9 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_constructor_bodies, must_be_immutable, prefer_const_constructors_in_immutables, non_constant_identifier_names, prefer_typing_uninitialized_variables, sized_box_for_whitespace, avoid_print, unused_element, unnecessary_string_escapes
 
+// import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:kaio/Literature/BookShape.dart';
+import 'package:kaio/Literature/BookTemplate.dart';
 import 'package:kaio/constants.dart';
-import 'package:kaio/data/literature.dart';
 import 'package:kaio/main.dart';
+
+List<String> books = ['Poetry', 'Prose', 'History', 'New'];
 
 class LiteraturePage extends StatefulWidget {
   LiteraturePage({super.key});
@@ -17,58 +23,44 @@ class _LiteraturePageState extends State<LiteraturePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Kaio',
-            style: kSubHeading,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Kaio',
+                style: kSubHeading,
+              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => LiteraturePage()));
+                  },
+                  icon: Icon(Icons.history))
+            ],
           ),
-          backgroundColor: Theme.of(context).primaryColor
+          backgroundColor: Theme.of(context).primaryColor,
         ),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [ Colors.white,
-                Theme.of(context).scaffoldBackgroundColor,], 
-            ),),
+              colors: [
+                Colors.white,
+                Theme.of(context).scaffoldBackgroundColor,
+              ],
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Container(
-              //   margin: EdgeInsets.all(20),
-              //   child: TextField(
-              //     decoration: InputDecoration(
-              //       prefixIcon: Icon(Icons.search),
-              //       hintText: 'Search',
-              //       hintStyle: kNormalText,
-              //       enabledBorder: OutlineInputBorder(
-              //           borderRadius: BorderRadius.circular(25),
-              //           borderSide:
-              //               BorderSide(color: Theme.of(context).primaryColor, width: 2)),
-              //       border: OutlineInputBorder(
-              //           borderRadius: BorderRadius.circular(25),
-              //           borderSide:
-              //               BorderSide(color: Theme.of(context).primaryColor, width: 2)),
-              //     ),
-              //   ),
+              //Padding(
+              //   padding: EdgeInsets.only(top: devW * 0.05),
+              //   child: SingleChildScrollView(
+              //       scrollDirection: Axis.horizontal,
+              //       child: Row(children: books)),
               // ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text('My Books', style: kHeading),
-              ),
-              SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                     children:poetry 
-                  )),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  'Book Shelf',
-                  style: kHeading,
-                ),
-              ),
-              
               DefaultTabController(
                 length: 4,
                 child: Expanded(
@@ -77,7 +69,7 @@ class _LiteraturePageState extends State<LiteraturePage> {
                       Theme(
                         data: myTheme,
                         child: Padding(
-                          padding: const EdgeInsets.only(right: 5,left: 5),
+                          padding: const EdgeInsets.only(right: 5, left: 5),
                           child: TabBar(
                             indicator: BoxDecoration(
                                 color: Theme.of(context).primaryColor,
@@ -113,20 +105,168 @@ class _LiteraturePageState extends State<LiteraturePage> {
       ),
     );
   }
+}
 
-  Widget Poetry() {
-    return GridView.count(crossAxisCount: 2, children: poetry);
+class Poetry extends StatefulWidget {
+  const Poetry({super.key});
+
+  @override
+  State<Poetry> createState() => _PoetryState();
+}
+
+class _PoetryState extends State<Poetry> {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('books')
+            .where('Category', isEqualTo: 'Poetry')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (BuildContext context, int index) {
+              Map<String, dynamic> data =
+                  snapshot.data!.docs[index].data()! as Map<String, dynamic>;
+              return BookShape(
+                name: BookTemplate(data['BID']),
+                imagepath: data['Bookimage'],
+              );
+            },
+          );
+        });
   }
+}
 
-  Widget History() {
-    return GridView.count(crossAxisCount: 2, children: history);
+class Prose extends StatefulWidget {
+  const Prose({super.key});
+
+  @override
+  State<Prose> createState() => _ProseState();
+}
+
+class _ProseState extends State<Prose> {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('books')
+            .where('Category', isEqualTo: 'Prose')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (BuildContext context, int index) {
+              Map<String, dynamic> data =
+                  snapshot.data!.docs[index].data()! as Map<String, dynamic>;
+              return BookShape(
+                name: BookTemplate(data['BID']),
+                imagepath: data['Bookimage'],
+              );
+            },
+          );
+        });
   }
+}
 
-  Widget Prose() {
-    return GridView.count(crossAxisCount: 2, children: prose);
+class History extends StatefulWidget {
+  const History({super.key});
+
+  @override
+  State<History> createState() => _HistoryState();
+}
+
+class _HistoryState extends State<History> {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('books')
+            .where('Category', isEqualTo: 'History')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (BuildContext context, int index) {
+              Map<String, dynamic> data =
+                  snapshot.data!.docs[index].data()! as Map<String, dynamic>;
+              return BookShape(
+                name: BookTemplate(data['BID']),
+                imagepath: data['Bookimage'],
+              );
+            },
+          );
+        });
   }
+}
 
-  Widget New() {
-    return GridView.count(crossAxisCount: 2, children: newbook);
+class New extends StatefulWidget {
+  const New({super.key});
+
+  @override
+  State<New> createState() => _NewState();
+}
+
+class _NewState extends State<New> {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('books')
+            .where('Category', isEqualTo: 'New')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (BuildContext context, int index) {
+              Map<String, dynamic> data =
+                  snapshot.data!.docs[index].data()! as Map<String, dynamic>;
+              return BookShape(
+                name: BookTemplate(data['BID']),
+                imagepath: data['Bookimage'],
+              );
+            },
+          );
+        });
   }
 }
