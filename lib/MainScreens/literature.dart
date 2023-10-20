@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_constructor_bodies, must_be_immutable, prefer_const_constructors_in_immutables, non_constant_identifier_names, prefer_typing_uninitialized_variables, sized_box_for_whitespace, avoid_print, unused_element, unnecessary_string_escapes
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_constructor_bodies, must_be_immutable, prefer_const_constructors_in_immutables, non_constant_identifier_names, prefer_typing_uninitialized_variables, sized_box_for_whitespace, avoid_print, unused_element, unnecessary_string_escapes, unused_import
 
-// import 'dart:convert';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/Literature/BookShape.dart';
 import 'package:kaio/Literature/BookTemplate.dart';
+import 'package:kaio/Literature/FetchLibrary.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/main.dart';
 
@@ -23,20 +23,9 @@ class _LiteraturePageState extends State<LiteraturePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Kaio',
-                style: kSubHeading,
-              ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => LiteraturePage()));
-                  },
-                  icon: Icon(Icons.history))
-            ],
+          title: Text(
+            'Kaio',
+            style: kSubHeading,
           ),
           backgroundColor: Theme.of(context).primaryColor,
         ),
@@ -55,12 +44,32 @@ class _LiteraturePageState extends State<LiteraturePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //Padding(
-              //   padding: EdgeInsets.only(top: devW * 0.05),
-              //   child: SingleChildScrollView(
-              //       scrollDirection: Axis.horizontal,
-              //       child: Row(children: books)),
-              // ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(devH * 0.02),
+                    child: Text(
+                      'Libraries',
+                      style: kHeading.copyWith(
+                          color: Theme.of(context).primaryColor),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FetchLibrary(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(devH * 0.02),
+                    child: Text(
+                      'Book Shelf',
+                      style: kHeading.copyWith(
+                          color: Theme.of(context).primaryColor),
+                    ),
+                  )
+                ],
+              ),
               DefaultTabController(
                 length: 4,
                 child: Expanded(
@@ -126,7 +135,6 @@ class _PoetryState extends State<Poetry> {
           if (snapshot.hasError) {
             return Text('Something went wrong');
           }
-
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Text("Loading");
           }

@@ -1,14 +1,15 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, sized_box_for_whitespace, prefer_typing_uninitialized_variables, prefer_const_constructors_in_immutables, unused_import, avoid_unnecessary_containers
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:kaio/Cuisine/RecipeImage.dart';
+import 'package:kaio/Cuisine/recipe.dart';
+import 'package:kaio/MainScreens/literature.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/data/cuisines.dart';
+import 'package:kaio/data/culture.dart';
 import 'package:kaio/main.dart';
-import 'package:kaio/Cuisine/RecipeImage.dart';
-
-import '../Cuisine/FlipCarousel.dart';
-import '../Cuisine/recipe.dart';
 
 // ignore: must_be_immutable
 class Cuisine extends StatefulWidget {
@@ -23,25 +24,28 @@ class _CuisineState extends State<Cuisine> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-           appBar: AppBar(
-          title: Text(
-            'Kaio',
-            style: kSubHeading,
-          ),
-          backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+        title: Text(
+          'Kaio',
+          style: kSubHeading,
         ),
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [ Colors.white,
-                Theme.of(context).scaffoldBackgroundColor,], 
-            ),),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.white,
+              Theme.of(context).scaffoldBackgroundColor,
+            ],
+          ),
+        ),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 8.0,left: 8.0,right: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
               child: CarouselSlider(
                 items: carouselList,
                 options: CarouselOptions(
@@ -60,22 +64,19 @@ class _CuisineState extends State<Cuisine> {
                 child: Column(
                   children: [
                     Theme(
-                        data: myTheme,
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 5,left: 5),
-                          child: TabBar(
-                            isScrollable: true,
-                            indicator: BoxDecoration(
-                                color: Theme.of(context).primaryColor,
-                                borderRadius: BorderRadius.circular(30.0)),
+                      data: myTheme,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5, left: 5),
+                        child: TabBar(
+                          indicator: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius: BorderRadius.circular(30.0)),
                           tabs: [
                             Tab(text: 'Beverages'),
                             Tab(text: 'HomeMade'),
                             Tab(text: 'Wazwan'),
                             Tab(text: 'Deserts'),
-                            
                           ],
-                          
                         ),
                       ),
                     ),
@@ -105,26 +106,79 @@ class Beverages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: beverages
-      ),
-    );
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('recipe')
+            .where('Category', isEqualTo: 'Beverages')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return ListView(
+                children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data()! as Map<String, dynamic>;
+                  return ListTile(
+                    subtitle: RecipeImage(
+                 name: Recipe(
+                  Category: data['Category'].toString(), 
+                  imagePath: data['RecipeImage'], 
+                  RecipeName: data['RecipeName'], 
+                  RecipeDescription: data['RecipeDescription'], 
+                  itemCount: data['Ingredients'].length, 
+                  buttonTexts: data['Ingredients'],
+                  listname: data['Steps']),
+                  assetName: data['RecipeImage'],
+                  recipeName: data['RecipeName']),
+                  );
+                }).toList(),
+              );
+            });
   }
 }
+
+
 
 class HomeMade extends StatelessWidget {
   const HomeMade({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: homemade
-      ),
-    );
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('recipe')
+        .where('Category', isEqualTo: 'HomeMade')
+        .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data()! as Map<String, dynamic>;
+              return ListTile(
+                subtitle: RecipeImage(
+                  name: Recipe(
+                        Category: data['Category'].toString(),
+                        imagePath: data['RecipeImage'],
+                        RecipeName: data['RecipeName'],
+                        RecipeDescription: data['RecipeDescription'],
+                        itemCount: data['Ingredients'].length,
+                        buttonTexts: data['Ingredients'],
+                        listname: data['Steps']),
+                    assetName: data['RecipeImage'],
+                    recipeName: data['RecipeName']),
+              );
+            }).toList(),
+          );
+        });
   }
 }
 
@@ -133,12 +187,37 @@ class Wazwan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: wazwan
-      ),
-    );
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('recipe')
+        .where('Category', isEqualTo: 'Wazwan')
+        .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data()! as Map<String, dynamic>;
+              return ListTile(
+                subtitle: RecipeImage(
+                  name: Recipe(
+                        Category: data['Category'].toString(),
+                        imagePath: data['RecipeImage'],
+                        RecipeName: data['RecipeName'],
+                        RecipeDescription: data['RecipeDescription'],
+                        itemCount: data['Ingredients'].length,
+                        buttonTexts: data['Ingredients'],
+                        listname: data['Steps']),
+                    assetName: data['RecipeImage'],
+                    recipeName: data['RecipeName']),
+              );
+            }).toList(),
+          );
+        });
   }
 }
 
@@ -147,16 +226,36 @@ class Deserts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: deserts
-      ),
-    );
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('recipe')
+        .where('Category', isEqualTo: 'Deserts')
+        .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Something went wrong');
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Loading");
+          }
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data()! as Map<String, dynamic>;
+              return ListTile(
+                subtitle: RecipeImage(
+                  name: Recipe(
+                        Category: data['Category'].toString(),
+                        imagePath: data['RecipeImage'],
+                        RecipeName: data['RecipeName'],
+                        RecipeDescription: data['RecipeDescription'],
+                        itemCount: data['Ingredients'].length,
+                        buttonTexts: data['Ingredients'],
+                        listname: data['Steps']),
+                    assetName: data['RecipeImage'],
+                    recipeName: data['RecipeName']),
+              );
+            }).toList(),
+          );
+        });
   }
 }
-
-
-
-
-

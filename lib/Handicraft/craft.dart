@@ -25,12 +25,9 @@ class CraftCard extends StatelessWidget {
               width: devW * 0.9,
               decoration:
                   BoxDecoration(border: Border.all(color: Theme.of(context).primaryColor,)),
-              child: Image(fit: BoxFit.fill, image: AssetImage(imagePath))),
+              child: Image(fit: BoxFit.fill, image: NetworkImage(imagePath))),
         ),
       ),
     );
   }
 }
-
-
-

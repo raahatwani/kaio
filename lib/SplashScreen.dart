@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, annotate_overrides, prefer_const_literals_to_create_immutables, file_names, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, annotate_overrides, prefer_const_literals_to_create_immutables, file_names
 
 import "dart:async";
+
 import "package:flutter/material.dart";
 import "package:kaio/main.dart";
 import "package:kaio/mainScreen.dart";
@@ -27,22 +28,16 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child: Scaffold(
           body: Container(
-            decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.white,
-                Theme.of(context).scaffoldBackgroundColor,
-              ],
-            ),
-          ),
-            child: Center(
-              child: Container(
-                height: devH*0.5,
-                child: Image(image: AssetImage("assets/logo.png"),fit: BoxFit.fill,)),
-            ),
-          )),
+        decoration: BoxDecoration(
+        color: Colors.white
+        ),
+        child: Center(
+          child: SizedBox(
+                 height: devH*0.5,
+                  child: Image.asset('assets/logo.png', fit: BoxFit.fill,)),
+        ),
+      )
+      )
     );
   }
 }

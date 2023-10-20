@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, non_constant_identifier_names
+// ignore_for_file: must_be_immutable, file_names, non_constant_identifier_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +8,11 @@ import 'package:url_launcher/url_launcher_string.dart';
 import '../constants.dart';
 import '../main.dart';
 
+List<BookTemplate> recents = [];
+
 class BookTemplate extends StatefulWidget {
   String id;
-  BookTemplate(this.id);
+  BookTemplate(this.id, {super.key});
 
   @override
   State<BookTemplate> createState() => _BookTemplateState();
@@ -24,9 +26,10 @@ class _BookTemplateState extends State<BookTemplate> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
+            recents.add(BookTemplate(widget.id));
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_sharp),
+          icon: const Icon(Icons.arrow_back_sharp),
           color: Colors.black,
         ),
         title: const Text('K-AIO', style: kHeading),
@@ -50,15 +53,18 @@ class _BookTemplateState extends State<BookTemplate> {
   }
 
   btn(String text1, String text2, IconData icon) {
-    return Column(
-      children: [
-        Text(
-          text1,
-          style: kNormalText,
-        ),
-        Icon(icon),
-        Text(text2, style: kNormalText)
-      ],
+    return Padding(
+      padding: EdgeInsets.all(devW * 0.05),
+      child: Column(
+        children: [
+          Text(
+            text1,
+            style: kNormalText,
+          ),
+          Icon(icon),
+          Text(text2, style: kNormalText)
+        ],
+      ),
     );
   }
 
@@ -70,11 +76,11 @@ class _BookTemplateState extends State<BookTemplate> {
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return Text('Something went wrong');
+            return const Text('Something went wrong');
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text("Loading");
+            return const Text("Loading");
           }
           return ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
@@ -128,49 +134,44 @@ class _BookTemplateState extends State<BookTemplate> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          btn('GENRE', data['Genre'], Icons.book_rounded),
-                          btn('LENGTH', data['Length'], Icons.menu_book),
-                          btn('LANG', data['Language'], Icons.language),
-                          Container(
-                            child: Column(
-                              children: [
-                                LikeButton(
-                                  padding: EdgeInsets.only(bottom: 20),
-                                  size: 4,
-                                  circleColor:
-                                      CircleColor(start: Colors.red, end: Colors.red),
-                                  bubblesColor: BubblesColor(
-                                    dotPrimaryColor: Colors.red,
-                                    dotSecondaryColor: Colors.red,
-                                  ),
-                                  likeCount: 45,
-                                  likeCountPadding: EdgeInsets.only(bottom: 15,left: 7),
-                                  likeBuilder: (bool isLiked) {
-                                    return Icon(
-                                      isLiked ? Icons.favorite : Icons.favorite_border,
-                                      color: isLiked ? Colors.red : Colors.black,
-                                      size: 40,
-                                      
-                                    );
-                                  },
-                                  onTap: (bool isLiked) {
-                                    // Implement the logic to handle the like/unlike action here.
-                                    // You can update Firestore, change the state, etc.
-                                    return Future.value(
-                                        !isLiked); // Return the new like state.
-                                  },
-                                ),
-                                Text('LIKES')
-                              ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        btn('GENRE', data['Genre'], Icons.book_rounded),
+                        btn('LENGTH', data['Length'], Icons.menu_book),
+                        btn('LANG', data['Language'], Icons.language),
+                        Column(
+                          children: [
+                            LikeButton(
+                              padding: const EdgeInsets.only(bottom: 20),
+                              size: 4,
+                              circleColor:
+                                  const CircleColor(start: Colors.red, end: Colors.red),
+                              bubblesColor: const BubblesColor(
+                                dotPrimaryColor: Colors.red,
+                                dotSecondaryColor: Colors.red,
+                              ),
+                              likeCount: 45,
+                              likeCountPadding: const EdgeInsets.only(bottom: 15,left: 7),
+                              likeBuilder: (bool isLiked) {
+                                return Icon(
+                                  isLiked ? Icons.favorite : Icons.favorite_border,
+                                  color: isLiked ? Colors.red : Colors.black,
+                                  size: 40,
+                                  
+                                );
+                              },
+                              onTap: (bool isLiked) {
+                                // Implement the logic to handle the like/unlike action here.
+                                // You can update Firestore, change the state, etc.
+                                return Future.value(
+                                    !isLiked); // Return the new like state.
+                              },
                             ),
-                          )
-                        ],
-                      ),
+                            const Text('LIKES')
+                          ],
+                        ),
+                      ],
                     ),
                     Row(
                       children: [

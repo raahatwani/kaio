@@ -1,9 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, file_names, must_be_immutable, camel_case_types, prefer_typing_uninitialized_variables, sized_box_for_whitespace
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kaio/constants.dart';
 import 'package:kaio/data/MainScreen.dart';
 import 'package:kaio/main.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+TextEditingController feedbackcontroller = TextEditingController();
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
@@ -88,8 +93,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ],
-      actionsIconTheme: IconThemeData(
-          color: Color(0xff473144), size: 25),
+      actionsIconTheme: IconThemeData(color: Color(0xff473144), size: 25),
     );
   }
 }
@@ -200,7 +204,7 @@ class AppDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            height: devH*0.1,
+            height: devH * 0.1,
             child: DrawerHeader(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -215,25 +219,25 @@ class AppDrawer extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back_ios,
-                    color: Color(0xff473144),
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xff473144),
                     ),
                     onPressed: () {
                       Scaffold.of(context).closeEndDrawer();
                     },
                   ),
-                  
                   Padding(
-                    padding: EdgeInsets.only(left: devW*0.15),
+                    padding: EdgeInsets.only(left: devW * 0.15),
                     child: Text('K-AIO', style: kTitle),
                   ),
                 ],
               ),
             ),
           ),
-       Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
+          Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
@@ -241,30 +245,163 @@ class AppDrawer extends StatelessWidget {
                     Theme.of(context).scaffoldBackgroundColor,
                   ],
                 ),
-        ),
-        child: Column(children: items,))
+              ),
+              child: Column(
+                children: [
+                  Column(
+                    children: items,
+                  ),
+                  ShareTile(),
+                  DeveloperTile(
+                    developerName: 'Raahat',
+                    linkedInProfile:
+                        'https://www.linkedin.com/in/raahat-khurshid-38439025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+                  ),
+                  DeveloperTile(
+                    developerName: 'Ahba',
+                    linkedInProfile:
+                        'https://www.linkedin.com/in/ahba-lateef-zarkoob-9a503920b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.star),
+                    title: Text('Review and Feedback'),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return FeedbackDialog();
+                        },
+                      );
+                    },
+                  ),
+                ],
+              )),
         ],
       ),
     );
   }
 }
 
-
 class DrawerItems extends StatelessWidget {
   IconData icon;
   String title;
   var nextpage;
- DrawerItems({required this.icon, required this.title,required this.nextpage});
+  DrawerItems(
+      {required this.icon, required this.title, required this.nextpage});
 
   @override
   Widget build(BuildContext context) {
-   return ListTile(
-    leading: Icon(icon),
-    title: Text(title),
-    onTap: (){
-      Navigator.push(context,MaterialPageRoute(builder: (_) => nextpage));
-    },
-  );
-}
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => nextpage));
+      },
+    );
+  }
 }
 
+class ShareTile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.share),
+      title: Text('Share This App'),
+      onTap: () {
+        Share.share('com.example.kaio');
+      },
+    );
+  }
+}
+
+class DeveloperTile extends StatelessWidget {
+  final String developerName;
+  final String linkedInProfile;
+
+  DeveloperTile({required this.developerName, required this.linkedInProfile});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.account_circle),
+      title: Text(developerName),
+      onTap: () async {
+        if (!await canLaunchUrlString(linkedInProfile)) {
+          await launchUrlString(linkedInProfile);
+        } else {
+          throw 'Could not launch $linkedInProfile';
+        }
+      },
+    );
+  }
+}
+
+final formGlobalKey = GlobalKey<FormState>();
+
+class FeedbackDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      title: Text('Review and Feedback', style: kSubHeading),
+      content: Form(
+        key: formGlobalKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Please leave your feedback and review below:',
+                style: kNormalTextBold),
+            TextFormField(
+              controller: feedbackcontroller,
+              decoration: InputDecoration(hintText: 'Your feedback...'),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).primaryColor)),
+              onPressed: () async {
+                if (formGlobalKey.currentState!.validate()) {
+                  String feedbackId =
+                      DateTime.now().microsecondsSinceEpoch.toString();
+                  await FirebaseFirestore.instance
+                      .collection('feedback')
+                      .doc(feedbackId)
+                      .set({
+                    'FID': feedbackId,
+                    'FeedBack': feedbackcontroller.text,
+                  }).then((_) {
+                    feedbackcontroller.clear();
+                    Navigator.of(context).pop();
+                    _showThankYouDialog(context);
+                  });
+                }
+              },
+              child: Text('Submit'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showThankYouDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: Text('Thank you for your feedback', style: kNormalText),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK', style: kNormalTextBold),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
